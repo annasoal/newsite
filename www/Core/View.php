@@ -1,11 +1,13 @@
 <?php
-class M_View
+namespace Core;
+
+class View
 {
     public static function template($filename, $values = []){
 
         extract($values);// превращает массив в переменные с названием их как ключи массива
         ob_start();
-        include ("v/". $filename);
+        include('Views/' . $filename);
         return ob_get_clean();
     }
 }
