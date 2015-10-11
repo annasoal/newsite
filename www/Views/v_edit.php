@@ -1,13 +1,22 @@
 <br>
-<form class="form-horizontal" action="/admin/add" method="post">
+
+<form class="form-horizontal" action="/admin/edit/<?php echo $id_post ?>" method="post">
     <fieldset>
-        <legend>Добавить пост</legend>
+        <legend>Изменить пост</legend>
 
         <div class="form-group">
-            <label for="textArea" class="col-lg-2 control-label">Новый пост</label>
+            <label for="inputTitle" class="col-lg-2 control-label">Заголовок</label>
+
             <div class="col-lg-10">
-                <textarea class="form-control" rows="3" id="textArea" name="text"></textarea>
-                <span class="help-block">Новое событие</span>
+                <input type="text" class="form-control" id="inputEmail" name="title" value="<?php echo $title_post; ?>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="textArea" class="col-lg-2 control-label">Редактировать пост</label>
+            <div class="col-lg-10">
+                <textarea class="form-control" rows="3" id="textArea" name="text"><?php echo $text_post; ?></textarea>
+                <span class="help-block">Измените текст</span>
             </div>
         </div>
 
@@ -53,7 +62,7 @@
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
                 <button type="reset" class="btn btn-warning">Очистить</button>
-                <button type="submit" class="btn btn-success">Отправить</button>
+                <button type="submit" class="btn btn-success" name="update">Отправить</button>
             </div>
         </div>
     </fieldset>

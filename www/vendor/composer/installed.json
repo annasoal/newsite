@@ -1,0 +1,51 @@
+[
+  {
+    "name": "codeguy/upload",
+    "version": "dev-master",
+    "version_normalized": "9999999-dev",
+    "source": {
+      "type": "git",
+      "url": "https://github.com/brandonsavage/Upload.git",
+      "reference": "e7cc1f87108c0a8a5a55cfdb6bc3d98887ec1b5c"
+    },
+    "dist": {
+      "type": "zip",
+      "url": "https://api.github.com/repos/brandonsavage/Upload/zipball/e7cc1f87108c0a8a5a55cfdb6bc3d98887ec1b5c",
+      "reference": "e7cc1f87108c0a8a5a55cfdb6bc3d98887ec1b5c",
+      "shasum": ""
+    },
+    "require": {
+      "ext-fileinfo": "*",
+      "php": ">=5.3.0"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "3.7.*"
+    },
+    "time": "2015-08-14 15:11:42",
+    "type": "library",
+    "installation-source": "source",
+    "autoload": {
+      "psr-4": {
+        "Upload\\": "src/Upload"
+      }
+    },
+    "notification-url": "https://packagist.org/downloads/",
+    "license": [
+      "MIT"
+    ],
+    "authors": [
+      {
+        "name": "Josh Lockhart",
+        "email": "info@joshlockhart.com",
+        "homepage": "https://github.com/codeguy/"
+      }
+    ],
+    "description": "Handle file uploads with extensible validation and storage strategies",
+    "homepage": "http://github.com/codeguy/Upload",
+    "keywords": [
+      "file",
+      "upload",
+      "validation"
+    ]
+  }
+]

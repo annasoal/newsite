@@ -3,5 +3,10 @@
 spl_autoload_register('__autoload');
 
 function __autoload($class){
-    include_once(strtolower($class[0]) . '/' . $class . '.php');
+    $path = strtr($class, '\\', '/') . '.php';
+
+    if (file_exists($path))
+        include_once($path);
+    else
+        die("$class - not found");
 }
