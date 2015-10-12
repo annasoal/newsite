@@ -2,30 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="309e3fbc-4b70-40b8-af46-b6497bf6b07b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/v_left.php" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_about.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_add.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_contacts.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_delete.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_edit.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_main.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_one.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\controllers\Admin.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\controllers\Base.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\controllers\Core.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\controllers\Pages.php" afterPath="" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Models\Post.php" afterPath="$PROJECT_DIR$/www/Model/Post.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_about.php" afterPath="$PROJECT_DIR$/www/View/v_about.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_add.php" afterPath="$PROJECT_DIR$/www/View/v_add.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_contacts.php" afterPath="$PROJECT_DIR$/www/View/v_contacts.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_delete.php" afterPath="$PROJECT_DIR$/www/View/v_delete.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_edit.php" afterPath="$PROJECT_DIR$/www/View/v_edit.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_index.php" afterPath="$PROJECT_DIR$/www/View/v_index.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_main.php" afterPath="$PROJECT_DIR$/www/View/v_main.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Views\v_one.php" afterPath="$PROJECT_DIR$/www/View/v_one.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/www/vendor/composer/ClassLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Core/View.php" afterPath="$PROJECT_DIR$/www/Core/View.php" />
+      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Controllers_1\Admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Controllers_1\Base.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Controllers_1\Core.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Controllers_1\Pages.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\controllers\Ghhh.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="e67e8a98-1ee2-4bc0-962c-f8cbc0e1d99b" name="Failed commit: Default" comment="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;" />
@@ -73,8 +54,8 @@
       <file leaf-file-name="Admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/Controller/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1683">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="1683">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#30#52#0#PHP" expanded="true" />
               </folding>
@@ -112,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pages.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Pages.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/Controller/Pages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="969">
-              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+            <state vertical-scroll-proportion="-0.86190474" vertical-offset="549" max-vertical-offset="969">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#30#53#0#PHP" expanded="true" />
               </folding>
@@ -124,15 +105,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Post.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/Model/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08095238" vertical-offset="0" max-vertical-offset="1241">
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1241">
               <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
               <folding>
                 <marker date="1444647570654" expanded="true" signature="135:178" placeholder="SELECT * FRO..posts..." />
                 <marker date="1444647570654" expanded="true" signature="269:311" placeholder="SELECT * FRO..posts..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v_about.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/View/v_about.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="153">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,11 +184,11 @@
         <option value="$PROJECT_DIR$/www/.gitignore" />
         <option value="$PROJECT_DIR$/www/Controllers/Ghhh.php" />
         <option value="$PROJECT_DIR$/www/index.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Admin.php" />
         <option value="$PROJECT_DIR$/www/Controller/Base.php" />
         <option value="$PROJECT_DIR$/www/Controller/Core.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Pages.php" />
         <option value="$PROJECT_DIR$/www/Models/Post.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Admin.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Pages.php" />
       </list>
     </option>
   </component>
@@ -567,7 +558,19 @@
       <option name="project" value="LOCAL" />
       <updated>1444647521465</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;">
+      <created>1444647608329</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1444647608329</updated>
+    </task>
+    <task id="LOCAL-00025" summary="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;">
+      <created>1444647709851</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1444647709851</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -772,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/v_about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="153">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/configsDb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="289">
@@ -961,10 +957,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/Model/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1241">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding>
+            <marker date="1444647570654" expanded="true" signature="135:178" placeholder="SELECT * FRO..posts..." />
+            <marker date="1444647570654" expanded="true" signature="269:311" placeholder="SELECT * FRO..posts..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/v_about.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="153">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/Controller/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1683">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="1683">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#30#52#0#PHP" expanded="true" />
           </folding>
@@ -989,21 +1004,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/Controller/Pages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="969">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        <state vertical-scroll-proportion="-0.86190474" vertical-offset="549" max-vertical-offset="969">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#30#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Model/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08095238" vertical-offset="0" max-vertical-offset="1241">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding>
-            <marker date="1444647570654" expanded="true" signature="135:178" placeholder="SELECT * FRO..posts..." />
-            <marker date="1444647570654" expanded="true" signature="269:311" placeholder="SELECT * FRO..posts..." />
           </folding>
         </state>
       </provider>
