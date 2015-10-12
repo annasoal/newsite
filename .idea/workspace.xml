@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="309e3fbc-4b70-40b8-af46-b6497bf6b07b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Controllers_1/Ghhh.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Controllers_c\Admin.php" afterPath="$PROJECT_DIR$/www/Controllers_1/Admin.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Controllers_c\Base.php" afterPath="$PROJECT_DIR$/www/Controllers_1/Base.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Controllers_c\Core.php" afterPath="$PROJECT_DIR$/www/Controllers_1/Core.php" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\Controllers_c\Pages.php" afterPath="$PROJECT_DIR$/www/Controllers_1/Pages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/www/vendor/composer/ClassLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.php" afterPath="$PROJECT_DIR$/www/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\Controllers_1\Ghhh.php" afterPath="" />
     </list>
     <list id="e67e8a98-1ee2-4bc0-962c-f8cbc0e1d99b" name="Failed commit: Default" comment="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;" />
     <list id="40c28123-838f-4d50-96ed-1ebeefc8f337" name="Failed commit: Default (2)" comment="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;" />
@@ -48,16 +41,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="119">
               <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ghhh.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/Controllers_1/Ghhh.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -427,7 +410,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444646469075</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;">
+      <created>1444647309151</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1444647309151</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -462,7 +451,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2935065" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2935065" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32905984" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -853,14 +842,6 @@
           <folding>
             <element signature="e#31#53#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Controllers_1/Ghhh.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="419">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
