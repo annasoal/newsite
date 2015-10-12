@@ -7,7 +7,7 @@ class View
 
         extract($values);// превращает массив в переменные с названием их как ключи массива
         ob_start();
-        include('Views/' . $filename);
+        include('View/' . $filename);
         return ob_get_clean();
     }
 }
