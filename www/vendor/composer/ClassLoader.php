@@ -3,7 +3,7 @@
 /*
  * This file is part of Composer.
  *
- * (Controllers_c) Nils Adermann <naderman@naderman.de>
+ * (Controllers_1) Nils Adermann <naderman@naderman.de>
  *     Jordi Boggiano <j.boggiano@seld.be>
  *
  * For the full copyright and license information, please view the LICENSE

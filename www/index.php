@@ -14,7 +14,7 @@ foreach($p as $one){
         $params[] = $one;
 }
 
-$c = '\\Controllers_c\\';
+$c = '\\Controllers_1\\';
 $c .= isset($params[0]) ? ucfirst($params[0]) : 'Pages';
 
 $action = 'action_';
