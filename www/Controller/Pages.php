@@ -3,7 +3,7 @@
 namespace Controller;
 
 use \Core\View as View;
-use \Models\Post as Post;
+use \Model\Post as Post;
 
 class Pages extends Base
 {
