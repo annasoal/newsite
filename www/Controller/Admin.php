@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers;
+namespace Controller;
 
 use Core\View as View;
 use Models\Post as Post;
