@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309e3fbc-4b70-40b8-af46-b6497bf6b07b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Model/Image.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Core/Model.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Model/Tag.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Model/User.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\images\11.PNG" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\images\22.PNG" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\images\a.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin.php" afterPath="$PROJECT_DIR$/www/Controller/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Pages.php" afterPath="$PROJECT_DIR$/www/Controller/Pages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/Post.php" afterPath="$PROJECT_DIR$/www/Model/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Core/SqlDb.php" afterPath="$PROJECT_DIR$/www/Core/SqlDb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/styles/styles.css" afterPath="$PROJECT_DIR$/www/styles/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/v_add.php" afterPath="$PROJECT_DIR$/www/View/v_add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/v_edit.php" afterPath="$PROJECT_DIR$/www/View/v_edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/v_index.php" afterPath="$PROJECT_DIR$/www/View/v_index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/v_main.php" afterPath="$PROJECT_DIR$/www/View/v_main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/v_one.php" afterPath="$PROJECT_DIR$/www/View/v_one.php" />
+    <list default="true" id="309e3fbc-4b70-40b8-af46-b6497bf6b07b" name="Default" comment="&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/images/12079470_501949103308490_6954766548849410363_n.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/images/12088009_500866653416735_6281055393724545069_n.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/images/IMAG1276_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/images/IMAG1276_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/images/background-15933_640.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/data/newsitedb.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="e67e8a98-1ee2-4bc0-962c-f8cbc0e1d99b" name="Failed commit: Default" comment="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;" />
@@ -130,8 +119,8 @@
       <file leaf-file-name="v_index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/View/v_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23538461" vertical-offset="0" max-vertical-offset="650">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.2876923" vertical-offset="0" max-vertical-offset="650">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -409,6 +398,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -485,11 +492,11 @@
       <recent name="C:\OpenServer\domains\newsite\www" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\newsite\www\data" />
       <recent name="C:\OpenServer\domains\newsite\www" />
       <recent name="C:\OpenServer\domains\newsite\www\" />
       <recent name="C:\OpenServer\domains\newsite\www\Core" />
       <recent name="C:\OpenServer\domains\newsite\www\Controllers1" />
-      <recent name="C:\OpenServer\domains\newsite" />
     </key>
   </component>
   <component name="RunManager">
@@ -706,7 +713,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444650876830</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;">
+      <created>1444847636929</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1444847636929</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1183,8 +1196,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/View/v_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23538461" vertical-offset="0" max-vertical-offset="650">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.2876923" vertical-offset="0" max-vertical-offset="650">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
