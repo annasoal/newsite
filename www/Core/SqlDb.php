@@ -42,6 +42,7 @@ class SqlDb
     }
 
 
+
     public function insert($table, $object)
     {
         $columns = [];

@@ -2,66 +2,93 @@
 
 namespace Model;
 
-use \Core\SqlDb;
+//use \Core\SqlDb;
 
 
-class Post
+class Post extends \Core\Model
 {
 
+    private static $instance;
 
-    public static function all()
-    {
-        return SqlDb::app()->select('SELECT * FROM posts ORDER BY date_post DESC');
+    public static function app(){
+        if(self::$instance == null){
+            self::$instance = new self();
+        }
+
+        return self::$instance;
     }
 
-    public static function one($id)
-    {
-
-        return SqlDb::app()->select('SELECT * FROM posts WHERE id_post=:id_post', ['id_post' => $id])[0];
+    protected function __construct(){
+        parent::__construct('posts', 'id_post');
     }
 
-    public function add($titlePost, $textPost, $filename, $imgDescriptionPost)
+
+    protected function validation($fields){
+        $err = false;
+
+        foreach($fields as $k => $v){
+            $fields[$k] = trim($v);
+            //$fields[$k] = htmlspecialchars(trim($v));
+
+            if($fields[$k] == '' || strpos($fields[$k], '<') !== false){
+                $err = true;
+                return false;
+            }
+        }
+
+        return $fields;
+    }
+
+    public function add($fields, $file)
     {
+        $res = $this->validation($fields);
 
-        $titlePost = trim($titlePost);
-        $textPost = trim($textPost);
-        $imgFilePost = '/../images/' . pathinfo($filename)['basename'];
-        $imgDescriptionPost = trim($imgDescriptionPost);
-
-        if ($titlePost == '' || $textPost == '' || $imgFilePost == '' || $imgDescriptionPost == '') {
+        if($res === false){
             return false;
         }
 
-        return $id = SqlDb::app()->insert('posts', ['title_post' => $titlePost,
-                'text_post' => $textPost,
-                'imgFile_post' => $imgFilePost,
-                'imgDescription_post' => $imgDescriptionPost]
-        );
+        if($_FILES['file'] != '') {
+           $id_image = Image::app()->add($file);
 
-    }
-
-    public function edit($id, $titlePost, $textPost)
-    {
-
-        $titlePost = trim($titlePost);
-        $textPost = trim($textPost);
-        //var_dump($titlePost);
-
-        //var_dump($id);
-
-        if ($titlePost == '' || $textPost == '') {
-            return false;
+           if($id_image === false) {
+               return false;
+           } else {
+               $res['id_image'] = $id_image;
+           }
         }
 
-        return SqlDb::app()->update('posts', ['title_post' => $titlePost,
-            'text_post' => $textPost], ' id_post=:id_post', ['id_post' => $id]);
+        return $this->db->insert($this->table, $res);
+    }
+
+
+    public function edit($id,$fields,$file)
+    {
+        $res = $this->validation($fields);
+        array_pop($res);
+        //var_dump($res);
+
+        if($res === false){
+            return false;
+        }
+        if($_FILES['file'] != '') {
+
+            $id_image = Image::app()->add($file);
+
+            if($id_image === false) {
+                return false;
+            } else {
+                $res['id_image'] = $id_image;
+            }
+        }
+        //var_dump($res);
+        return $this->db->update('posts', $res, ' id_post=:id_post', ['id_post' => $id]);
 
     }
 
     public function delete($id)
     {
 
-        return SqlDb::app()->delete('posts', 'id_post=:id_post', ['id_post' => $id]);
+        return $this->db->delete('posts', 'id_post=:id_post', ['id_post' => $id]);
 
     }
 

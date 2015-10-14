@@ -2,13 +2,13 @@
 
 foreach ($posts as $post): ?>
     <div class="jumbotron">
-        <h2><?php echo $post['title_post']; ?> </h2>
+        <h2><?php echo $post['title']; ?> </h2>
         <br>
         <article>
             <?php
-            echo $post['text_post'];
+            echo '<img src="' . $post['file'] . '" alt="">';
             echo '<br>';
-            echo '<img src="' . $post['imgFile_post'] . '" alt="' . $post['imgDescription_post'] . '">';
+            echo $post['text'];
             ?>
         </article>
         <a class="btn btn-success btn-sm" href="/pages/one/<?php echo $post['id_post'] ?>">

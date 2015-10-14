@@ -1,6 +1,5 @@
 <br>
-
-<form class="form-horizontal" action="/admin/edit/<?php echo $id_post ?>" method="post">
+<form class="form-horizontal" action="/admin/edit/<?php echo $id_post ?>" method="post"  enctype="multipart/form-data">
     <fieldset>
         <legend>Изменить пост</legend>
 
@@ -8,15 +7,26 @@
             <label for="inputTitle" class="col-lg-2 control-label">Заголовок</label>
 
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputEmail" name="title" value="<?php echo $title_post; ?>">
+                <input type="text" class="form-control" id="inputTitle" name="title" value="<?php echo $title; ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="textArea" class="col-lg-2 control-label">Редактировать пост</label>
             <div class="col-lg-10">
-                <textarea class="form-control" rows="3" id="textArea" name="text"><?php echo $text_post; ?></textarea>
+                <textarea class="form-control" rows="3" id="textArea" name="text"><?php echo $text; ?></textarea>
                 <span class="help-block">Измените текст</span>
+            </div>
+        </div>
+        <div>
+            <img src=" <? echo $file ?>" alt="">
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="file"> Изменить изображение</label>
+
+            <div class="col-lg-10">
+                <input id="filebutton" name="file" class="input-file btn-info btn-lg" type="file">
+                <span class="help-block">Добавить файл с раширением <strong>.png /.jpg /.jpeg / .gif</strong></span>
             </div>
         </div>
 

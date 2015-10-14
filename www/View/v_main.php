@@ -9,7 +9,7 @@
 
         <!-- Bootstrap -->
         <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="/www/styles/styles.css" rel="stylesheet">
+        <link href="/styles/styles.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>

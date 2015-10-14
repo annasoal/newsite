@@ -4,6 +4,7 @@ namespace Controller;
 
 use \Core\View as View;
 use \Model\Post as Post;
+use \Model\Image as Image;
 
 class Pages extends Base
 {
@@ -14,7 +15,8 @@ class Pages extends Base
     {
         parent::__construct();
         $this->left = View::template('v_left.php');
-        $this->post = new Post();
+        $this->post = Post::app();
+        $this->image = Image::app();
     }
 
     // ниже по одному методу под каждую страницу
@@ -24,6 +26,9 @@ class Pages extends Base
 
         $this->title = 'Главная';
         $posts = $this->post->all();
+        foreach ($posts as $key=>$value) {
+            $posts[$key]['file'] = $this->image->one($posts[$key]['id_image'])['file'];
+        }
         $this->content = View::template('v_index.php', ['posts' => $posts]);
     }
 
@@ -32,6 +37,7 @@ class Pages extends Base
         $this->title = 'Новость';
         $id = $this->params[2];
         $post = $this->post->one($id);
+        $post['file'] = $this->image->one($post['id_image'])['file'];
         $this->content = View::template('v_one.php', $post);
     }
 

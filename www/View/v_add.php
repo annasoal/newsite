@@ -1,4 +1,5 @@
 <br>
+
 <form class="form-horizontal" enctype="multipart/form-data" action="/admin/add" method="post">
     <fieldset>
         <legend>Добавить пост</legend>
@@ -46,14 +47,23 @@
                 <span class="help-block">Добавить файл с раширением <strong>.png /.jpg /.jpeg / .gif</strong></span>
             </div>
         </div>
-        <div class="form-group">
-            <label for="inputImgDescription" class="col-lg-2 control-label">Описание картинки</label>
 
+        <!--
+        <div class="form-group">
+            <label for="inputImgDescription" class="col-lg-2 control-label">Описание изображения</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputImgDescription" name="imgDescription">
+                <input type="text" class="form-control" id="inputImgDescription" name="altdescription">
+                <span class="help-block">Добавить <strong>альтернативное описание изображения</strong></span>
             </div>
         </div>
-
+        <div class="form-group">
+            <label for="inputImgFigcaption" class="col-lg-2 control-label">Подпись к изображению</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputImgDescription" name="figcaption">
+                <span class="help-block">Добавить <strong>подпись к изображению</strong></span>
+            </div>
+        </div>
+        -->
 
         <!--
         <div class="form-group">
