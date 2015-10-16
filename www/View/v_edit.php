@@ -1,5 +1,5 @@
 <br>
-<form class="form-horizontal" action="/admin/edit/<?php echo $id_post ?>" method="post"  enctype="multipart/form-data">
+<form class="form-horizontal" action="/adminPost/edit/<?php echo $fields['id_post'];?>" method="post"  enctype="multipart/form-data">
     <fieldset>
         <legend>Изменить пост</legend>
 
@@ -7,19 +7,19 @@
             <label for="inputTitle" class="col-lg-2 control-label">Заголовок</label>
 
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputTitle" name="title" value="<?php echo $title; ?>">
+                <input type="text" class="form-control" id="inputTitle" name="title" value="<?php echo $fields['title']; ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="textArea" class="col-lg-2 control-label">Редактировать пост</label>
             <div class="col-lg-10">
-                <textarea class="form-control" rows="3" id="textArea" name="text"><?php echo $text; ?></textarea>
+                <textarea class="form-control" rows="3" id="textArea" name="text"><?php echo $fields['text']; ?></textarea>
                 <span class="help-block">Измените текст</span>
             </div>
         </div>
         <div>
-            <img src=" <? echo $file ?>" alt="">
+            <img src=" <? echo $fields['file'] ?>" alt="">
         </div>
         <div class="form-group">
             <label class="col-lg-2 control-label" for="file"> Изменить изображение</label>

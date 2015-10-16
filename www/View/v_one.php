@@ -8,10 +8,10 @@
         ?>
     </article>
 
-    <a class="btn btn-primary btn-sm" href="/admin/edit/<?php echo $id_post ?>">
+    <a class="btn btn-primary btn-sm" href="/adminPost/edit/<?php echo $id_post ?>">
         Редактировать
     </a>
-    <a class="btn btn-danger btn-sm" href="/admin/delete/<?php echo $id_post ?>">
+    <a class="btn btn-danger btn-sm" href="/adminPost/delete/<?php echo $id_post ?>">
         Удалить
     </a>
 

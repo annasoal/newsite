@@ -17,7 +17,7 @@ abstract class Core
 
     public function __call($name, $params)
     {
-        echo '404';
+        throw new \Exception('Класс не найден');
     }
 
 }

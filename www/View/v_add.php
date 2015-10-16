@@ -1,6 +1,6 @@
 <br>
 
-<form class="form-horizontal" enctype="multipart/form-data" action="/admin/add" method="post">
+<form class="form-horizontal" enctype="multipart/form-data" action="/adminPost/add/" method="post">
     <fieldset>
         <legend>Добавить пост</legend>
         <!--
@@ -26,14 +26,14 @@
             <label for="inputTitle" class="col-lg-2 control-label">Заголовок</label>
 
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputTitle" name="title">
+                <input type="text" class="form-control" id="inputTitle" name="title" value="<?php echo $fields['title'];?>">
             </div>
         </div>
         <div class="form-group">
             <label for="textArea" class="col-lg-2 control-label">Новый пост</label>
 
             <div class="col-lg-10">
-                <textarea class="form-control" rows="5" id="textArea" name="text"></textarea>
+                <textarea class="form-control" rows="5" id="textArea" name="text"><?php echo $fields['text'];?></textarea>
                 <span class="help-block">Новое событие</span>
             </div>
         </div>
@@ -83,18 +83,12 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label for="select" class="col-lg-2 control-label">Selects</label>
+        -->
+        <!--<div class="form-group">
+            <label for="tag-selection" class="col-lg-2 control-label" >Выберите тег</label>
             <div class="col-lg-10">
-                <select class="form-control" id="select">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-                <br>
-                <select multiple="" class="form-control">
+
+                <select id="tag-selection" multiple required class="form-control" name="tags[]" size="10">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

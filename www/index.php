@@ -1,7 +1,9 @@
 <?php
 
 //error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 setlocale(LC_ALL, 'ru_RU.UTF8');
+
 include_once('autoload.php');
 include_once('configsDb.php');
 
@@ -15,10 +17,18 @@ foreach($p as $one){
 }
 
 $c = '\\Controller\\';
-$c .= isset($params[0]) ? ucfirst($params[0]) : 'Pages';
+$c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
 
 $action = 'action_';
 $action .= isset($params[1]) ? $params[1] : 'index';
 
-$conrtroller = new $c();
-$conrtroller->request($action, $params);
+try{
+    $conrtroller = new $c();
+    $conrtroller->request($action, $params);
+}
+catch(\Exception $e){
+    $c = '\\Controller\\Page';
+    $action = 'action_p404';
+    $conrtroller = new $c();
+    $conrtroller->request($action, $params);
+}

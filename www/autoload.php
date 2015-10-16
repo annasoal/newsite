@@ -1,5 +1,6 @@
 <?php
 
+
 spl_autoload_register('__autoload');
 
 function __autoload($class){
@@ -7,6 +8,7 @@ function __autoload($class){
 
     if (file_exists($path))
         include_once($path);
-    else
-        die("$class - not found");
+    else{
+        throw new \Exception('404');
+    }
 }

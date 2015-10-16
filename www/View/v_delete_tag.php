@@ -1,5 +1,5 @@
 <div class="jumbotron">
-    <form class="form-horizontal" action="/adminPost/delete/<?php echo $id_post ?>" method="post">
+    <form class="form-horizontal" action="/adminTag/delete/<?php echo $id_tag ?>" method="post">
         <fieldset>
             <legend>Вы уверены, что хотите удалить информацию без возможности восстановления?</legend>
 
@@ -11,6 +11,4 @@
             </div>
         </fieldset>
     </form>
-
-
 </div>

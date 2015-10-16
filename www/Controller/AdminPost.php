@@ -4,10 +4,11 @@ namespace Controller;
 
 use Core\View as View;
 use Model\Post as Post;
-use Model\Image as Image;
+
+use Core\Arr as Arr;
 
 
-class Admin extends Base
+class AdminPost extends Base
 {
 
     private $post;
@@ -16,7 +17,6 @@ class Admin extends Base
     {
         parent::__construct();
         $this->post = Post::app();
-        $this->image = Image::app();
     }
 
     // ниже по одному методу под каждую страницу
@@ -27,6 +27,9 @@ class Admin extends Base
         $fields = ['text' => ''];
 
         if(count($_POST) > 0){
+            // $_POST[tags] -> массив с номера тегов
+            // $this->post->add($_POST, $_FILES['file'], $_POST[tags])
+
             if($this->post->add($_POST, $_FILES['file'])){
                 header('Location: /');
                 exit();
@@ -35,7 +38,8 @@ class Admin extends Base
             $fields = $_POST;
         }
 
-        $this->content = View::template('v_add.php', $fields);
+        // в шаблон tags Model\Tags\all для селекта
+        $this->content = View::template('v_add.php', ['fields' => $fields]);
     }
 
 
@@ -45,21 +49,22 @@ class Admin extends Base
 
         $this->title = 'Редактировать пост';
         $id = $this->params[2];
-        $fields = $this->post->one($id);
-        $fields['file'] = $this->image->one($fields['id_image'])['file'];
 
-
+        // 3
         if (isset($_POST['update'])) {
-            array_pop($_POST);
-            $fields = $_POST;
-            //var_dump($fields);
-            if ($this->post->edit($id, $fields,$_FILES['file']) !== false) {
-                header('Location: /pages/one/' . $id);
+            $fields = Arr::extract($_POST, ['title', 'text']);
+
+            if ($this->post->edit($id, $fields, $_FILES['file']) !== false) {
+                //die();
+                header('Location: /post/one/' . $id);
                 exit();
             }
         }
+        else{
+            $fields = $this->post->one($id);
+        }
 
-        $this->content = View::template('v_edit.php', $fields);
+        $this->content = View::template('v_edit.php', ['fields' => $fields]);
 
     }
 
@@ -73,7 +78,7 @@ class Admin extends Base
 
         if (isset ($_POST['undoDelete'])) {
             //$this->content = View::template('v_one.php', $this->post->one($id));
-            header('Location: /pages/one/' . $id);
+            header('Location: /page/one/' . $id);
 
         } elseif (isset($_POST['delete'])) {
             if ($this->post->delete($id) !== false) {
