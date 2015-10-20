@@ -1,5 +1,4 @@
 <br>
-
 <form class="form-horizontal" enctype="multipart/form-data" action="/adminPost/add/" method="post">
     <fieldset>
         <legend>Добавить пост</legend>
@@ -84,24 +83,23 @@
             </div>
         </div>
         -->
-        <!--<div class="form-group">
-            <label for="tag-selection" class="col-lg-2 control-label" >Выберите тег</label>
+        <div class="form-group">
+            <label for="selectTag" class="col-lg-2 control-label">Выберите тег</label>
             <div class="col-lg-10">
-
-                <select id="tag-selection" multiple required class="form-control" name="tags[]" size="10">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                 <select id="selectTag" multiple class="form-control" name="tags[]" size="5">
+                     <?foreach ($tags as $tag): ?>
+                    <option label="<? echo 'ТЕГ: ' . $tag['name'] . '. Комментарий к тегу: ' . $tag['comment']; ?>">
+                        <?echo $tag['id_tag'];?>
+                    </option>
+                    <? endforeach;?>
+                 </select>
             </div>
         </div>
-        -->
+
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
                 <button type="reset" class="btn btn-danger">Очистить</button>
-                <button type="submit" class="btn btn-success">Отправить</button>
+                <button type="submit" class="btn btn-success" name="add">Отправить</button>
             </div>
         </div>
     </fieldset>

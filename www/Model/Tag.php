@@ -20,5 +20,12 @@ class Tag extends \Core\Model
         parent::__construct('tags', 'id_tag');
     }
 
+    public function addIdPost ($postTags){
+       {
+
+            return $this->db->insert('posts_tags', $postTags);
+        }
+
+    }
 
 }

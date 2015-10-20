@@ -2,9 +2,10 @@
 
 
 namespace Controller;
+
+use Core\Arr as Arr;
 use Core\View as View;
 use Model\Tag as TagModel;
-use Core\Arr as Arr;
 
 
 class AdminTag
@@ -21,18 +22,20 @@ class AdminTag
     }
 
 
-    public function action_index(){
+    public function action_index()
+    {
         $tags = $this->tag->all();
-        $this->content = View::template($this->template,['tags' =>$tags]);
+        $this->content = View::template($this->template, ['tags' => $tags]);
     }
 
 
-    public function action_add(){
+    public function action_add()
+    {
 
         $fields = ['name' => ''];
-        if(count($_POST) > 0){
+        if (count($_POST) > 0) {
 
-            if($this->tag->add($_POST)) {
+            if ($this->tag->add($_POST)) {
                 header('Location: /adminTag/');
                 exit();
             }
@@ -40,7 +43,7 @@ class AdminTag
             $fields = $_POST;
         }
 
-         $this->content = View::template($this->template, ['fields' => $fields]);
+        $this->content = View::template($this->template, ['fields' => $fields]);
     }
 
 
@@ -57,14 +60,12 @@ class AdminTag
                 header('Location: /adminTag/');
                 exit();
             }
-        }
-        else {
+        } else {
             $fields = $this->tag->one($id);
         }
 
         $this->content = View::template('v_admin_tags_edit.php', ['fields' => $fields]);
     }
-
 
 
     public function action_delete()

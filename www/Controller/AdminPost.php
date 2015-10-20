@@ -2,16 +2,17 @@
 
 namespace Controller;
 
+use Core\Arr as Arr;
 use Core\View as View;
 use Model\Post as Post;
-
-use Core\Arr as Arr;
+use Model\Tag as Tags;
 
 
 class AdminPost extends Base
 {
 
     private $post;
+
 
     public function __construct()
     {
@@ -22,24 +23,28 @@ class AdminPost extends Base
     // ниже по одному методу под каждую страницу
 
     // добавление поста
-    public function action_add(){
+    public function action_add()
+    {
         $this->title = 'Добавить запись';
         $fields = ['text' => ''];
+        $tags = Tags::app()->all();
 
-        if(count($_POST) > 0){
+        if (isset($_POST['add'])) {
+            $fields = Arr::extract($_POST, ['title', 'text']);
+            $tags = $_POST['tags'];
+            //var_dump($tags);
             // $_POST[tags] -> массив с номера тегов
             // $this->post->add($_POST, $_FILES['file'], $_POST[tags])
-
-            if($this->post->add($_POST, $_FILES['file'])){
+            if ($this->post->add($fields, $tags, $_FILES['file'])) {
                 header('Location: /');
                 exit();
+            } else {
+                $fields = Arr::extract($_POST, ['title', 'text']);
+                $tags = Tags::app()->all();
             }
-
-            $fields = $_POST;
         }
-
         // в шаблон tags Model\Tags\all для селекта
-        $this->content = View::template('v_add.php', ['fields' => $fields]);
+        $this->content = View::template('v_add.php', ['fields' => $fields,'tags' => $tags]);
     }
 
 
@@ -53,14 +58,12 @@ class AdminPost extends Base
         // 3
         if (isset($_POST['update'])) {
             $fields = Arr::extract($_POST, ['title', 'text']);
-
             if ($this->post->edit($id, $fields, $_FILES['file']) !== false) {
                 //die();
                 header('Location: /post/one/' . $id);
                 exit();
             }
-        }
-        else{
+        } else {
             $fields = $this->post->one($id);
         }
 
@@ -69,15 +72,13 @@ class AdminPost extends Base
     }
 
 
-
     public function action_delete()
     {
         $this->title = 'Удаление поста';
         $id = $this->params[2];
-        //$postCurrent = $this->post->one($id);
+
 
         if (isset ($_POST['undoDelete'])) {
-            //$this->content = View::template('v_one.php', $this->post->one($id));
             header('Location: /page/one/' . $id);
 
         } elseif (isset($_POST['delete'])) {

@@ -1,4 +1,5 @@
 <br>
+<? var_dump($values)?>
 <form class="form-horizontal" action="/adminPost/edit/<?php echo $fields['id_post'];?>" method="post"  enctype="multipart/form-data">
     <fieldset>
         <legend>Изменить пост</legend>

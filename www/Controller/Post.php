@@ -29,7 +29,7 @@ class Post extends Base
     public function action_page()
     {
         $page = isset($this->params[2]) ? (int)$this->params[2] : 1;
-        $this->title = 'Страница: ' . $page;
+        $this->title = 'Страница ' . $page;
         $posts = $this->post->page($page);
         $pages_count = $this->post->pages_count();
         $this->content = View::template('v_index.php', ['posts' => $posts, 'pages_count' => $pages_count, 'page' => $page]);
@@ -40,10 +40,18 @@ class Post extends Base
         $this->title = 'Новость';
         $id = $this->params[2];
         $post = $this->post->one($id);
-        $this->content = View::template('v_one.php', $post);
+        $this->content = View::template('v_one.php', ['post' => $post]);
     }
 
-    public function action_tag()
+    public function action_tagsForPost()
+    {
+        $id = $this->params[2];
+        $tag = $this->tag->one($id);
+        return $tags = $this->post->getOneByTag($id);
+
+    }
+
+    public function action_postsByTag()
     {
         $id = $this->params[2];
         $tag = $this->tag->one($id);
@@ -52,7 +60,7 @@ class Post extends Base
 
         $this->title = 'Новости по тегу: ' . $tag['name'];
 
-        $posts = $this->post->getByTag($id);
+        $posts = $this->post->getAllByTag($id);
         //var_dump($posts);
     }
 }

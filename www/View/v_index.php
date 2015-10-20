@@ -1,4 +1,5 @@
-<?php foreach ($posts as $post): ?>
+<? var_dump($posts);
+ foreach ($posts as $post): ?>
     <div class="jumbotron">
         <h2><?php echo $post['title']; ?> </h2>
         <br>
@@ -8,8 +9,22 @@
             echo '<br>';
             echo $post['text'];
             ?>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Теги</div>
+            <div class="panel-body">
+            <?php
+                echo $post['name'];
+                echo '<br>';
+
+            ?>
+            </div>
+        </div>
         </article>
-        <a class="btn btn-success btn-sm" href="/pages/one/<?php echo $post['id_post'] ?>">
+
+
+        </aside>
+        <a class="btn btn-success btn-sm" href="/post/one/<?php echo $post['id_post'] ?>">
             Подробнее
         </a>
         <a class="btn btn-primary btn-sm" href="/adminPost/edit/<?php echo $post['id_post'] ?>">
