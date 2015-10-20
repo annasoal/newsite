@@ -34,10 +34,12 @@ class Post extends \Core\Model
         $on_page = 5;
         $shift = ($page - 1) * $on_page;
 
-        return $this->db->select("SELECT * FROM {$this->table}
+        return $this->db->select("SELECT * FROM {$this->table},
+                                  CONCAT(tags.name) AS name,
                                   LEFT JOIN images using(id_image)
                                   LEFT JOIN posts_tags using(id_post)
-                                  LEFT JOIN tags using(id_tag)
+                                  LEFT JOIN tags using(id_tag),
+                                  GROUP BY posts.id
                                   LIMIT $shift,$on_page
                                   ");
     }
@@ -123,14 +125,14 @@ class Post extends \Core\Model
         return $this->db->update($this->table, $res, ' id_post=:id_post', ['id_post' => $id]);
     }
 
-    public function getAllByTag($id_tag)
+    public function getAllPostsByTag($id_tag)
     {
         return $this->db->select("SELECT * FROM {$this->table}
                                   JOIN posts_tags using(id_post)
                                   JOIN tags using(id_tag)
                                   WHERE id_tag=:id_tag", ['id_tag' => $id_tag]);
     }
-    public function getOneByTag($id_post)
+    public function getAllTagsByPost($id_post)
     {
         return $this->db->select("SELECT * FROM {$this->table}
                                   LEFT JOIN posts_tags using(id_post)
