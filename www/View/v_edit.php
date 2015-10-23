@@ -19,18 +19,30 @@
                 <span class="help-block">Измените текст</span>
             </div>
         </div>
-        <div>
-            <img src=" <? echo $fields['file'] ?>" alt="">
-        </div>
+
         <div class="form-group">
             <label class="col-lg-2 control-label" for="file"> Изменить изображение</label>
-
             <div class="col-lg-10">
                 <input id="filebutton" name="file" class="input-file btn-info btn-lg" type="file">
                 <span class="help-block">Добавить файл с раширением <strong>.png /.jpg /.jpeg / .gif</strong></span>
+                <img src=" <? echo $fields['file'] ?>" alt="">
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="selectTag" class="col-lg-2 control-label">Выберите тег</label>
+            <div class="col-lg-10">
+                <select id="selectTag" multiple class="form-control" name="tags[]" size="5">
+                    <? foreach ($tags as $tag): ?>
+                        <option value="<?php echo $tag['id_tag'];?>"
+                            <? if(in_array($tag['id_tag'], $fields['tags'])) echo 'selected="selected"'; ?>
+                            >
+                            <? echo 'ТЕГ: ' . $tag['name'] . '. Комментарий к тегу: ' . $tag['comment']; ?>
+                        </option>
+                    <? endforeach;?>
+                </select>
+            </div>
+        </div>
         <!--
         <div class="form-group">
             <label class="col-lg-2 control-label">Radios</label>

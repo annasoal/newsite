@@ -31,8 +31,19 @@ class Post extends Base
         $page = isset($this->params[2]) ? (int)$this->params[2] : 1;
         $this->title = 'Страница ' . $page;
         $posts = $this->post->page($page);
+        $posts_id = [];
+
+        foreach($posts as $one)
+            $posts_id[] = $one['id_post'];
+        // 74, 75, ///, 78
+        $tags = $this->tag->getTagsForAll($posts_id);
+
         $pages_count = $this->post->pages_count();
-        $this->content = View::template('v_index.php', ['posts' => $posts, 'pages_count' => $pages_count, 'page' => $page]);
+        $this->content = View::template('v_index.php', ['posts' => $posts,
+                                                        'pages_count' => $pages_count,
+                                                        'page' => $page,
+                                                        'tags' => $tags]
+                                        );
     }
 
     public function action_one()
@@ -40,27 +51,28 @@ class Post extends Base
         $this->title = 'Новость';
         $id = $this->params[2];
         $post = $this->post->one($id);
-        $this->content = View::template('v_one.php', ['post' => $post]);
+        $tags = $this->tag->getTagsForOne($id);
+        $this->content = View::template('v_one.php', ['post' => $post,'tags' => $tags]);
     }
 
-    public function action_tagsForPost()
-    {
-        $id = $this->params[2];
-        $tag = $this->tag->one($id);
-        return $tags = $this->post->getOneByTag($id);
-
-    }
 
     public function action_postsByTag()
     {
         $id = $this->params[2];
         $tag = $this->tag->one($id);
-
-        // проверка на 404-ую ошибку, если тег не нашли
-
-        $this->title = 'Новости по тегу: ' . $tag['name'];
-
         $posts = $this->post->getAllByTag($id);
         //var_dump($posts);
-    }
+        $this->title = 'Новости по тегу: ' . $tag['name'];
+        $posts_id = [];
+
+        foreach($posts as $one)
+            $posts_id[] = $one['id_post'];
+        // 74, 75, ///, 78
+        $tags = $this->tag->getTagsForAll($posts_id);
+
+        $this->content = View::template('v_allbytags.php', ['posts' => $posts, 'tags' => $tags ]);
+        }
+
+
+
 }

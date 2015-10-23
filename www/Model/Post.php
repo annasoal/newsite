@@ -34,12 +34,8 @@ class Post extends \Core\Model
         $on_page = 5;
         $shift = ($page - 1) * $on_page;
 
-        return $this->db->select("SELECT * FROM {$this->table},
-                                  CONCAT(tags.name) AS name,
+        return $this->db->select("SELECT * FROM {$this->table}
                                   LEFT JOIN images using(id_image)
-                                  LEFT JOIN posts_tags using(id_post)
-                                  LEFT JOIN tags using(id_tag),
-                                  GROUP BY posts.id
                                   LIMIT $shift,$on_page
                                   ");
     }
@@ -55,7 +51,7 @@ class Post extends \Core\Model
         return $this->db->select("SELECT * FROM {$this->table} 
                                   LEFT JOIN images using(id_image)
                                   WHERE {$this->pk}=:{$this->pk}",
-            [$this->pk => $id])[0];
+                                 [$this->pk => $id])[0];
     }
 
     protected function validation($fields)
@@ -77,12 +73,7 @@ class Post extends \Core\Model
 
     public function add($fields, $tags, $file)
     {
-        $res = $this->validation($fields);
-
-        if ($res === false) {
-            return false;
-        }
-
+        $res = $fields;
         if ($file['name'] != '') {
             $id_image = Image::app()->add($file);
 
@@ -93,18 +84,40 @@ class Post extends \Core\Model
             }
         }
 
-        $id_post = $this->db->insert($this->table, $res);
+        $id_post = parent::add($res);
 
-        if (count($tags) > 0) {
-            foreach ($tags as $key=>$tag) {
-                $this->db->insert('posts_tags', ['id_post' =>$id_post, 'id_tag' => $tag]);
+        if ($id_post != false) {
+            if (count($tags) > 0 ) {
+                foreach ($tags as $key=>$tag) {
+                    $this->db->insert('posts_tags', ['id_post' =>$id_post, 'id_tag' => $tag]);
+                }
             }
+        } else {
+            Image::app()->delete($id_image);
         }
         return $id_post;
     }
+   /* public function add($fields, $file){
+        $mImages = Images::app();
+
+        if(($id_image = $mImages->add($file)) === false){
+            $this->errors = $mImages->errors();
+            return false;
+        }
+
+        $fields['id_image'] = $id_image;
+        $res = parent::add($fields);
+
+        if(!$res){
+            //$mImages->delete($id_image);
+            return false;
+        }
+
+        return $res;
+    }*/
 
 
-    public function edit($id, $fields, $file)
+    public function edit($id, $fields, $tags, $file)
     {
         $res = $this->validation($fields);
 
@@ -119,25 +132,46 @@ class Post extends \Core\Model
                 return false;
             } else {
                 $res['id_image'] = $id_image;
+            }
+        }
+        if (count($tags) > 0) {
+            foreach ($tags as $key=>$tag) {
+                $this->db->insert('posts_tags', ['id_post' =>$id, 'id_tag' => $tag]);
             }
         }
 
         return $this->db->update($this->table, $res, ' id_post=:id_post', ['id_post' => $id]);
     }
+    public function delete($id)
+    {
+        $post = $this->one($id);
+        //var_dump($post);
+        $id_image = $post['id_image'];
+        $file = $post['file'];
+        $resP = $this->db->delete($this->table, ' id_post=:id_post', ['id_post' => $id]);
 
-    public function getAllPostsByTag($id_tag)
+        if ($resP === false) {
+            return false;
+        } elseif ($file != null) {
+            if(Image::app()->delete($id_image) ===true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public function getAllByTag($id_tag)
     {
         return $this->db->select("SELECT * FROM {$this->table}
+                                  LEFT JOIN images using(id_image)
                                   JOIN posts_tags using(id_post)
                                   JOIN tags using(id_tag)
                                   WHERE id_tag=:id_tag", ['id_tag' => $id_tag]);
     }
-    public function getAllTagsByPost($id_post)
-    {
-        return $this->db->select("SELECT * FROM {$this->table}
-                                  LEFT JOIN posts_tags using(id_post)
-                                  LEFT JOIN tags using(id_tag)
-                                  WHERE id_post=:id_post", ['id_post' => $id_post]);
-    }
+
+
 
 }

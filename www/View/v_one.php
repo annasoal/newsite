@@ -5,18 +5,18 @@
         <?php echo $post['text'];?>
         <br>
         <img src="<? echo $post['file'];?>" alt="">
-    </article>
-    <div class="panel panel-default">
-        <div class="panel-heading">Теги</div>
-        <div class="panel-body">
-            <?php foreach ($post['name'] as $tag){
-                echo $tag;
-                echo '<br>';
-            }
-            ?>
-        </div>
-    </div>
 
+    <?php if(is_array($tags[$post['id_post']])): ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">Теги</div>
+            <div class="panel-body">
+                <?php foreach ($tags[$post['id_post']] as $tag): ?>
+                    <div><a href="/post/postsByTag/<?php echo $tag['id_tag']; ?>"><?php echo $tag['name']; ?></a></div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <? endif; ?>
+    </article>
 
     <a class="btn btn-primary btn-sm" href="/adminPost/edit/<?php echo $post['id_post'] ?>">
         Редактировать

@@ -1,4 +1,9 @@
 <br>
+ <? if($errors != null):
+ foreach($errors as $e): ?>
+    <p class="error"><?php echo $e; ?></p>
+<?php endforeach;?>
+<? endif;?>
 <form class="form-horizontal" enctype="multipart/form-data" action="/adminPost/add/" method="post">
     <fieldset>
         <legend>Добавить пост</legend>
@@ -86,13 +91,16 @@
         <div class="form-group">
             <label for="selectTag" class="col-lg-2 control-label">Выберите тег</label>
             <div class="col-lg-10">
-                 <select id="selectTag" multiple class="form-control" name="tags[]" size="5">
-                     <?foreach ($tags as $tag): ?>
-                    <option label="<? echo 'ТЕГ: ' . $tag['name'] . '. Комментарий к тегу: ' . $tag['comment']; ?>">
-                        <?echo $tag['id_tag'];?>
-                    </option>
+                <select id="selectTag" multiple  required class="form-control" name="tags[]" size="5">
+                    <? foreach ($tags as $tag): ?>
+                        <option value="<?php echo $tag['id_tag'];?>"
+                            <? if($fields['tags'] != null && in_array($tag['id_tag'], $fields['tags'])) echo
+                            'selected="selected"'; ?>
+                        >
+                            <? echo 'ТЕГ: ' . $tag['name'] . '. Комментарий к тегу: ' . $tag['comment']; ?>
+                        </option>
                     <? endforeach;?>
-                 </select>
+                </select>
             </div>
         </div>
 

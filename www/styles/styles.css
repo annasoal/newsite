@@ -6,3 +6,6 @@ img {
 #selectTag > option {
     display: block;
 }
+article {
+    word-wrap: break-word;
+}

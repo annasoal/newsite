@@ -25,49 +25,55 @@ class AdminPost extends Base
     // добавление поста
     public function action_add()
     {
-        $this->title = 'Добавить запись';
-        $fields = ['text' => ''];
+        $this->title = 'Добавить пост';
+        $fields = ['text' => '', 'tags' => []];
+        $errors =[];
         $tags = Tags::app()->all();
 
         if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['title', 'text']);
             $tags = $_POST['tags'];
-            //var_dump($tags);
-            // $_POST[tags] -> массив с номера тегов
-            // $this->post->add($_POST, $_FILES['file'], $_POST[tags])
+
             if ($this->post->add($fields, $tags, $_FILES['file'])) {
                 header('Location: /');
                 exit();
             } else {
                 $fields = Arr::extract($_POST, ['title', 'text']);
+                $fields['tags'] = $tags;
                 $tags = Tags::app()->all();
+                $errors = $this->post->errors();
             }
         }
         // в шаблон tags Model\Tags\all для селекта
-        $this->content = View::template('v_add.php', ['fields' => $fields,'tags' => $tags]);
+        $this->content = View::template('v_add.php', ['fields' => $fields,'tags' => $tags,'errors' =>$errors]);
     }
+
 
 
     // Редактирование поста
     public function action_edit()
     {
-
         $this->title = 'Редактировать пост';
         $id = $this->params[2];
 
         // 3
         if (isset($_POST['update'])) {
             $fields = Arr::extract($_POST, ['title', 'text']);
-            if ($this->post->edit($id, $fields, $_FILES['file']) !== false) {
+            $tags = $_POST['tags'];
+            if ($this->post->edit($id, $fields, $tags, $_FILES['file']) !== false) {
                 //die();
                 header('Location: /post/one/' . $id);
                 exit();
             }
         } else {
             $fields = $this->post->one($id);
+            var_dump($fields);
+           // $fields['tags'] = $tags;
+            $tags = Tags::app()->all();
+
         }
 
-        $this->content = View::template('v_edit.php', ['fields' => $fields]);
+        $this->content = View::template('v_edit.php', ['fields' => $fields, 'tags' => $tags]);
 
     }
 
@@ -78,8 +84,9 @@ class AdminPost extends Base
         $id = $this->params[2];
 
 
+
         if (isset ($_POST['undoDelete'])) {
-            header('Location: /page/one/' . $id);
+            header('Location: /post/one/' . $id);
 
         } elseif (isset($_POST['delete'])) {
             if ($this->post->delete($id) !== false) {

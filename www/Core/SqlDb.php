@@ -21,7 +21,7 @@ class SqlDb
 
     private function __construct()
     {
-        //$config = include __DIR__ . '/../configsDb.php';
+        //$config = include __DIR__ . '/../configs.php';
         //$this->db = new \PDO('mysql:host=' .$config['host'] . ';dbname=' . $config['dname'], $config['user'], $config['password']);
         $this->db = new \PDO('mysql:host=' . HOST . ';dbname=' . DNAME, USER, PASSWORD);
         $this->db->exec('SET NAMES UTF8');

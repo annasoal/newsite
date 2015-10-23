@@ -5,7 +5,7 @@
 setlocale(LC_ALL, 'ru_RU.UTF8');
 
 include_once('autoload.php');
-include_once('configsDb.php');
+include_once('configs.php');
 
 
 $p = explode('/', $_GET['q']);

@@ -20,11 +20,40 @@ class Tag extends \Core\Model
         parent::__construct('tags', 'id_tag');
     }
 
-    public function addIdPost ($postTags){
-       {
+    public function getTagsForAll($posts_id){
 
-            return $this->db->insert('posts_tags', $postTags);
+        $in = implode(', ', $posts_id);
+        $tmp = $this->db->select("SELECT id_tag, id_post, name FROM `posts_tags`
+                                  LEFT JOIN {$this->table} using(id_tag)
+                                  WHERE id_post IN ($in)");
+        $res = [];
+
+        foreach($tmp as $one){
+            if($res[$one['id_post']] == null) {
+                $res[$one['id_post']] = [];
+            }
+            $res[$one['id_post']][] = $one;
         }
+
+        return $res;
+
+    }
+    public function getTagsForOne($id_post){
+
+
+        $tmp = $this->db->select("SELECT id_tag, id_post, name FROM `posts_tags`
+                                  LEFT JOIN {$this->table} using(id_tag)
+                                  WHERE id_post IN($id_post)");
+        $res = [];
+
+        foreach($tmp as $one){
+            if($res[$one['id_post']] == null){
+                $res[$one['id_post']] = [];
+            }
+            $res[$one['id_post']][] = $one;
+        }
+
+        return $res;
 
     }
 

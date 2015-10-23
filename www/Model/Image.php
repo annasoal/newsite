@@ -28,6 +28,8 @@ class Image extends \Core\Model
 
     public function add($file)
     {
+
+
         $res = $this->validation($file);
         //var_dump($res);
         if ( $res === false) {
@@ -48,6 +50,19 @@ class Image extends \Core\Model
         } else {
         return false;
         }
+    }
+    public function delete ($id)
+    {
+        $file = $this->one($id)['file'];
+        $res = parent::delete($id);
+
+        if ($res !== false) {
+            unlink(__DIR__ . '/../' . $file);
+            $res = true;
+        } else {
+            $res = false;
+        }
+        return $res;
     }
 
 }

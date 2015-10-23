@@ -8,12 +8,14 @@ namespace Core;
         protected $db;
         protected $table;
         protected $pk;
-        //protected $anyKey;
+        protected $errors;
+        protected $last_valid_obj;
 
         protected function __construct($table, $pk){
             $this->db = SqlDb::app();
             $this->table = $table;
             $this->pk = $pk;
+            $this->errors = [];
         }
 
         public function all(){
@@ -30,37 +32,38 @@ namespace Core;
         }
 
         public function add($fields){
-            $res = $this->validation($fields);
+            $valid = new Validation($this->table);
+            $valid->execute($fields);
 
-            if($res === false)
-                return false;
+            if($valid->good() !== false){
+                $this->last_valid_obj = $valid->getObj();
+                $id = $this->db->insert($this->table, $this->last_valid_obj);
+                return $id;
+            }
 
-            return $this->db->insert($this->table, $res);
+            $this->errors = $valid->errors();
+            return false;
         }
 
         public function edit($id, $fields){
-            $res = $this->validation($fields);
+            $this->errors = [];
 
-            if($res === false)
-                return false;
+            $id = (int)$id;
+            $valid = new Validation($this->table);
+            $valid->execute($fields, $id);
 
-            $this->db->update($this->table, $res, "{$this->pk}=:{$this->pk}", [$this->pk => $id]);
-            return true;
-        }
-
-        protected function validation($fields){
-            $err = false;
-
-            foreach($fields as $k => $v){
-                $fields[$k] = trim($v);
-
-                if($fields[$k] == ''){
-                    $err = true;
-                    return false;
-                }
+            if($valid->good()){
+                $this->last_valid_obj = $valid->getObj();
+                $this->db->update($this->table, $this->last_valid_obj, "{$this->pk}=:{$this->pk}", [$this->pk => $id]);
+                return true;
             }
 
-            return $fields;
+            $this->errors = $valid->errors();
+            return false;
+        }
+
+        public function errors(){
+            return $this->errors;
         }
     }
 
