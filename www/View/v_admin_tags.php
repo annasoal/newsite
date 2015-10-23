@@ -27,6 +27,11 @@
 
 <br>
 <br>
+<? if($errors != null):
+foreach($errors as $e): ?>
+    <p class="error"><?php echo $e; ?></p>
+<?php endforeach;?>
+<?php endif;?>
 
 <form class="form-horizontal" action="/adminTag/add/" method="post">
     <fieldset>
@@ -51,7 +56,7 @@
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
                 <button type="reset" class="btn btn-danger">Очистить</button>
-                <button type="submit" class="btn btn-success">Отправить</button>
+                <button type="submit" class="btn btn-success" name="add" >Отправить</button>
             </div>
         </div>
     </fieldset>

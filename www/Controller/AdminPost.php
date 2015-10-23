@@ -38,7 +38,7 @@ class AdminPost extends Base
                 header('Location: /');
                 exit();
             } else {
-                $fields = Arr::extract($_POST, ['title', 'text']);
+                //$fields = Arr::extract($_POST, ['title', 'text']);
                 $fields['tags'] = $tags;
                 $tags = Tags::app()->all();
                 $errors = $this->post->errors();

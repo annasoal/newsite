@@ -31,19 +31,20 @@ class AdminTag
 
     public function action_add()
     {
-
+        $tags = $this->tag->all();
+        $errors =[];
         $fields = ['name' => ''];
-        if (count($_POST) > 0) {
-
-            if ($this->tag->add($_POST)) {
-                header('Location: /adminTag/');
+        if (isset($_POST['add'])) {
+            $fields = Arr::extract($_POST, ['name', 'comment']);
+            if ($this->tag->add($fields)) {
+                header('Location: /adminTag');
                 exit();
+            } else {
+                 $errors = $this->tag->errors();
             }
-
-            $fields = $_POST;
         }
 
-        $this->content = View::template($this->template, ['fields' => $fields]);
+        $this->content = View::template($this->template, ['fields' => $fields, 'errors' =>$errors, 'tags'=>$tags]);
     }
 
 

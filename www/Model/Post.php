@@ -92,7 +92,7 @@ class Post extends \Core\Model
                     $this->db->insert('posts_tags', ['id_post' =>$id_post, 'id_tag' => $tag]);
                 }
             }
-        } else {
+        } elseif($id_post == false && $id_image != null) {
             Image::app()->delete($id_image);
         }
         return $id_post;
