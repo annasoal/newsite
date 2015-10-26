@@ -55,6 +55,8 @@ class AdminPost extends Base
     {
         $this->title = 'Редактировать пост';
         $id = $this->params[2];
+        $errors =[];
+        $tags = Tags::app()->all();
 
         // 3
         if (isset($_POST['update'])) {
@@ -67,13 +69,13 @@ class AdminPost extends Base
             }
         } else {
             $fields = $this->post->one($id);
-            var_dump($fields);
-           // $fields['tags'] = $tags;
-            $tags = Tags::app()->all();
+            $fields['tags'] = Tags::app()->getIdTagsForOne($id);
+            //var_dump($fields);
+            //$tags = Tags::app()->all();
 
         }
 
-        $this->content = View::template('v_edit.php', ['fields' => $fields, 'tags' => $tags]);
+        $this->content = View::template('v_edit.php', ['fields' => $fields, 'tags' => $tags,'errors' =>$errors]);
 
     }
 

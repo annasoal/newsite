@@ -1,5 +1,9 @@
 <br>
-<? var_dump($values)?>
+<? if($errors != null):
+foreach($errors as $e): ?>
+    <p class="error"><?php echo $e; ?></p>
+<?php endforeach;?>
+<? endif;?>
 <form class="form-horizontal" action="/adminPost/edit/<?php echo $fields['id_post'];?>" method="post"  enctype="multipart/form-data">
     <fieldset>
         <legend>Изменить пост</legend>
@@ -35,7 +39,8 @@
                 <select id="selectTag" multiple class="form-control" name="tags[]" size="5">
                     <? foreach ($tags as $tag): ?>
                         <option value="<?php echo $tag['id_tag'];?>"
-                            <? if(in_array($tag['id_tag'], $fields['tags'])) echo 'selected="selected"'; ?>
+                            <? if($fields['tags'] != null && in_array($tag['id_tag'], $fields['tags'])) echo
+                            'selected="selected"'; ?>
                             >
                             <? echo 'ТЕГ: ' . $tag['name'] . '. Комментарий к тегу: ' . $tag['comment']; ?>
                         </option>

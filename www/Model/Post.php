@@ -121,6 +121,7 @@ class Post extends \Core\Model
     {
         $res = $this->validation($fields);
 
+
         if ($res === false) {
             return false;
         }
@@ -134,26 +135,40 @@ class Post extends \Core\Model
                 $res['id_image'] = $id_image;
             }
         }
-        if (count($tags) > 0) {
-            foreach ($tags as $key=>$tag) {
-                $this->db->insert('posts_tags', ['id_post' =>$id, 'id_tag' => $tag]);
+        $res = parent::edit($id,$res);
+        if ($res != false) {
+            if (count($tags) > 0) {
+                foreach ($tags as $key=>$tag) {
+                    $this->db->insert('posts_tags', ['id_post' =>$id, 'id_tag' => $tag]);
+                }
             }
+        } elseif($res == false && $id_image != null) {
+            Image::app()->delete($id_image);
         }
+        return $res;
 
-        return $this->db->update($this->table, $res, ' id_post=:id_post', ['id_post' => $id]);
+
     }
     public function delete($id)
     {
         $post = $this->one($id);
-        //var_dump($post);
+        var_dump($post);
         $id_image = $post['id_image'];
         $file = $post['file'];
-        $resP = $this->db->delete($this->table, ' id_post=:id_post', ['id_post' => $id]);
+        $tags = Tag::app()->getTagsForOne($id);
 
-        if ($resP === false) {
+        $res = $this->db->delete($this->table, ' id_post=:id_post', ['id_post' => $id]);
+
+        if ($res === false) {
             return false;
         } elseif ($file != null) {
             if(Image::app()->delete($id_image) ===true) {
+                return true;
+            } else {
+                return false;
+            }
+        } elseif (count($tags)>0){
+            if (Tag::app()->deleteTagsForOne($id) === true) {
                 return true;
             } else {
                 return false;
