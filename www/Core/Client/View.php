@@ -1,5 +1,5 @@
 <?php
-namespace Core;
+namespace Core\Client;
 
 class View
 {
@@ -7,7 +7,7 @@ class View
 
         extract($values);// превращает массив в переменные с названием их как ключи массива
         ob_start();
-        include('View/' . $filename);
+        include('View/client/' . $filename);
         return ob_get_clean();
     }
 }

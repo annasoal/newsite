@@ -13,7 +13,7 @@ class Page extends Base
     public function __construct()
     {
         parent::__construct();
-        $this->left = View::template('v_left.php');
+        //$this->left = View::template('v_left.php');
     }
 
     // ниже по одному методу под каждую страницу

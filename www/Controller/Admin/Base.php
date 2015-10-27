@@ -1,30 +1,30 @@
 <?php
 
-namespace Controller;
+namespace Controller\Admin;
 
-use \Core\View as View;
+use \Core\Admin\View as View;
 
-abstract class Base extends Core
+abstract class Base extends \Controller\Core
 {
     protected $params;
 
     // поля базового шаблона
     protected $title;
     protected $content;
-    protected $left;
+    //protected $left;
 
     // всё, что до
     public function __construct()
     {
         $this->title = '';
         $this->content = '';
-        $this->left = '';
+       // $this->left = '';
     }
 
     // всё, что после
     public function render()
     {
-        $main = View::template('v_main.php', ['title' => $this->title, 'content' => $this->content, 'left' => $this->left]);
+        $main = View::template('v_main.php', ['title' => $this->title, 'content' => $this->content]);
         echo $main;
     }
 

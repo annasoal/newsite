@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Controller;
+namespace Controller\Admin;
 
 use Core\Arr as Arr;
-use Core\View as View;
-use Model\Tag as TagModel;
+use Core\Admin\View as View;
+use Model\Tag as MTag;
 
 
-class AdminTag
+class Tag
     extends Base
 {
     private $tag;
@@ -17,8 +17,8 @@ class AdminTag
     public function __construct()
     {
         parent::__construct();
-        $this->tag = TagModel::app();
-        $this->template = 'v_admin_tags.php';
+        $this->tag = MTag::app();
+        $this->template = 'tag/v_tags.php';
     }
 
 
@@ -65,7 +65,7 @@ class AdminTag
             $fields = $this->tag->one($id);
         }
 
-        $this->content = View::template('v_admin_tags_edit.php', ['fields' => $fields]);
+        $this->content = View::template('tag/v_edit.php', ['fields' => $fields]);
     }
 
 
@@ -86,7 +86,7 @@ class AdminTag
 
         }
 
-        $this->content = View::template('v_delete_tag.php', ['id_tag' => $id]);
+        $this->content = View::template('tag/v_delete.php', ['id_tag' => $id]);
     }
 
 }

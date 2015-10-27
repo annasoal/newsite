@@ -1,14 +1,16 @@
 <?php
 
-namespace Controller;
+namespace Controller\Admin;
 
 use Core\Arr as Arr;
-use Core\View as View;
-use Model\Post as Post;
-use Model\Tag as Tags;
+use Core\Admin\View as View;
+use Model\Image as Image;
+use Model\Post as MPost;
+use Model\Tag as Tag;
 
 
-class AdminPost extends Base
+class Post
+    extends Base
 {
 
     private $post;
@@ -17,8 +19,47 @@ class AdminPost extends Base
     public function __construct()
     {
         parent::__construct();
-        $this->post = Post::app();
+        $this->post = MPost::app();
+
+        //$this->left = View::template('post/v_left.php');
+
+        $this->image = Image::app();
+        $this->tag = Tag::app();
+
     }
+    public function action_index(){
+        $this->action_page();
+    }
+
+    public function action_page()
+    {
+        $page = isset($this->params[2]) ? (int)$this->params[2] : 1;
+        $this->title = 'Страница ' . $page;
+        $posts = $this->post->page($page);
+        $posts_id = [];
+
+        foreach($posts as $one)
+            $posts_id[] = $one['id_post'];
+        // 74, 75, ///, 78
+        $tags = $this->tag->getTagsForAll($posts_id);
+
+        $pages_count = $this->post->pages_count();
+        $this->content = View::template('post/v_index.php', ['posts' => $posts,
+                'pages_count' => $pages_count,
+                'page' => $page,
+                'tags' => $tags]
+        );
+    }
+
+    public function action_one()
+    {
+        $this->title = 'Новость';
+        $id = $this->params[2];
+        $post = $this->post->one($id);
+        $tags = $this->tag->getTagsForOne($id);
+        $this->content = View::template('post/v_one.php', ['post' => $post,'tags' => $tags]);
+    }
+
 
     // ниже по одному методу под каждую страницу
 
@@ -28,7 +69,7 @@ class AdminPost extends Base
         $this->title = 'Добавить пост';
         $fields = ['text' => '', 'tags' => []];
         $errors =[];
-        $tags = Tags::app()->all();
+        $tags = Tag::app()->all();
 
         if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['title', 'text']);
@@ -40,12 +81,12 @@ class AdminPost extends Base
             } else {
                 //$fields = Arr::extract($_POST, ['title', 'text']);
                 $fields['tags'] = $tags;
-                $tags = Tags::app()->all();
+                $tags = Tag::app()->all();
                 $errors = $this->post->errors();
             }
         }
         // в шаблон tags Model\Tags\all для селекта
-        $this->content = View::template('v_add.php', ['fields' => $fields,'tags' => $tags,'errors' =>$errors]);
+        $this->content = View::template('post/v_add.php', ['fields' => $fields,'tags' => $tags,'errors' =>$errors]);
     }
 
 
@@ -56,7 +97,7 @@ class AdminPost extends Base
         $this->title = 'Редактировать пост';
         $id = $this->params[2];
         $errors =[];
-        $tags = Tags::app()->all();
+        $tags = Tag::app()->all();
 
         // 3
         if (isset($_POST['update'])) {
@@ -69,13 +110,13 @@ class AdminPost extends Base
             }
         } else {
             $fields = $this->post->one($id);
-            $fields['tags'] = Tags::app()->getIdTagsForOne($id);
+            $fields['tags'] = Tag::app()->getIdTagsForOne($id);
             //var_dump($fields);
             //$tags = Tags::app()->all();
 
         }
 
-        $this->content = View::template('v_edit.php', ['fields' => $fields, 'tags' => $tags,'errors' =>$errors]);
+        $this->content = View::template('post/v_edit.php', ['fields' => $fields, 'tags' => $tags,'errors' =>$errors]);
 
     }
 
@@ -84,20 +125,19 @@ class AdminPost extends Base
     {
         $this->title = 'Удаление поста';
         $id = $this->params[2];
-
-
+        $return = isset($this->params[3]) ? $this->params[3] : 1;
 
         if (isset ($_POST['undoDelete'])) {
             header('Location: /post/one/' . $id);
-
+            exit;
         } elseif (isset($_POST['delete'])) {
             if ($this->post->delete($id) !== false) {
-                header('Location: /');
+                header('Location: /post/page/' . $return);
                 exit;
             }
 
         }
 
-        $this->content = View::template('v_delete.php', ['id_post' => $id]);
+        $this->content = View::template('post/v_delete.php', ['id_post' => $id]);
     }
 }

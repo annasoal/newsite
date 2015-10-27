@@ -16,7 +16,15 @@ foreach($p as $one){
         $params[] = $one;
 }
 
-$c = '\\Controller\\';
+//$folder = 'Client';
+
+if($params[0] == ADMIN_URL){
+    $folder = 'Admin';
+    unset($params[0]);
+    $params = array_values($params);
+}
+
+$c = "\\Controller\\$folder\\";
 $c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
 
 $action = 'action_';

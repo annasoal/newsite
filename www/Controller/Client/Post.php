@@ -1,13 +1,14 @@
 <?php
 
-namespace Controller;
+namespace Controller\Client;
 
-use \Core\View as View;
+use \Core\Client\View as View;
 use \Model\Post as PostModel;
 use \Model\Image as Image;
 use \Model\Tag as Tag;
 
-class Post extends Base
+class Post
+    extends Base
 {
     private $post;
 

@@ -39,50 +39,21 @@ class Tag extends \Core\Model
 
     }
     public function getTagsForOne($id_post){
-
-
-        $tmp = $this->db->select("SELECT id_tag, id_post, name FROM `posts_tags`
+        return $this->db->select("SELECT id_tag, id_post, name FROM `posts_tags`
                                   LEFT JOIN {$this->table} using(id_tag)
-                                  WHERE id_post IN($id_post)");
-        $res = [];
-
-        foreach($tmp as $one){
-            if($res[$one['id_post']] == null){
-                $res[$one['id_post']] = [];
-            }
-            $res[$one['id_post']][] = $one;
-        }
-
-        return $res;
-
+                                  WHERE id_post=:id_post", ['id_post' => $id_post]);
     }
     public function getIdTagsForOne($id_post){
+        $res = $this->getTagsForOne($id_post);
+        $tags_id = [];
 
-
-        $tmp = $this->db->select("SELECT id_tag,id_post FROM `posts_tags`
-                                  LEFT JOIN {$this->table} using(id_tag)
-                                  WHERE id_post IN($id_post)");
-        $res = [];
-
-        foreach($tmp as $one){
-            if($res[$one['id_post']] == null){
-                $res[$one['id_post']] = [];
-            }
-            $res[$one['id_post']][] = $one;
+        foreach($res as $key => $el){
+            $tags_id[] = $el['id_tag'];
         }
-        var_dump($res);
-        foreach ($res as $key=>$el) {
-            foreach ($el as $k=>$v)
-            $resF[$k] = $v['id_tag'];
-        }
-        return($resF);
 
+        return($tags_id);
     }
-    public function deleteTagsForOne($id_post){
-
-    return $this->db->delete('posts_tags', "id_post=:id_post", ['id_post' => $id_post]);
 
 
-    }
 
 }

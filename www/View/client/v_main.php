@@ -40,7 +40,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Работа с сайтом <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/adminPost/add">Добавить пост</a></li>
+                                <li><a href="/admin/add">Добавить пост</a></li>
                                 <li><a href="/adminTag/">Работа с тегами</a></li>
                                 <li><a href="/adminImage/">Работа с изображениями</a></li>
                                 <!--

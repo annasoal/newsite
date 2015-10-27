@@ -1,10 +1,10 @@
 <?php
 
-namespace Controller;
+namespace Controller\Client;
 
-use \Core\View as View;
+use \Core\Client\View as View;
 
-abstract class Base extends Core
+abstract class Base extends \Controller\Core
 {
     protected $params;
 

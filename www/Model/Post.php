@@ -97,46 +97,22 @@ class Post extends \Core\Model
         }
         return $id_post;
     }
-   /* public function add($fields, $file){
-        $mImages = Images::app();
-
-        if(($id_image = $mImages->add($file)) === false){
-            $this->errors = $mImages->errors();
-            return false;
-        }
-
-        $fields['id_image'] = $id_image;
-        $res = parent::add($fields);
-
-        if(!$res){
-            //$mImages->delete($id_image);
-            return false;
-        }
-
-        return $res;
-    }*/
-
 
     public function edit($id, $fields, $tags, $file)
     {
-        $res = $this->validation($fields);
-
-
-        if ($res === false) {
-            return false;
-        }
-
         if ($file['name'] != '') {
             $id_image = Image::app()->add($file);
 
             if ($id_image === false) {
                 return false;
             } else {
-                $res['id_image'] = $id_image;
+                $fields['id_image'] = $id_image;
             }
         }
-        $res = parent::edit($id,$res);
+        $res = parent::edit($id, $fields);
         if ($res != false) {
+            $this->db->delete('posts_tags', 'id_post=:id_post', ['id_post' => $id]);
+
             if (count($tags) > 0) {
                 foreach ($tags as $key=>$tag) {
                     $this->db->insert('posts_tags', ['id_post' =>$id, 'id_tag' => $tag]);
@@ -146,32 +122,30 @@ class Post extends \Core\Model
             Image::app()->delete($id_image);
         }
         return $res;
-
-
     }
+
     public function delete($id)
     {
         $post = $this->one($id);
-        var_dump($post);
+        //var_dump($post);
         $id_image = $post['id_image'];
         $file = $post['file'];
-        $tags = Tag::app()->getTagsForOne($id);
+        //$tags = Tag::app()->getTagsForOne($id);
 
-        $res = $this->db->delete($this->table, ' id_post=:id_post', ['id_post' => $id]);
+        $res = $this->db->delete($this->table, 'id_post=:id_post', ['id_post' => $id]);
 
-        if ($res === false) {
+        if($res === false){
             return false;
-        } elseif ($file != null) {
-            if(Image::app()->delete($id_image) ===true) {
-                return true;
-            } else {
-                return false;
-            }
-        } elseif (count($tags)>0){
-            if (Tag::app()->deleteTagsForOne($id) === true) {
-                return true;
-            } else {
-                return false;
+        }
+        else{
+            $this->db->delete('posts_tags', 'id_post=:id_post', ['id_post' => $id]);
+
+            if($file != null) {
+                if(Image::app()->delete($id_image) ===true) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         }
 

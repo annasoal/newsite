@@ -36,7 +36,7 @@ foreach($errors as $e): ?>
         <div class="form-group">
             <label for="selectTag" class="col-lg-2 control-label">Выберите тег</label>
             <div class="col-lg-10">
-                <select id="selectTag" multiple class="form-control" name="tags[]" size="5">
+                <select id="selectTag" required multiple class="form-control" name="tags[]" size="5">
                     <? foreach ($tags as $tag): ?>
                         <option value="<?php echo $tag['id_tag'];?>"
                             <? if($fields['tags'] != null && in_array($tag['id_tag'], $fields['tags'])) echo
