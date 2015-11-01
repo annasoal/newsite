@@ -2,12 +2,11 @@
 
 namespace Model;
 
-use \Core\Arr;
+//use \Core\Arr;
 
 
 class Post extends \Core\Model
 {
-
     private static $instance;
 
     public static function app()

@@ -6,7 +6,7 @@
 <? endif;?>
 <form class="form-horizontal" enctype="multipart/form-data"  method="post">
     <fieldset>
-        <legend>Добавить пост</legend>
+        <legend>Добавить пользователя</legend>
         <!--
         <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
@@ -27,25 +27,38 @@
         </div>
         -->
         <div class="form-group">
-            <label for="inputTitle" class="col-lg-2 control-label">Заголовок</label>
-
+            <label for="inputName" class="col-lg-2 control-label">Имя пользователя</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputTitle" name="title" value="<?php echo $fields['title'];?>">
+                <input type="text" class="form-control" required id="inputTitle" name="title" value="<?php echo
+                $fields['name'];?>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email/login</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmail" required placeholder="Email" value="<?php echo
+                $fields['email'];?>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Пароль пользователя</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" required id="inputTitle" name="password" placeholder="Пароль">
             </div>
         </div>
         <div class="form-group">
-            <label for="textArea" class="col-lg-2 control-label">Новый пост</label>
-
+            <label for="inputBirthday" class="col-lg-2 control-label">Дата рождения пользователя</label>
             <div class="col-lg-10">
-                <textarea class="form-control" rows="5" id="textArea" name="text"><?php echo $fields['text'];?></textarea>
-                <span class="help-block">Новое событие</span>
+                <input type="text" class="form-control" id="inputTitle" name="datebirth" value="<?php echo
+                $fields['datebirth'];?>">
             </div>
         </div>
 
         <!-- File Button -->
         <div class="form-group">
-            <label class="col-lg-2 control-label" for="file">Добавить изображение</label>
-
+            <label class="col-lg-2 control-label" for="file">Добавить аватар</label>
             <div class="col-lg-10">
                 <input id="filebutton" name="file" class="input-file btn-info btn-lg" type="file">
                 <span class="help-block">Добавить файл с раширением <strong>.png /.jpg /.jpeg / .gif</strong></span>
@@ -89,15 +102,14 @@
         </div>
         -->
         <div class="form-group">
-            <label for="selectTag" class="col-lg-2 control-label">Выберите тег</label>
+            <label for="selectTag" class="col-lg-2 control-label">Выберите роли</label>
             <div class="col-lg-10">
-                <select id="selectTag" multiple  required class="form-control" name="tags[]" size="5">
-                    <? foreach ($tags as $tag): ?>
-                        <option value="<?php echo $tag['id_tag'];?>"
-                            <? if($fields['tags'] != null && in_array($tag['id_tag'], $fields['tags'])) echo
-                            'selected="selected"'; ?>
-                        >
-                            <? echo 'ТЕГ: ' . $tag['name'] . '. Комментарий к тегу: ' . $tag['comment']; ?>
+                <select id="selectTag" multiple  required class="form-control" name="roles[]" size="3">
+                    <? foreach ($roles as $role): ?>
+                        <option value="<?php echo $role['id_role'];?>"
+                            <? if($fields['roles'] != null && in_array($role['id_role'], $fields['roles'])){
+                            echo'selected="selected"'; }?>>
+                            <? echo 'Роль: ' . $role['name']; ?>
                         </option>
                     <? endforeach;?>
                 </select>

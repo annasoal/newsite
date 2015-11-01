@@ -16,7 +16,7 @@ foreach($p as $one){
         $params[] = $one;
 }
 
-//$folder = 'Client';
+$folder = 'Client';
 
 if($params[0] == ADMIN_URL){
     $folder = 'Admin';

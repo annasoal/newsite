@@ -28,6 +28,37 @@
       <column name="id_tag" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <index name="a" unique="true" columns="id_post,id_tag"/>
     </table>
+    <table name="privs" schema="" catalog="newsitedb" type="TABLE">
+      <column name="id_priv" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id_priv"/>
+      <index name="id_priv" unique="true" columns="id_priv"/>
+      <index name="name" unique="true" columns="name"/>
+    </table>
+    <table name="roles" schema="" catalog="newsitedb" type="TABLE">
+      <column name="id_role" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id_role"/>
+      <index name="id_role" unique="true" columns="id_role"/>
+      <index name="name" unique="true" columns="name"/>
+    </table>
+    <table name="roles_privs" schema="" catalog="newsitedb" type="TABLE">
+      <column name="id_role" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="id_priv" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <index name="id_role" unique="true" columns="id_role,id_priv"/>
+    </table>
+    <table name="sessions" schema="" catalog="newsitedb" type="TABLE">
+      <column name="id_session" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="id_user" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="token" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="timestart" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="lastactivity" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="isover" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id_session"/>
+      <index name="id_session" unique="true" columns="id_session"/>
+      <index name="id_user" unique="false" columns="id_user"/>
+    </table>
     <table name="tags" schema="" catalog="newsitedb" type="TABLE">
       <column name="id_tag" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>

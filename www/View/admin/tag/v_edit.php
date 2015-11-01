@@ -1,7 +1,7 @@
 <br>
 <br>
 <? var_dump ($values);?>
-<form class="form-horizontal" action="/adminTag/edit/<? echo $fields['id_tag'];?>" method="post">
+<form class="form-horizontal"  method="post">
     <fieldset>
         <legend>Редактирование тега</legend>
         <div class="form-group">

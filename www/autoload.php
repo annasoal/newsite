@@ -9,6 +9,6 @@ function __autoload($class){
     if (file_exists($path))
         include_once($path);
     else{
-        throw new \Exception('404');
+        throw new \Exception('class not found');
     }
 }

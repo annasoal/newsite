@@ -34,7 +34,7 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Главная страница <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="/<?=ADMIN_URL?>">Главная страница <span class="sr-only">(current)</span></a></li>
                         <li><a href="/<?=ADMIN_URL?>/page/about">О нас</a></li>
                         <li><a href="/<?=ADMIN_URL?>/page/contacts">Контакты</a></li>
                         <li class="dropdown">
@@ -42,6 +42,8 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/<?=ADMIN_URL?>/post/add">Добавить пост</a></li>
                                 <li><a href="/<?=ADMIN_URL?>/tag/">Работа с тегами</a></li>
+                                <li><a href="/<?=ADMIN_URL?>/user/all">Работа с пользователями</a></li>
+                                <li><a href="/<?=ADMIN_URL?>/user/add">Работа с пользователями</a></li>
                                 <li><a href="/<?=ADMIN_URL?>/image/">Работа с изображениями</a></li>
                                 <!--
                                 <li class="divider"></li>

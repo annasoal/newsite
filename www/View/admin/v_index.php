@@ -14,7 +14,7 @@
                     <div class="panel-heading">Теги</div>
                     <div class="panel-body">
                         <?php foreach ($tags[$post['id_post']] as $tag): ?>
-                            <div><a href="/post/postsByTag/<?php echo $tag['id_tag']; ?>"><?php echo $tag['name'];
+                            <div><a href="/post/tag/<?php echo $tag['id_tag']; ?>"><?php echo $tag['name'];
                                     ?></a></div>
                         <?php endforeach; ?>
                     </div>
@@ -22,13 +22,13 @@
             <? endif; ?>
         </article>
 
-        <a class="btn btn-success btn-sm" href="/post/one/<?php echo $post['id_post'] ?>">
+        <a class="btn btn-success btn-sm" href="/<?=ADMIN_URL?>/post/one/<?php echo $post['id_post'] ?>">
             Подробнее
         </a>
-        <a class="btn btn-primary btn-sm" href="/adminPost/edit/<?php echo $post['id_post'] ?>">
+        <a class="btn btn-primary btn-sm" href="/<?=ADMIN_URL?>/post/edit/<?php echo $post['id_post'] ?>">
             Редактировать
         </a>
-        <a class="btn btn-danger btn-sm" href="/adminPost/delete/<?php echo $post['id_post'] ?>">
+        <a class="btn btn-danger btn-sm" href="/<?=ADMIN_URL?>/post/delete/<?php echo $post['id_post'] ?>">
             Удалить
         </a>
 

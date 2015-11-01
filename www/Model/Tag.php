@@ -22,6 +22,9 @@ class Tag extends \Core\Model
 
     public function getTagsForAll($posts_id){
 
+        if(empty($posts_id))
+            return [];
+
         $in = implode(', ', $posts_id);
         $tmp = $this->db->select("SELECT id_tag, id_post, name FROM `posts_tags`
                                   LEFT JOIN {$this->table} using(id_tag)

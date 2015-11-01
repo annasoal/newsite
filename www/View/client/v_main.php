@@ -34,7 +34,8 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Главная страница <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a href="/">Главная страница <span class="sr-only">(current)
+                                </span></a></li>
                         <li><a href="/page/about">О нас</a></li>
                         <li><a href="/page/contacts">Контакты</a></li>
                         <li class="dropdown">

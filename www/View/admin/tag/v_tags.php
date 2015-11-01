@@ -12,14 +12,15 @@
     </thead>
 
     <tbody>
-    <?php var_dump ($values);
+    <?php
     foreach ($tags as $tag): ?>
         <tr class="active">
             <td><?php echo $tag['id_tag']?></td>
             <td><?php echo $tag['name']?></td>
             <td><?php echo $tag['comment']?></td>
-            <td><a href="/adminTag/edit/<?php echo $tag['id_tag']?>" class="btn btn-success">Редактировать</a></td>
-            <td><a href="/adminTag/delete/<?php echo $tag['id_tag']?>" class="btn btn-danger">Удалить</a></td>
+            <td><a href="/<?ADMIN_URL?>/tag/edit/<?php echo $tag['id_tag']?>" class="btn
+            btn-success">Редактировать</a></td>
+            <td><a href="/<?ADMIN_URL?>/tag/delete/<?php echo $tag['id_tag']?>" class="btn btn-danger">Удалить</a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
@@ -33,7 +34,7 @@ foreach($errors as $e): ?>
 <?php endforeach;?>
 <?php endif;?>
 
-<form class="form-horizontal" action="/adminTag/add/" method="post">
+<form class="form-horizontal" method="post">
     <fieldset>
         <legend>Добавить тег</legend>
         <div class="form-group">

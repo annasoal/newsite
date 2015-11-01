@@ -44,7 +44,7 @@ class Post
         $tags = $this->tag->getTagsForAll($posts_id);
 
         $pages_count = $this->post->pages_count();
-        $this->content = View::template('post/v_index.php', ['posts' => $posts,
+        $this->content = View::template('v_index.php', ['posts' => $posts,
                 'pages_count' => $pages_count,
                 'page' => $page,
                 'tags' => $tags]
@@ -59,6 +59,23 @@ class Post
         $tags = $this->tag->getTagsForOne($id);
         $this->content = View::template('post/v_one.php', ['post' => $post,'tags' => $tags]);
     }
+    public function action_tag()
+    {
+        $id = $this->params[2];
+        $tag = $this->tag->one($id);
+        $posts = $this->post->getAllByTag($id);
+        //var_dump($posts);
+        $this->title = 'Новости по тегу: ' . $tag['name'];
+        $posts_id = [];
+
+        foreach($posts as $one)
+            $posts_id[] = $one['id_post'];
+        // 74, 75, ///, 78
+        $tags = $this->tag->getTagsForAll($posts_id);
+
+        $this->content = View::template('post/v_allbytags.php', ['posts' => $posts, 'tags' => $tags ]);
+    }
+
 
 
     // ниже по одному методу под каждую страницу
@@ -69,19 +86,19 @@ class Post
         $this->title = 'Добавить пост';
         $fields = ['text' => '', 'tags' => []];
         $errors =[];
-        $tags = Tag::app()->all();
+        $tags = $this->tag->all();
 
         if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['title', 'text']);
             $tags = $_POST['tags'];
-
-            if ($this->post->add($fields, $tags, $_FILES['file'])) {
-                header('Location: /');
+            $id_post = $this->post->add($fields, $tags, $_FILES['file']);
+            if ( $id_post!= false) {
+                header('Location: /admin/post/one/' . $id_post);
                 exit();
             } else {
                 //$fields = Arr::extract($_POST, ['title', 'text']);
                 $fields['tags'] = $tags;
-                $tags = Tag::app()->all();
+                $tags = $this->tag->all();
                 $errors = $this->post->errors();
             }
         }
@@ -97,7 +114,7 @@ class Post
         $this->title = 'Редактировать пост';
         $id = $this->params[2];
         $errors =[];
-        $tags = Tag::app()->all();
+        $tags = $this->tag->all();
 
         // 3
         if (isset($_POST['update'])) {
@@ -105,12 +122,12 @@ class Post
             $tags = $_POST['tags'];
             if ($this->post->edit($id, $fields, $tags, $_FILES['file']) !== false) {
                 //die();
-                header('Location: /post/one/' . $id);
+                header('Location: /admin//post/one/' . $id);
                 exit();
             }
         } else {
             $fields = $this->post->one($id);
-            $fields['tags'] = Tag::app()->getIdTagsForOne($id);
+            $fields['tags'] = $this->tag->getIdTagsForOne($id);
             //var_dump($fields);
             //$tags = Tags::app()->all();
 
@@ -128,11 +145,11 @@ class Post
         $return = isset($this->params[3]) ? $this->params[3] : 1;
 
         if (isset ($_POST['undoDelete'])) {
-            header('Location: /post/one/' . $id);
+            header('Location: /admin/post/one/' . $id);
             exit;
         } elseif (isset($_POST['delete'])) {
             if ($this->post->delete($id) !== false) {
-                header('Location: /post/page/' . $return);
+                header('Location: admin/post/page/' . $return);
                 exit;
             }
 
