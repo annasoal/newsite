@@ -128,6 +128,7 @@ class Post
         } else {
             $fields = $this->post->one($id);
             $fields['tags'] = $this->tag->getIdTagsForOne($id);
+            $errors = $this->post->errors();
             //var_dump($fields);
             //$tags = Tags::app()->all();
 

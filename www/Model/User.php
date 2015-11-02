@@ -83,6 +83,7 @@ class User extends \Core\Model
 
         $id_user = parent::add($res);
 
+
         if ($id_user != false) {
             if (count($roles) > 0) {
                 foreach ($roles as $key => $id_role) {
@@ -149,7 +150,7 @@ class User extends \Core\Model
     {
         return $this->db->select("SELECT * FROM {$this->table}
                                   LEFT JOIN images using(id_image)
-                                  JOIN users_roles using(id_role)
+                                  JOIN users_roles using(id_user)
                                   JOIN roles using(id_role)
                                   WHERE id_role=:id_role", ['id_role' => $id_role]);
     }

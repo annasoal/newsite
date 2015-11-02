@@ -22,7 +22,7 @@ class Tag
     }
 
 
-    public function action_index()
+    public function action_all()
     {
         $tags = $this->tag->all();
         $this->content = View::template($this->template, ['tags' => $tags]);
@@ -37,7 +37,7 @@ class Tag
         if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['name', 'comment']);
             if ($this->tag->add($fields)) {
-                header('Location: /adminTag');
+                header('Location: /admin/tag/all');
                 exit();
             } else {
                  $errors = $this->tag->errors();
@@ -58,7 +58,7 @@ class Tag
             $fields = Arr::extract($_POST, ['name', 'comment']);
 
             if ($this->tag->edit($id, $fields) !== false) {
-                header('Location: /adminTag/');
+                header('Location: /admin/tag/all');
                 exit();
             }
         } else {
@@ -75,12 +75,12 @@ class Tag
         $id = $this->params[2];
 
         if (isset ($_POST['undoDelete'])) {
-            header('Location: /adminTag/');
+            header('Location: /admin/tag/all');
             exit;
 
         } elseif (isset($_POST['delete'])) {
             if ($this->tag->delete($id) !== false) {
-                header('Location: /adminTag/');
+                header('Location: /admin/tag/all');
                 exit;
             }
 

@@ -19,6 +19,8 @@ use Model\Role as MRole;
 class User
     extends Base
 {
+    private $user;
+
     public function __construct()
     {
         parent::__construct();
@@ -55,7 +57,7 @@ class User
 
     public function action_one()
     {
-        $this->title = 'Новость';
+        $this->title = 'Пользователь';
         $id = $this->params[2];
         $user = $this->user->one($id);
         $roles = $this->role->getRolesForOne($id);
@@ -91,7 +93,8 @@ class User
         $roles = $this->role->all();
 
         if (isset($_POST['add'])) {
-            $fields = Arr::extract($_POST, ['name', 'email']);
+            $fields = Arr::extract($_POST, ['name', 'email', 'password', 'datebirth']);
+
             $roles = $_POST['roles'];
             $id_user = $this->user->add($fields, $roles, $_FILES['file']);
             if ( $id_user!= false) {
@@ -118,9 +121,10 @@ class User
         $errors =[];
         $roles = $this->role->all();
 
-        // 3
         if (isset($_POST['update'])) {
-            $fields = Arr::extract($_POST, ['name', 'email']);
+
+            $fields = Arr::extract($_POST, ['name', 'email','password', 'datebirth']);
+
             $roles = $_POST['roles'];
             if ($this->user->edit($id, $fields, $roles, $_FILES['file']) !== false) {
                 //die();
@@ -129,7 +133,9 @@ class User
             }
         } else {
             $fields = $this->user->one($id);
+
             $fields['roles'] = $this->role->getIdRolesForOne($id);
+            $errors = $this->user->errors();
 
         }
 

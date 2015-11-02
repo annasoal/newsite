@@ -1,4 +1,3 @@
-<? foreach ($roles as $role): ?>
 <div class="jumbotron">
     <h2><?php echo $role['name']; ?> </h2>
     <br>
@@ -7,23 +6,20 @@
 
         echo $role['description'];
         ?>
-
-        <?php if(is_array($privs[$role['id_role']])): ?>
+        <? if(!empty($privs)): ?>
             <div class="panel panel-default">
-                <div class="panel-heading">Привилегии</div>
+                <div class="panel-heading">Теги</div>
                 <div class="panel-body">
-                    <?php foreach ($privs[$role['id_role']] as $priv): ?>
-                        <div><a href="/user/role/<?php echo $priv['id_priv']; ?>"><?php echo $priv['name'];
-                                ?></a></div>
+                    <?php foreach ($privs as $priv): ?>
+                        <div><a href="/<?=ADMIN_URL?>/role/priv/<?php echo $priv['id_priv']; ?>"><?php echo
+                                $priv['name'];?></a>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </div>
         <? endif; ?>
     </article>
 
-    <a class="btn btn-success btn-sm" href="/<?=ADMIN_URL?>/role/one/<?php echo $role['id_role'] ?>">
-        Подробнее
-    </a>
     <a class="btn btn-primary btn-sm" href="/<?=ADMIN_URL?>/role/edit/<?php echo $role['id_role'] ?>">
         Редактировать
     </a>
@@ -32,4 +28,3 @@
     </a>
 
 </div>
-<?php endforeach; ?>

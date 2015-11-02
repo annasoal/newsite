@@ -7,7 +7,7 @@
 <? endif;?>
 <form class="form-horizontal" enctype="multipart/form-data"  method="post">
     <fieldset>
-        <legend>Добавить пользователя</legend>
+        <legend>Добавить роль</legend>
         <!--
         <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
@@ -28,7 +28,7 @@
         </div>
         -->
         <div class="form-group">
-            <label for="inputName" class="col-lg-2 control-label">Имя пользователя</label>
+            <label for="inputName" class="col-lg-2 control-label">Название роли</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" required id="inputName" name="name" value="<?php echo
                 $fields['name'];?>">
@@ -36,34 +36,13 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Email/login</label>
-            <div class="col-lg-10">
-                <input type="email" class="form-control" id="inputEmail" required placeholder="Email"
-                       name='email' value="<?php echo $fields['email'];?>">
-            </div>
-        </div>
+            <label for="textArea" class="col-lg-2 control-label">Описание роли</label>
 
-        <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Пароль пользователя</label>
             <div class="col-lg-10">
-                <input type="password" class="form-control" required id="inputTitle" name="password"
-                       placeholder="Пароль">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputBirthday" class="col-lg-2 control-label">Дата рождения пользователя</label>
-            <div class="col-lg-10">
-                <input type="date" class="form-control" id="inputBirthday" name="datebirth" value="<?php echo
-                $fields['datebirth'];?>">
-            </div>
-        </div>
-
-        <!-- File Button -->
-        <div class="form-group">
-            <label class="col-lg-2 control-label" for="file">Добавить аватар</label>
-            <div class="col-lg-10">
-                <input id="filebutton" name="file" class="input-file btn-info btn-lg" type="file">
-                <span class="help-block">Добавить файл с раширением <strong>.png /.jpg /.jpeg / .gif</strong></span>
+                <textarea class="form-control" rows="5" id="textArea" name="description"><?php echo
+                    $fields['description'];
+                    ?></textarea>
+                <span class="help-block">Комментарий к роли</span>
             </div>
         </div>
 
@@ -104,14 +83,14 @@
         </div>
         -->
         <div class="form-group">
-            <label for="selectTag" class="col-lg-2 control-label">Выберите роли</label>
+            <label for="selectTag" class="col-lg-2 control-label">Выберите привилегии</label>
             <div class="col-lg-10">
-                <select id="selectTag" multiple  required class="form-control" name="roles[]" size="3">
-                    <? foreach ($roles as $role): ?>
-                        <option value="<?php echo $role['id_role'];?>"
-                            <? if($fields['roles'] != null && in_array($role['id_role'], $fields['roles'])){
+                <select id="selectTag" multiple  required class="form-control" name="privs[]" size="3">
+                    <? foreach ($privs as $priv): ?>
+                        <option value="<?php echo $priv['id_priv'];?>"
+                            <? if($fields['privs'] != null && in_array($priv['id_priv'], $fields['privs'])){
                             echo'selected="selected"'; }?>>
-                            <? echo 'Роль: ' . $role['name']; ?>
+                            <? echo 'Привилегия: ' . $priv['name']; ?>
                         </option>
                     <? endforeach;?>
                 </select>

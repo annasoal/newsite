@@ -14,7 +14,7 @@
                     <div class="panel-heading">Теги</div>
                     <div class="panel-body">
                         <?php foreach ($tags[$post['id_post']] as $tag): ?>
-                            <div><a href="/post/tag/<?php echo $tag['id_tag']; ?>"><?php echo $tag['name'];
+                            <div><a href="/<?=ADMIN_URL?>/post/tag/<?php echo $tag['id_tag']; ?>"><?php echo $tag['name'];
                                     ?></a></div>
                         <?php endforeach; ?>
                     </div>

@@ -3,8 +3,8 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>Название тега</th>
-        <th contentedittable>Комментарий</th><!--//как реализовать???-->
+        <th>Название привилегии</th>
+        <th contentedittable>Описание</th><!--//как реализовать???-->
         <th>Редактировать</th>
         <th>Удалить</th>
 
@@ -13,14 +13,15 @@
 
     <tbody>
     <?php
-    foreach ($tags as $tag): ?>
+    foreach ($privs as $priv): ?>
         <tr class="active">
-            <td><?php echo $tag['id_tag']?></td>
-            <td><?php echo $tag['name']?></td>
-            <td><?php echo $tag['comment']?></td>
-            <td><a href="/<?=ADMIN_URL?>/tag/edit/<?php echo $tag['id_tag']?>" class="btn
+            <td><?php echo $priv['id_priv']?></td>
+            <td><?php echo $priv['name']?></td>
+            <td><?php echo $priv['description']?></td>
+            <td><a href="/<?=ADMIN_URL?>/priv/edit/<?php echo $priv['id_priv']?>" class="btn
             btn-success">Редактировать</a></td>
-            <td><a href="/<?=ADMIN_URL?>/tag/delete/<?php echo $tag['id_tag']?>" class="btn btn-danger">Удалить</a></td>
+            <td><a href="/<?=ADMIN_URL?>/priv/delete/<?php echo $priv['id_priv']?>" class="btn
+            btn-danger">Удалить</a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
@@ -34,22 +35,24 @@ foreach($errors as $e): ?>
 <?php endforeach;?>
 <?php endif;?>
 
-<form class="form-horizontal" method="post" action="/<?=ADMIN_URL?>/tag/add">
+<form class="form-horizontal" method="post" >
     <fieldset>
-        <legend>Добавить тег</legend>
+        <legend>Добавить привилегию</legend>
         <div class="form-group">
-            <label for="inputTitle" class="col-lg-2 control-label">Название тега</label>
+            <label for="inputTitle" class="col-lg-2 control-label">Название привилегии</label>
 
             <div class="col-lg-10">
                 <input type="text" class="form-control" id="inputTitle" name="name" value="<?php echo $fields['name'];?>">
             </div>
         </div>
         <div class="form-group">
-            <label for="textArea" class="col-lg-2 control-label">Комментарий</label>
+            <label for="textArea" class="col-lg-2 control-label">Описание привилегии</label>
 
             <div class="col-lg-10">
-                <textarea class="form-control" rows="5" id="textArea" name="comment"><?php echo $fields['comment'];?></textarea>
-                <span class="help-block">Для заметок</span>
+                <textarea class="form-control" rows="5" id="textArea" name="description"><?php echo
+                    $fields['description'];
+                    ?></textarea>
+                <span class="help-block">Допустимое действие</span>
             </div>
         </div>
 

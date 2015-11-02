@@ -53,22 +53,7 @@ class Post extends \Core\Model
                                  [$this->pk => $id])[0];
     }
 
-    protected function validation($fields)
-    {
-        $err = false;
 
-        foreach ($fields as $k => $v) {
-            $fields[$k] = trim($v);
-            //$fields[$k] = htmlspecialchars(trim($v));
-
-            if ($fields[$k] == '' || strpos($fields[$k], '<') !== false) {
-                $err = true;
-                return false;
-            }
-        }
-
-        return $fields;
-    }
 
     public function add($fields, $tags, $file)
     {

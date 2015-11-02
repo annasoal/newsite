@@ -101,9 +101,10 @@ class Validation
                     }
                 }
 
-                /* if(isset($this->rules['hash']) && in_array($key, $this->rules['hash']))
-                $value = crypt::hash($value); */
-
+                 if(isset($this->rules['hash']) && in_array($key, $this->rules['hash'])) {
+                     $salt = '5363637';
+                     $value = hash('sha256', $value . $salt);
+                 }
                 $this->final_object[$key] = $value;
             }
         }
@@ -149,6 +150,7 @@ class Validation
 
         return $result;
     }
+
 
 //
 // returns:

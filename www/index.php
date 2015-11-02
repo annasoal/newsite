@@ -30,6 +30,7 @@ $c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
 $action = 'action_';
 $action .= isset($params[1]) ? $params[1] : 'index';
 
+
 try{
     $conrtroller = new $c();
     $conrtroller->request($action, $params);

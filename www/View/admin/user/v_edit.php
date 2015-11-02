@@ -1,48 +1,54 @@
 <br>
-<? if($errors != null):
+<? var_dump($fields);if($errors != null):
 foreach($errors as $e): ?>
     <p class="error"><?php echo $e; ?></p>
 <?php endforeach;?>
 <? endif;?>
 <form class="form-horizontal"  method="post" enctype="multipart/form-data">
     <fieldset>
-        <legend>Изменить пост</legend>
+        <legend>Изменить пользователя</legend>
 
         <div class="form-group">
-            <label for="inputTitle" class="col-lg-2 control-label">Заголовок</label>
-
+            <label for="inputName" class="col-lg-2 control-label">Имя пользователя</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputTitle" name="title" value="<?php echo $fields['title']; ?>">
+                <input type="text" class="form-control" required id="inputName" name="name" value="<?php echo
+                $fields['name'];?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="textArea" class="col-lg-2 control-label">Редактировать пост</label>
+            <label for="inputEmail" class="col-lg-2 control-label">Email/login</label>
             <div class="col-lg-10">
-                <textarea class="form-control" rows="3" id="textArea" name="text"><?php echo $fields['text']; ?></textarea>
-                <span class="help-block">Измените текст</span>
+                <input type="email" class="form-control" id="inputEmail" required placeholder="Email"
+                       name='email' value="<?php echo $fields['email'];?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label class="col-lg-2 control-label" for="file"> Изменить изображение</label>
+            <label for="inputPassword" class="col-lg-2 control-label">Пароль пользователя</label>
             <div class="col-lg-10">
-                <input id="filebutton" name="file" class="input-file btn-info btn-lg" type="file">
-                <span class="help-block">Добавить файл с раширением <strong>.png /.jpg /.jpeg / .gif</strong></span>
-                <img src=" <? echo $fields['file'] ?>" alt="">
+                <input type="password" class="form-control" required id="inputTitle" name="password"
+                       placeholder="Пароль">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputBirthday" class="col-lg-2 control-label">Дата рождения пользователя</label>
+            <div class="col-lg-10">
+                <input type="date" class="form-control" id="inputBirthday" name="datebirth" value="<?php echo
+                $fields['datebirth'];?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="selectTag" class="col-lg-2 control-label">Выберите тег</label>
             <div class="col-lg-10">
-                <select id="selectTag" required multiple class="form-control" name="tags[]" size="5">
-                    <? foreach ($tags as $tag): ?>
-                        <option value="<?php echo $tag['id_tag'];?>"
-                            <? if($fields['tags'] != null && in_array($tag['id_tag'], $fields['tags'])) echo
+                <select id="selectTag" required multiple class="form-control" name="roles[]" size="3">
+                    <? foreach ($roles as $role): ?>
+                        <option value="<?php echo $role['id_role'];?>"
+                            <? if($fields['roles'] != null && in_array($role['id_role'], $fields['roles'])) echo
                             'selected="selected"'; ?>
                             >
-                            <? echo 'ТЕГ: ' . $tag['name'] . '. Комментарий к тегу: ' . $tag['comment']; ?>
+                            <? echo 'РОЛЬ: ' . $role['name']; ?>
                         </option>
                     <? endforeach;?>
                 </select>
