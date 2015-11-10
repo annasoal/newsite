@@ -42,11 +42,14 @@ class Tag extends \Core\Model
 
     }
     public function getTagsForOne($id_post){
+
         return $this->db->select("SELECT id_tag, id_post, name FROM `posts_tags`
                                   LEFT JOIN {$this->table} using(id_tag)
                                   WHERE id_post=:id_post", ['id_post' => $id_post]);
     }
+
     public function getIdTagsForOne($id_post){
+
         $res = $this->getTagsForOne($id_post);
         $tags_id = [];
 

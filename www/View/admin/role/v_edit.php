@@ -11,8 +11,8 @@ foreach($errors as $e): ?>
         <div class="form-group">
             <label for="inputName" class="col-lg-2 control-label">Название роли</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" required id="inputName" name="name" value="<?php echo
-                $fields['name'];?>">
+                <input type="text" class="form-control" required id="inputName" name="role" value="<?php echo
+                $fields['role'];?>">
             </div>
         </div>
 

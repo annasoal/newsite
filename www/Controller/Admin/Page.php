@@ -3,6 +3,7 @@
 namespace Controller\Client;
 
 use \Core\Client\View as View;
+use Core\Auth as Auth;
 
 
 class Page extends Base

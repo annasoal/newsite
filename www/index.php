@@ -1,9 +1,8 @@
 <?php
-
 //error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 setlocale(LC_ALL, 'ru_RU.UTF8');
-
+session_start();
 include_once('autoload.php');
 include_once('configs.php');
 

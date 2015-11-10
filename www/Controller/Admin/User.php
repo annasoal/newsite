@@ -9,6 +9,7 @@
 namespace Controller\Admin;
 
 use Core\Arr as Arr;
+use Core\Auth as Auth;
 use Core\Admin\View as View;
 use Model\Image as Image;
 use Model\User as MUser;
@@ -27,8 +28,15 @@ class User
         $this->user = MUser::app();
         $this->image = Image::app();
         $this->role = MRole::app();
+        if(!Auth::app()->can('edit_users')) {
+            echo "Доступ запрещен";
+            die();
+        }
+
+
 
     }
+
     public function action_all(){
         $this->action_page();
     }
@@ -38,20 +46,14 @@ class User
         $page = isset($this->params[2]) ? (int)$this->params[2] : 1;
         $this->title = 'Страница ' . $page;
         $users = $this->user->page($page);
-        $users_id = [];
-
-        foreach($users as $one)
-            $users_id[] = $one['id_user'];
-        // 74, 75, ///, 78
-        $roles = $this->role->getRolesForAll($users_id);
-        if (empty($users_id)) {
-            $this->action_add();
+        if (empty($users)) {
+            header('Location: /' . ADMIN_URL . '/user/add/' );;
         }
         $pages_count = $this->user->pages_count();
         $this->content = View::template('user/v_all.php', ['users' => $users,
                 'pages_count' => $pages_count,
                 'page' => $page,
-                'roles' => $roles]
+               ]
         );
     }
 
@@ -60,27 +62,17 @@ class User
         $this->title = 'Пользователь';
         $id = $this->params[2];
         $user = $this->user->one($id);
-        $roles = $this->role->getRolesForOne($id);
-        $this->content = View::template('user/v_one.php', ['user' => $user,'roles' => $roles]);
+        var_dump ($user);
+        $this->content = View::template('user/v_one.php', ['user' => $user]);
     }
     public function action_role()
     {
         $id = $this->params[2];
         $role = $this->role->one($id);
         $users = $this->user->getAllByRole($id);
-
-        $this->title = 'Пользователи с ролью: ' . $role['name'];
-        $users_id = [];
-
-        foreach($users as $one)
-            $users_id[] = $one['id_user'];
-        // 74, 75, ///, 78
-        $roles = $this->role->getRolesForAll($users_id);
-
-        $this->content = View::template('user/v_allbyroles.php', ['users' => $users, 'roles' => $roles ]);
+        $this->title = 'Пользователи с ролью: ' . $role['role'];
+        $this->content = View::template('user/v_allbyrole.php', ['users' => $users]);
     }
-
-
 
     // ниже по одному методу под каждую страницу
 
@@ -88,21 +80,19 @@ class User
     public function action_add()
     {
         $this->title = 'Добавить пользователя';
-        $fields = ['name' => '', 'roles' => []];
+        $fields = [];
         $errors =[];
         $roles = $this->role->all();
 
         if (isset($_POST['add'])) {
-            $fields = Arr::extract($_POST, ['name', 'email', 'password', 'datebirth']);
+            $fields = Arr::extract($_POST, ['name', 'email', 'password', 'id_role', 'role','datebirth']);
 
-            $roles = $_POST['roles'];
-            $id_user = $this->user->add($fields, $roles, $_FILES['file']);
+            $id_user = $this->user->add($fields, $_FILES['file']);
             if ( $id_user!= false) {
-                header('Location: /admin/user/one/' . $id_user);
+                header('Location: /' . ADMIN_URL . '/user/one/' . $id_user);
                 exit();
             } else {
 
-                $fields['roles'] = $roles;
                 $roles = $this->role->all();
                 $errors = $this->user->errors();
             }
@@ -123,18 +113,15 @@ class User
 
         if (isset($_POST['update'])) {
 
-            $fields = Arr::extract($_POST, ['name', 'email','password', 'datebirth']);
+            $fields = Arr::extract($_POST, ['name', 'email','id_role', 'role', 'datebirth']);
 
-            $roles = $_POST['roles'];
-            if ($this->user->edit($id, $fields, $roles, $_FILES['file']) !== false) {
+            if ($this->user->edit($id, $fields, $_FILES['file']) !== false) {
                 //die();
-                header('Location: /admin//user/one/' . $id);
+                header('Location: /' . ADMIN_URL . '/user/one/' . $id);
                 exit();
             }
         } else {
             $fields = $this->user->one($id);
-
-            $fields['roles'] = $this->role->getIdRolesForOne($id);
             $errors = $this->user->errors();
 
         }
@@ -151,11 +138,11 @@ class User
         $return = isset($this->params[3]) ? $this->params[3] : 1;
 
         if (isset ($_POST['undoDelete'])) {
-            header('Location: /admin/user/one/' . $id);
+            header('Location: /' . ADMIN_URL . '/user/one/' . $id);
             exit;
         } elseif (isset($_POST['delete'])) {
             if ($this->user->delete($id) !== false) {
-                header('Location: admin/user/page/' . $return);
+                header('Location: /' . ADMIN_URL . '/user/page/' . $return);
                 exit;
             }
 
@@ -163,5 +150,6 @@ class User
 
         $this->content = View::template('user/v_delete.php', ['id_user' => $id]);
     }
+
 
 }

@@ -9,6 +9,7 @@
 namespace Controller\Admin;
 
 use Core\Admin\View as View;
+use \Core\Auth as Auth;
 use Core\Arr as Arr;
 use Model\Priv as MPriv;
 use Model\Role as MRole;
@@ -23,6 +24,10 @@ class Role
         parent::__construct();
         $this->priv = MPriv::app();
         $this->role = MRole::app();
+        if(!Auth::app()->can('edit_rights')) {
+            echo "Доступ запрещен";
+            die();
+        }
     }
 
     public function action_all(){
@@ -94,7 +99,7 @@ class Role
             $privs = $_POST['privs'];
             $id_role = $this->role->add($fields, $privs);
             if ($id_role != false) {
-                header('Location: /admin/role/one/' . $id_role);
+                header('Location: /' . ADMIN_URL . '/role/one/' . $id_role);
                 exit();
             } else {
 
@@ -121,7 +126,7 @@ class Role
             $privs = $_POST['privs'];
             if ($this->role->edit($id, $fields, $privs) !== false) {
                 //die();
-                header('Location: /admin/role/one/' . $id);
+                header('Location: /' . ADMIN_URL . '/role/one/' . $id);
                 exit();
             }
         } else {
@@ -142,11 +147,11 @@ class Role
         $id = $this->params[2];
 
         if (isset ($_POST['undoDelete'])) {
-            header('Location: /admin/role/one/' . $id);
+            header('Location: /' . ADMIN_URL . '/role/one/' . $id);
             exit;
         } elseif (isset($_POST['delete'])) {
             if ($this->role->delete($id) !== false) {
-                header('Location: /admin/role/all');
+                header('Location: /' . ADMIN_URL . '/role/all');
                 exit;
             }
 

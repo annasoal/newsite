@@ -24,13 +24,7 @@ foreach($errors as $e): ?>
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Пароль пользователя</label>
-            <div class="col-lg-10">
-                <input type="password" class="form-control" required id="inputTitle" name="password"
-                       placeholder="Пароль">
-            </div>
-        </div>
+
         <div class="form-group">
             <label for="inputBirthday" class="col-lg-2 control-label">Дата рождения пользователя</label>
             <div class="col-lg-10">
@@ -40,15 +34,22 @@ foreach($errors as $e): ?>
         </div>
 
         <div class="form-group">
+            <label class="col-lg-2 control-label" for="file">Изменить аватар</label>
+            <div class="col-lg-10">
+                <input id="filebutton" name="file" class="input-file btn-info btn-lg" type="file">
+                <span class="help-block">Добавить файл с раширением <strong>.png /.jpg /.jpeg / .gif</strong></span>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="selectTag" class="col-lg-2 control-label">Выберите тег</label>
             <div class="col-lg-10">
-                <select id="selectTag" required multiple class="form-control" name="roles[]" size="3">
+                <select id="selectTag" required  class="form-control" name="id_role">
                     <? foreach ($roles as $role): ?>
                         <option value="<?php echo $role['id_role'];?>"
-                            <? if($fields['roles'] != null && in_array($role['id_role'], $fields['roles'])) echo
-                            'selected="selected"'; ?>
-                            >
-                            <? echo 'РОЛЬ: ' . $role['name']; ?>
+                            <? if($fields['id_role'] == $role['id_role']){
+                                echo'selected="selected"'; }?>>
+                            <? echo 'Роль: ' . $role['role']; ?>
                         </option>
                     <? endforeach;?>
                 </select>

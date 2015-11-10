@@ -1,15 +1,15 @@
 <?php
 
 	return [
-        'fields' => ['id_role', 'name', 'description'],
-        'not_empty' => ['name'],
+        'fields' => ['id_role', 'role', 'description'],
+        'not_empty' => ['role'],
         //'html_allowed' => ['text'],
         /* 'range' => ['title' => [3, 64]],
         'exact_length' => ['text' => 30], */
-        'unique' => ['name'],
+        'unique' => ['role'],
         'labels' => [
             'id_role' => 'Id роли',
-            'name' => 'Название роли',
+            'role' => 'Название роли',
             'description' => 'Описание роли',
 
         ],

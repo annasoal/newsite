@@ -24,7 +24,8 @@ class User extends \Core\Model
     public function all()
     {
         return $this->db->select("SELECT * FROM {$this->table}
-                                  LEFT JOIN images using(id_image) ORDER BY date DESC");
+                                  LEFT JOIN images using(id_image)
+                                  JOIN roles using(id_role)");
     }
 
     public function page($page)
@@ -34,6 +35,7 @@ class User extends \Core\Model
 
         return $this->db->select("SELECT * FROM {$this->table}
                                   LEFT JOIN images using(id_image)
+                                  JOIN roles using(id_role)
                                   LIMIT $shift,$on_page
                                   ");
     }
@@ -48,55 +50,38 @@ class User extends \Core\Model
     {
         return $this->db->select("SELECT * FROM {$this->table}
                                   LEFT JOIN images using(id_image)
+                                  LEFT JOIN roles using(id_role)
                                   WHERE {$this->pk}=:{$this->pk}",
-            [$this->pk => $id])[0];
+                                  [$this->pk => $id])[0];
     }
-
-    protected function validation($fields)
+    public function getByLogin($email)
     {
-        $err = false;
+        return $this->db->select("SELECT * FROM {$this->table}
+                                  WHERE email=:email", ['email' => $email])[0];
 
-        foreach ($fields as $k => $v) {
-            $fields[$k] = trim($v);
-
-            if ($fields[$k] == '' || strpos($fields[$k], '<') !== false) {
-                $err = true;
-                return false;
-            }
-        }
-
-        return $fields;
     }
 
-    public function add($fields, $roles, $file)
+
+    public function add($fields, $file)
     {
         $res = $fields;
         if ($file['name'] != '') {
             $id_image = Image::app()->add($file);
-
             if ($id_image === false) {
                 return false;
             } else {
                 $res['id_image'] = $id_image;
             }
         }
-
         $id_user = parent::add($res);
 
-
-        if ($id_user != false) {
-            if (count($roles) > 0) {
-                foreach ($roles as $key => $id_role) {
-                    $this->db->insert('users_roles', ['id_user' => $id_user, 'id_role' => $id_role]);
-                }
-            }
-        } elseif ($id_user == false && $id_image != null) {
+        if ($id_user == false && $id_image != null) {
             Image::app()->delete($id_image);
         }
         return $id_user;
     }
 
-    public function edit($id, $fields, $roles, $file)
+    public function edit($id, $fields, $file)
     {
         if ($file['name'] != '') {
             $id_image = Image::app()->add($file);
@@ -108,15 +93,7 @@ class User extends \Core\Model
             }
         }
         $res = parent::edit($id, $fields);
-        if ($res != false) {
-            $this->db->delete('users_roles', 'id_user=:id_user', ['id_user' => $id]);
-
-            if (count($roles) > 0) {
-                foreach ($roles as $key => $id_role) {
-                    $this->db->insert('users_roles', ['id_user' => $id, 'id_role' => $id_role]);
-                }
-            }
-        } elseif ($res == false && $id_image != null) {
+        if ($res == false && $id_image != null) {
             Image::app()->delete($id_image);
         }
         return $res;
@@ -132,7 +109,6 @@ class User extends \Core\Model
         if ($res === false) {
             return false;
         } else {
-            $this->db->delete('users_roles', 'id_user=:id_user', ['id_user' => $id]);
 
             if ($file != null) {
                 if (Image::app()->delete($id_image) === true) {
@@ -150,10 +126,22 @@ class User extends \Core\Model
     {
         return $this->db->select("SELECT * FROM {$this->table}
                                   LEFT JOIN images using(id_image)
-                                  JOIN users_roles using(id_user)
                                   JOIN roles using(id_role)
                                   WHERE id_role=:id_role", ['id_role' => $id_role]);
     }
 
+    public function getPrivs($id_user)
+    {
+        $res = $this->db->select("SELECT privs.name FROM {$this->table}
+                                  JOIN roles_privs using(id_role)
+                                  JOIN privs using(id_priv)
+                                  WHERE id_user=:id_user", ['id_user' => $id_user]);
 
+        $privs = [];
+
+        foreach($res as $one)
+            $privs[] = $one['name'];
+
+        return $privs;
+    }
 }

@@ -2,41 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="309e3fbc-4b70-40b8-af46-b6497bf6b07b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Controller/Admin/Priv.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Model/Priv.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Controller/Admin/Role.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Model/rules/privs.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Model/rules/roles.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Model/rules/users.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/role/v_add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/role/v_all.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/role/v_allbyprivs.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/priv/v_delete.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/role/v_delete.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/priv/v_edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/role/v_edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/role/v_one.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/priv/v_privs.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Controller/Client/Auth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Core/Auth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Model/Session.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Model/rules/sessions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/page/v_accessdenied.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/client/v_auth.php" />
+      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\View\admin\user\v_allbyroles.php" afterPath="$PROJECT_DIR$/www/View/admin/user/v_allbyrole.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Base.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Page.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Post.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/Post.php" afterPath="$PROJECT_DIR$/www/Model/Post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Priv.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Priv.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Role.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Role.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/Role.php" afterPath="$PROJECT_DIR$/www/Model/Role.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Tag.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Tag.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/Tag.php" afterPath="$PROJECT_DIR$/www/Model/Tag.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/User.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/User.php" afterPath="$PROJECT_DIR$/www/Model/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Core/Validation.php" afterPath="$PROJECT_DIR$/www/Core/Validation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/configs.php" afterPath="$PROJECT_DIR$/www/configs.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.php" afterPath="$PROJECT_DIR$/www/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/rules/posts.php" afterPath="$PROJECT_DIR$/www/Model/rules/posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/rules/roles.php" afterPath="$PROJECT_DIR$/www/Model/rules/roles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/rules/users.php" afterPath="$PROJECT_DIR$/www/Model/rules/users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/role/v_add.php" afterPath="$PROJECT_DIR$/www/View/admin/role/v_add.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/user/v_add.php" afterPath="$PROJECT_DIR$/www/View/admin/user/v_add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/role/v_all.php" afterPath="$PROJECT_DIR$/www/View/admin/role/v_all.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/user/v_all.php" afterPath="$PROJECT_DIR$/www/View/admin/user/v_all.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/user/v_allbyroles.php" afterPath="$PROJECT_DIR$/www/View/admin/user/v_allbyroles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/role/v_allbyprivs.php" afterPath="$PROJECT_DIR$/www/View/admin/role/v_allbyprivs.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/post/v_allbytags.php" afterPath="$PROJECT_DIR$/www/View/admin/post/v_allbytags.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/role/v_edit.php" afterPath="$PROJECT_DIR$/www/View/admin/role/v_edit.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/user/v_edit.php" afterPath="$PROJECT_DIR$/www/View/admin/user/v_edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/v_index.php" afterPath="$PROJECT_DIR$/www/View/admin/v_index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/v_main.php" afterPath="$PROJECT_DIR$/www/View/admin/v_main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/client/v_main.php" afterPath="$PROJECT_DIR$/www/View/client/v_main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/role/v_one.php" afterPath="$PROJECT_DIR$/www/View/admin/role/v_one.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/user/v_one.php" afterPath="$PROJECT_DIR$/www/View/admin/user/v_one.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/tag/v_tags.php" afterPath="$PROJECT_DIR$/www/View/admin/tag/v_tags.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="e67e8a98-1ee2-4bc0-962c-f8cbc0e1d99b" name="Failed commit: Default" comment="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;" />
@@ -79,7 +80,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="users_roles" />
+        <option name="myItemId" value="users" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -94,6 +95,28 @@
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="newsitedb" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="tags" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - newsitedb@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="newsitedb" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="sessions" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -220,8 +243,30 @@
       <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5" vertical-offset="1800" max-vertical-offset="2754">
-              <caret line="129" column="63" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2907">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Page.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="884">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding>
+                <element signature="e#37#67#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Base.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Base.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6012862" vertical-offset="153" max-vertical-offset="782">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -230,8 +275,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/Controller/Admin/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462" vertical-offset="306" max-vertical-offset="2839">
-              <caret line="46" column="13" selection-start-line="35" selection-start-column="3" selection-end-line="55" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2635">
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
               <folding>
                 <element signature="e#117#137#0#PHP" expanded="true" />
               </folding>
@@ -239,11 +284,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="v_404.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/View/admin/page/v_404.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v_accessdenied.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/View/admin/page/v_accessdenied.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="187">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v_edit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1853">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Role.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Role.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615" vertical-offset="1734" max-vertical-offset="2686">
-              <caret line="129" column="66" selection-start-line="129" selection-start-column="66" selection-end-line="129" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2771">
+              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
               <folding>
                 <element signature="e#117#145#0#PHP" expanded="true" />
               </folding>
@@ -251,72 +326,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="v_edit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/View/admin/post/v_edit.php">
+      <file leaf-file-name="Tag.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Tag.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5" vertical-offset="408" max-vertical-offset="1734">
-              <caret line="37" column="32" selection-start-line="35" selection-start-column="8" selection-end-line="49" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="v_edit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_edit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.269231" vertical-offset="351" max-vertical-offset="986">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Role.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/Model/Role.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7055118" vertical-offset="742" max-vertical-offset="2448">
-              <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
-              <folding>
-                <marker date="1446487145085" expanded="true" signature="578:654" placeholder="SELECT * FRO..." />
-                <marker date="1446487145085" expanded="true" signature="782:810" placeholder="SELECT count..." />
-                <marker date="1446487145085" expanded="true" signature="2228:2407" placeholder="SELECT id_ro..." />
-                <marker date="1446487145085" expanded="true" signature="2731:2910" placeholder="SELECT id_ro..." />
-                <marker date="1446487145085" expanded="true" signature="3275:3486" placeholder="SELECT * FRO..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newsitedb.roles_privs" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..roles_privs">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="v_one.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_one.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="595">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Priv.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Priv.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.26923" vertical-offset="432" max-vertical-offset="1717">
-              <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1734">
+              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
               <folding>
                 <element signature="e#37#57#0#PHP" expanded="true" />
               </folding>
@@ -325,14 +339,11 @@
         </entry>
       </file>
       <file leaf-file-name="Priv.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/Model/Priv.php">
+        <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Priv.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.23077" vertical-offset="368" max-vertical-offset="1156">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding>
-                <marker date="1446484480228" expanded="true" signature="523:702" placeholder="SELECT id_pr..." />
-                <marker date="1446484480228" expanded="true" signature="1026:1205" placeholder="SELECT id_pr..." />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1819">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -347,57 +358,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/www/configs.php" />
-        <option value="$PROJECT_DIR$/www/Core/Client/View.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Client/Base.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Client/Post.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Admin/Base.php" />
-        <option value="$PROJECT_DIR$/www/Core/Admin/View.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Client/Page.php" />
-        <option value="$PROJECT_DIR$/www/autoload.php" />
         <option value="$PROJECT_DIR$/www/View/admin/page/v_404.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Admin/Page.php" />
         <option value="$PROJECT_DIR$/www/View/admin/post/v_one.php" />
         <option value="$PROJECT_DIR$/www/View/admin/post/v_edit.php" />
-        <option value="$PROJECT_DIR$/www/View/client/v_main.php" />
         <option value="$PROJECT_DIR$/www/View/admin/post/v_add.php" />
         <option value="$PROJECT_DIR$/www/View/admin/tag/v_delete.php" />
         <option value="$PROJECT_DIR$/www/View/admin/tag/v_edit.php" />
         <option value="$PROJECT_DIR$/www/Core/SqlDb.php" />
-        <option value="$PROJECT_DIR$/www/Model/Tag.php" />
         <option value="$PROJECT_DIR$/www/Model/rules/posts.php" />
-        <option value="$PROJECT_DIR$/www/index.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/user/v_add.php" />
-        <option value="$PROJECT_DIR$/www/Core/Validation.php" />
-        <option value="$PROJECT_DIR$/www/Model/rules/users.php" />
         <option value="$PROJECT_DIR$/www/Controller/Admin/Privs.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Admin/Tag.php" />
         <option value="$PROJECT_DIR$/www/View/admin/priv/v_edit.php" />
         <option value="$PROJECT_DIR$/www/View/admin/tag/v_tags.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Admin/Post.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/role/v_add.php" />
         <option value="$PROJECT_DIR$/www/View/admin/v_index.php" />
-        <option value="$PROJECT_DIR$/www/Model/User.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/user/v_allbyroles.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/user/v_one.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/user/v_all.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/user/v_edit.php" />
         <option value="$PROJECT_DIR$/www/View/admin/post/v_delete.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Admin/User.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/v_main.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/role/v_all.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/post/v_allbytags.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/role/v_allbyprivs.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/role/v_one.php" />
         <option value="$PROJECT_DIR$/www/Model/Priv.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Admin/Priv.php" />
         <option value="$PROJECT_DIR$/www/Model/rules/privs.php" />
-        <option value="$PROJECT_DIR$/www/Model/rules/roles.php" />
         <option value="$PROJECT_DIR$/www/View/admin/priv/v_privs.php" />
         <option value="$PROJECT_DIR$/www/Model/Post.php" />
-        <option value="$PROJECT_DIR$/www/Controller/Admin/Role.php" />
-        <option value="$PROJECT_DIR$/www/View/admin/role/v_edit.php" />
         <option value="$PROJECT_DIR$/www/Model/Role.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/role/v_add.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/role/v_all.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/role/v_edit.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/role/v_one.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/user/v_all.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/user/v_allbyroles.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/user/v_one.php" />
+        <option value="$PROJECT_DIR$/www/Model/rules/users.php" />
+        <option value="$PROJECT_DIR$/www/Model/Tag.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/post/v_allbytags.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/role/v_allbyprivs.php" />
+        <option value="$PROJECT_DIR$/www/Model/rules/roles.php" />
+        <option value="$PROJECT_DIR$/www/Model/Session.php" />
+        <option value="$PROJECT_DIR$/www/Model/rules/sessions.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/user/v_add.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Client/Auth.php" />
+        <option value="$PROJECT_DIR$/www/View/client/v_auth.php" />
+        <option value="$PROJECT_DIR$/www/configs.php" />
+        <option value="$PROJECT_DIR$/www/Core/Validation.php" />
+        <option value="$PROJECT_DIR$/www/index.php" />
+        <option value="$PROJECT_DIR$/www/Model/User.php" />
+        <option value="$PROJECT_DIR$/www/View/client/v_main.php" />
+        <option value="$PROJECT_DIR$/www/Core/Auth.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/v_main.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/user/v_edit.php" />
+        <option value="$PROJECT_DIR$/www/View/admin/page/v_accessdenied.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Admin/User.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Admin/Role.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Admin/Tag.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Admin/Priv.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Admin/Post.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Admin/Page.php" />
+        <option value="$PROJECT_DIR$/www/Controller/Admin/Base.php" />
       </list>
     </option>
   </component>
@@ -434,6 +445,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -471,6 +483,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -640,6 +656,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -663,6 +705,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="rules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -770,14 +830,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.lastSelected" value="database.main" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../html5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../studytwig" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
@@ -803,11 +862,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\newsite\www\View\admin\page" />
+      <recent name="C:\OpenServer\domains\newsite\www\data" />
       <recent name="C:\OpenServer\domains\newsite\www\Model\rules" />
       <recent name="C:\OpenServer\domains\newsite\www\View\admin\role" />
       <recent name="C:\OpenServer\domains\newsite\www\Controller\Admin" />
-      <recent name="C:\OpenServer\domains\newsite\www\Model" />
-      <recent name="C:\OpenServer\domains\newsite\www\View\admin\priv" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\newsite\www\Core\Client" />
@@ -1109,7 +1168,19 @@
       <option name="project" value="LOCAL" />
       <updated>1446409271371</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="этап 6 (разделение админки и клиентской части), добавлена работа с пользователями, ролями и привилегиями">
+      <created>1446487206716</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1446487206716</updated>
+    </task>
+    <task id="LOCAL-00043" summary="этап 6 (разделение админки и клиентской части), добавлена работа с пользователями, ролями и привилегиями">
+      <created>1446487906450</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1446487906450</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1142,9 +1213,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18181819" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22857143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30324677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.021367522" sideWeight="0.50064933" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1155,10 +1224,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43874645" sideWeight="0.49935064" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1190,7 +1261,8 @@
     <MESSAGE value="этап 6 (разделение админки и клиентской части)" />
     <MESSAGE value="этап 6 (разделение админки и клиентской части) - не работает((" />
     <MESSAGE value="этап 6 (разделение админки и клиентской части), контроллер user. необходимо добавить правила валидации, роли-привилегии.контроллер ролей и привилегий" />
-    <option name="LAST_COMMIT_MESSAGE" value="этап 6 (разделение админки и клиентской части), контроллер user. необходимо добавить правила валидации, роли-привилегии.контроллер ролей и привилегий" />
+    <MESSAGE value="этап 6 (разделение админки и клиентской части), добавлена работа с пользователями, ролями и привилегиями" />
+    <option name="LAST_COMMIT_MESSAGE" value="этап 6 (разделение админки и клиентской части), добавлена работа с пользователями, ролями и привилегиями" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1201,230 +1273,27 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/www/Controller/Admin/Role.php</url>
-          <line>10</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/www/Controller/Admin/Post.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/Core/SqlDb.php">
+    <entry file="file://$PROJECT_DIR$/www/Core/Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="2176">
-          <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-          <folding>
-            <marker date="1446408591809" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1446408591809" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-          </folding>
+        <state vertical-scroll-proportion="-12.807693" vertical-offset="92" max-vertical-offset="1275">
+          <caret line="25" column="123" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="123" />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..users">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/configs.php">
+    <entry file="file://$PROJECT_DIR$/www/Model/Post.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Core/Admin/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.307693" vertical-offset="155" max-vertical-offset="833">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..privs">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..roles">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/priv/v_delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="661">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/tag/v_tags.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.538462" vertical-offset="92" max-vertical-offset="1190">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="40" />
-          <folding>
-            <marker date="1446460106159" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/tag/v_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="629">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/tag/v_delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="323">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-71.92308" vertical-offset="0" max-vertical-offset="2261">
-          <caret line="110" column="35" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/post/v_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769" vertical-offset="306" max-vertical-offset="2023">
-          <caret line="39" column="17" selection-start-line="35" selection-start-column="8" selection-end-line="42" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Model/Tag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8076925" vertical-offset="283" max-vertical-offset="1139">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding>
-            <marker date="1446408810309" expanded="true" signature="-1:-1" placeholder="SELECT id_ta..." />
-            <marker date="1446408810309" expanded="true" signature="-1:-1" placeholder="SELECT id_ta..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_allbyroles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.038462" vertical-offset="130" max-vertical-offset="765">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/v_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.9615383" vertical-offset="219" max-vertical-offset="867">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="1836">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.9230769" vertical-offset="102" max-vertical-offset="918">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_one.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/post/v_delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="357">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding>
-            <marker date="1446482294310" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="867">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/v_main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693" vertical-offset="510" max-vertical-offset="1870">
-          <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/post/v_allbytags.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4615383" vertical-offset="45" max-vertical-offset="680">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
+        <state vertical-scroll-proportion="-33.576923" vertical-offset="266" max-vertical-offset="2635">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1432,95 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="561">
           <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_allbyprivs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="663">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="204" max-vertical-offset="850">
-          <caret line="31" column="12" selection-start-line="26" selection-start-column="8" selection-end-line="31" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.692307" vertical-offset="1269" max-vertical-offset="1904">
-          <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Tag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.0" vertical-offset="444" max-vertical-offset="1615">
-          <caret line="74" column="29" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Model/rules/posts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="374">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Model/rules/tags.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="661">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Model/rules/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="425">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Model/rules/privs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/priv/v_privs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="459" max-vertical-offset="1241">
-          <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.615385" vertical-offset="1983" max-vertical-offset="2805">
-          <caret line="139" column="24" selection-start-line="70" selection-start-column="3" selection-end-line="146" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/priv/v_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="663">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1528,40 +1308,95 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="661">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/Model/Post.php">
+    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="40.96154" vertical-offset="2000" max-vertical-offset="2635">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <marker date="1446486445549" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1446486445549" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1446486445549" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
-            <marker date="1446486445549" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1446486445549" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
+        <state vertical-scroll-proportion="1.3076923" vertical-offset="255" max-vertical-offset="986">
+          <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/Core/Model.php">
+    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_one.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.923077" vertical-offset="41" max-vertical-offset="1275">
-          <caret line="39" column="75" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="75" />
-          <folding />
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="595">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/Core/Validation.php">
+    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-99.38461" vertical-offset="0" max-vertical-offset="4012">
-          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding>
-            <marker date="1446455910905" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1446455910905" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_all.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="17" max-vertical-offset="850">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_one.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="595">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..tags">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/priv/v_delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="661">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Model/Tag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.653846" vertical-offset="555" max-vertical-offset="1190">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_allbyrole.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="51" max-vertical-offset="697">
+          <caret line="16" column="75" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_allbyprivs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="697">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Model/rules/privs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.423077" vertical-offset="325" max-vertical-offset="1904">
+          <caret line="32" column="90" selection-start-line="32" selection-start-column="90" selection-end-line="32" selection-end-column="90" />
         </state>
       </provider>
     </entry>
@@ -1569,38 +1404,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
           <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..roles_privs">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_one.php">
+    <entry file="file://$PROJECT_DIR$/www/View/admin/post/v_allbytags.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="635">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="697">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Priv.php">
+    <entry file="file://$PROJECT_DIR$/www/Controller/Client/Base.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.26923" vertical-offset="432" max-vertical-offset="1717">
-          <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
-          <folding>
-            <element signature="e#37#57#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_all.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.192308" vertical-offset="0" max-vertical-offset="918">
+          <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/configs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="289">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1608,68 +1439,252 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.23077" vertical-offset="368" max-vertical-offset="1156">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <marker date="1446484480228" expanded="true" signature="523:702" placeholder="SELECT id_pr..." />
-            <marker date="1446484480228" expanded="true" signature="1026:1205" placeholder="SELECT id_pr..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Controller/Client/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.961538" vertical-offset="62" max-vertical-offset="799">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/client/v_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462" vertical-offset="663" max-vertical-offset="1802">
+          <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/client/v_auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="646">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Model/Role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-51.576923" vertical-offset="155" max-vertical-offset="1836">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Core/Validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.115385" vertical-offset="1350" max-vertical-offset="4012">
+          <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Model/rules/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="442">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.3076925" vertical-offset="181" max-vertical-offset="816">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..sessions">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Model/Session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.5" vertical-offset="742" max-vertical-offset="1377">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/v_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="1071" max-vertical-offset="1870">
+          <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/v_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.846154" vertical-offset="219" max-vertical-offset="867">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Model/rules/sessions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="661">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Core/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0769231" vertical-offset="1303" max-vertical-offset="1938">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..roles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.769231" vertical-offset="1173" max-vertical-offset="2601">
+          <caret line="51" column="66" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="12.346154" vertical-offset="1460" max-vertical-offset="2261">
+          <caret line="67" column="14" selection-start-line="61" selection-start-column="8" selection-end-line="67" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/user/v_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1853">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/page/v_404.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="661">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/View/admin/page/v_accessdenied.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="187">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..roles_privs">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..privs">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/Controller/Admin/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462" vertical-offset="306" max-vertical-offset="2839">
-          <caret line="46" column="13" selection-start-line="35" selection-start-column="3" selection-end-line="55" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2635">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
           <folding>
             <element signature="e#117#137#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Post.php">
+    <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Tag.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5" vertical-offset="1800" max-vertical-offset="2754">
-          <caret line="129" column="63" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="63" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1734">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <element signature="e#37#57#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Role.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="1734" max-vertical-offset="2686">
-          <caret line="129" column="66" selection-start-line="129" selection-start-column="66" selection-end-line="129" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2771">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
           <folding>
             <element signature="e#117#145#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/post/v_edit.php">
+    <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Priv.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="408" max-vertical-offset="1734">
-          <caret line="37" column="32" selection-start-line="35" selection-start-column="8" selection-end-line="49" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1819">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/View/admin/role/v_edit.php">
+    <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Post.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.269231" vertical-offset="351" max-vertical-offset="986">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2907">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/Model/Role.php">
+    <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7055118" vertical-offset="742" max-vertical-offset="2448">
-          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="884">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding>
-            <marker date="1446487145085" expanded="true" signature="578:654" placeholder="SELECT * FRO..." />
-            <marker date="1446487145085" expanded="true" signature="782:810" placeholder="SELECT count..." />
-            <marker date="1446487145085" expanded="true" signature="2228:2407" placeholder="SELECT id_ro..." />
-            <marker date="1446487145085" expanded="true" signature="2731:2910" placeholder="SELECT id_ro..." />
-            <marker date="1446487145085" expanded="true" signature="3275:3486" placeholder="SELECT * FRO..." />
+            <element signature="e#37#67#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6012862" vertical-offset="153" max-vertical-offset="782">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -64,7 +64,7 @@
                         <button type="submit" class="btn btn-warning">Искать</button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Авторизация</a></li>
+                        <li><a href="/auth/logout">Выход</a></li>
                     </ul>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 namespace Controller\Admin;
 
 use Core\Arr as Arr;
+use Core\Auth as Auth;
 use Core\Admin\View as View;
 use Model\Image as Image;
 use Model\Post as MPost;
@@ -25,6 +26,10 @@ class Post
 
         $this->image = Image::app();
         $this->tag = Tag::app();
+        if(!Auth::app()->can('edit_posts')) {
+            echo "Доступ запрещен";
+
+        }
 
     }
     public function action_index(){
@@ -93,7 +98,7 @@ class Post
             $tags = $_POST['tags'];
             $id_post = $this->post->add($fields, $tags, $_FILES['file']);
             if ( $id_post!= false) {
-                header('Location: /admin/post/one/' . $id_post);
+                header('Location: /' . ADMIN_URL . '/post/one/' . $id_post);
                 exit();
             } else {
                 //$fields = Arr::extract($_POST, ['title', 'text']);
@@ -122,7 +127,7 @@ class Post
             $tags = $_POST['tags'];
             if ($this->post->edit($id, $fields, $tags, $_FILES['file']) !== false) {
                 //die();
-                header('Location: /admin//post/one/' . $id);
+                header('Location: /' . ADMIN_URL . '/post/one/' . $id);
                 exit();
             }
         } else {
@@ -146,11 +151,11 @@ class Post
         $return = isset($this->params[3]) ? $this->params[3] : 1;
 
         if (isset ($_POST['undoDelete'])) {
-            header('Location: /admin/post/one/' . $id);
+            header('Location: /' . ADMIN_URL . '/post/one/' . $id);
             exit;
         } elseif (isset($_POST['delete'])) {
             if ($this->post->delete($id) !== false) {
-                header('Location: admin/post/page/' . $return);
+                header('Location: /' . ADMIN_URL . '/post/page/' . $return);
                 exit;
             }
 

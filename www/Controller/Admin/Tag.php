@@ -4,6 +4,7 @@
 namespace Controller\Admin;
 
 use Core\Arr as Arr;
+use Core\Auth as Auth;
 use Core\Admin\View as View;
 use Model\Tag as MTag;
 
@@ -19,6 +20,10 @@ class Tag
         parent::__construct();
         $this->tag = MTag::app();
         $this->template = 'tag/v_tags.php';
+        if(!Auth::app()->can('edit_posts')) {
+            echo "Доступ запрещен";
+            die();
+        }
     }
 
 
@@ -37,7 +42,7 @@ class Tag
         if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['name', 'comment']);
             if ($this->tag->add($fields)) {
-                header('Location: /admin/tag/all');
+                header('Location: /' . ADMIN_URL . '/tag/all');
                 exit();
             } else {
                  $errors = $this->tag->errors();
@@ -58,7 +63,7 @@ class Tag
             $fields = Arr::extract($_POST, ['name', 'comment']);
 
             if ($this->tag->edit($id, $fields) !== false) {
-                header('Location: /admin/tag/all');
+                header('Location: /' . ADMIN_URL . '/tag/all');
                 exit();
             }
         } else {
@@ -75,12 +80,12 @@ class Tag
         $id = $this->params[2];
 
         if (isset ($_POST['undoDelete'])) {
-            header('Location: /admin/tag/all');
+            header('Location: /' . ADMIN_URL . '/tag/all');
             exit;
 
         } elseif (isset($_POST['delete'])) {
             if ($this->tag->delete($id) !== false) {
-                header('Location: /admin/tag/all');
+                header('Location: /' . ADMIN_URL . '/tag/all');
                 exit;
             }
 

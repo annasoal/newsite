@@ -1,6 +1,6 @@
 <? foreach ($roles as $role): ?>
     <div class="jumbotron">
-        <h2><?php echo $role['name']; ?> </h2>
+        <h2><?php echo $role['role']; ?> </h2>
         <br>
         <article>
             <?php

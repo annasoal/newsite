@@ -38,11 +38,11 @@
     </table>
     <table name="roles" schema="" catalog="newsitedb" type="TABLE">
       <column name="id_role" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="role" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
       <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <primary-key name="PRIMARY" columns="id_role"/>
       <index name="id_role" unique="true" columns="id_role"/>
-      <index name="name" unique="true" columns="name"/>
+      <index name="unique_role" unique="true" columns="role"/>
     </table>
     <table name="roles_privs" schema="" catalog="newsitedb" type="TABLE">
       <column name="id_role" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -72,18 +72,14 @@
       <column name="id_user" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="256" scale="0" nullable="false" jdbcType="12"/>
       <column name="email" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
-      <column name="password" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="64" scale="0" nullable="true" jdbcType="12"/>
       <column name="id_image" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="datebirth" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="id_role" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <primary-key name="PRIMARY" columns="id_user"/>
       <index name="email" unique="true" columns="email"/>
       <index name="id_user" unique="true" columns="id_user"/>
       <index name="datebirth" unique="false" columns="datebirth"/>
-    </table>
-    <table name="users_roles" schema="" catalog="newsitedb" type="TABLE">
-      <column name="id_user" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="id_role" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <index name="id_user" unique="true" columns="id_user,id_role"/>
     </table>
   </data-source>
 </component>

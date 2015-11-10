@@ -102,8 +102,8 @@ class Validation
                 }
 
                  if(isset($this->rules['hash']) && in_array($key, $this->rules['hash'])) {
-                     $salt = '5363637';
-                     $value = hash('sha256', $value . $salt);
+
+                     $value = hash('sha256', $value . AUTH_SALT);
                  }
                 $this->final_object[$key] = $value;
             }

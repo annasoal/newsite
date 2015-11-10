@@ -46,7 +46,7 @@
         <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Пароль пользователя</label>
             <div class="col-lg-10">
-                <input type="password" class="form-control" required id="inputTitle" name="password"
+                <input type="password" class="form-control" required id="inputPassword" name="password"
                        placeholder="Пароль">
             </div>
         </div>
@@ -106,12 +106,12 @@
         <div class="form-group">
             <label for="selectTag" class="col-lg-2 control-label">Выберите роли</label>
             <div class="col-lg-10">
-                <select id="selectTag" multiple  required class="form-control" name="roles[]" size="3">
+                <select id="selectTag"  required class="form-control" name="id_role">
                     <? foreach ($roles as $role): ?>
                         <option value="<?php echo $role['id_role'];?>"
-                            <? if($fields['roles'] != null && in_array($role['id_role'], $fields['roles'])){
-                            echo'selected="selected"'; }?>>
-                            <? echo 'Роль: ' . $role['name']; ?>
+                            <? if($fields['id_role'] == $role['id_role']){
+                                echo'selected="selected"'; }?>>
+                            <? echo 'Роль: ' . $role['role']; ?>
                         </option>
                     <? endforeach;?>
                 </select>

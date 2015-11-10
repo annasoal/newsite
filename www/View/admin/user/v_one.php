@@ -1,4 +1,3 @@
-
 <div class="jumbotron">
     <h2><?php echo $user['name']; ?> </h2>
     <br>
@@ -8,19 +7,17 @@
         echo '<br>';
         echo $user['email'];
         echo '<br>';
-        echo $user['datebirth'];
-        if(!empty($roles)): ?>
-            <div class="panel panel-default">
-                <div class="panel-heading">Теги</div>
-                <div class="panel-body">
-                    <?php foreach ($roles as $role): ?>
-                        <div><a href="/<?=ADMIN_URL?>/user/role/<?php echo $role['id_role']; ?>"><?php echo
-                                $role['name'];
-                                ?></a></div>
-                    <?php endforeach; ?>
-                </div>
+        echo $user['datebirth'];?>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Роль</div>
+            <div class="panel-body">
+                <div><a href="/<?=ADMIN_URL?>/user/role/<?php echo $user['id_role']; ?>"><?php echo $user['role'];
+                            ?></a></div>
+
             </div>
-        <? endif; ?>
+        </div>
+
     </article>
 
     <a class="btn btn-primary btn-sm" href="/<?=ADMIN_URL?>/user/edit/<?php echo $user['id_user'] ?>">

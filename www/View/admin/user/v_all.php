@@ -10,19 +10,19 @@
             echo $user['email'];
             echo '<br>';
             echo $user['datebirth'];
+
             ?>
 
-            <?php if(is_array($roles[$user['id_user']])): ?>
-                <div class="panel panel-default">
-                    <div class="panel-heading">Роли</div>
-                    <div class="panel-body">
-                        <?php foreach ($roles[$user['id_user']] as $role): ?>
-                            <div><a href="/<?=ADMIN_URL?>/user/role/<?php echo $role['id_role']; ?>"><?php echo $role['name'];
-                                    ?></a></div>
-                        <?php endforeach; ?>
+            <div class="panel panel-default">
+                <div class="panel-heading">Роль</div>
+                <div class="panel-body">
+                    <div>
+                        <a href="/<?=ADMIN_URL?>/user/role/<?php echo $user['id_role']; ?>">
+                            <?php echo $user['role'];?></a>
                     </div>
+
                 </div>
-            <? endif; ?>
+            </div>
         </article>
 
         <a class="btn btn-success btn-sm" href="/<?=ADMIN_URL?>/user/one/<?php echo $user['id_user'] ?>">
