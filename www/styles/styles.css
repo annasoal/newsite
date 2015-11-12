@@ -3,9 +3,11 @@ img {
     height: 25%;
     padding: 20px;
 }
+
 #selectTag > option {
     display: block;
 }
+
 article {
     word-wrap: break-word;
 }

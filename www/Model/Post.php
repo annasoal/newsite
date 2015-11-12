@@ -29,7 +29,8 @@ class Post extends \Core\Model
                                   LEFT JOIN images using(id_image) ORDER BY date DESC");
     }
 
-    public function page($page) {
+    public function page($page)
+    {
         $on_page = 5;
         $shift = ($page - 1) * $on_page;
 
@@ -50,9 +51,8 @@ class Post extends \Core\Model
         return $this->db->select("SELECT * FROM {$this->table} 
                                   LEFT JOIN images using(id_image)
                                   WHERE {$this->pk}=:{$this->pk}",
-                                 [$this->pk => $id])[0];
+            [$this->pk => $id])[0];
     }
-
 
 
     public function add($fields, $tags, $file)
@@ -71,12 +71,12 @@ class Post extends \Core\Model
         $id_post = parent::add($res);
 
         if ($id_post != false) {
-            if (count($tags) > 0 ) {
-                foreach ($tags as $key=>$tag) {
-                    $this->db->insert('posts_tags', ['id_post' =>$id_post, 'id_tag' => $tag]);
+            if (count($tags) > 0) {
+                foreach ($tags as $key => $tag) {
+                    $this->db->insert('posts_tags', ['id_post' => $id_post, 'id_tag' => $tag]);
                 }
             }
-        } elseif($id_post == false && $id_image != null) {
+        } elseif ($id_post == false && $id_image != null) {
             Image::app()->delete($id_image);
         }
         return $id_post;
@@ -98,11 +98,11 @@ class Post extends \Core\Model
             $this->db->delete('posts_tags', 'id_post=:id_post', ['id_post' => $id]);
 
             if (count($tags) > 0) {
-                foreach ($tags as $key=>$tag) {
-                    $this->db->insert('posts_tags', ['id_post' =>$id, 'id_tag' => $tag]);
+                foreach ($tags as $key => $tag) {
+                    $this->db->insert('posts_tags', ['id_post' => $id, 'id_tag' => $tag]);
                 }
             }
-        } elseif($res == false && $id_image != null) {
+        } elseif ($res == false && $id_image != null) {
             Image::app()->delete($id_image);
         }
         return $res;
@@ -118,14 +118,13 @@ class Post extends \Core\Model
 
         $res = $this->db->delete($this->table, 'id_post=:id_post', ['id_post' => $id]);
 
-        if($res === false){
+        if ($res === false) {
             return false;
-        }
-        else{
+        } else {
             $this->db->delete('posts_tags', 'id_post=:id_post', ['id_post' => $id]);
 
-            if($file != null) {
-                if(Image::app()->delete($id_image) ===true) {
+            if ($file != null) {
+                if (Image::app()->delete($id_image) === true) {
                     return true;
                 } else {
                     return false;
@@ -144,7 +143,6 @@ class Post extends \Core\Model
                                   JOIN tags using(id_tag)
                                   WHERE id_tag=:id_tag", ['id_tag' => $id_tag]);
     }
-
 
 
 }

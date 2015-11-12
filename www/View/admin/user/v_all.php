@@ -16,21 +16,21 @@
                 <div class="panel-heading">Роль</div>
                 <div class="panel-body">
                     <div>
-                        <a href="/<?=ADMIN_URL?>/user/role/<?php echo $user['id_role']; ?>">
-                            <?php echo $user['role'];?></a>
+                        <a href="/<?= ADMIN_URL ?>/user/role/<?php echo $user['id_role']; ?>">
+                            <?php echo $user['role']; ?></a>
                     </div>
 
                 </div>
             </div>
         </article>
 
-        <a class="btn btn-success btn-sm" href="/<?=ADMIN_URL?>/user/one/<?php echo $user['id_user'] ?>">
+        <a class="btn btn-success btn-sm" href="/<?= ADMIN_URL ?>/user/one/<?php echo $user['id_user'] ?>">
             Подробнее
         </a>
-        <a class="btn btn-primary btn-sm" href="/<?=ADMIN_URL?>/user/edit/<?php echo $user['id_user'] ?>">
+        <a class="btn btn-primary btn-sm" href="/<?= ADMIN_URL ?>/user/edit/<?php echo $user['id_user'] ?>">
             Редактировать
         </a>
-        <a class="btn btn-danger btn-sm" href="/<?=ADMIN_URL?>/user/delete/<?php echo $user['id_user'] ?>">
+        <a class="btn btn-danger btn-sm" href="/<?= ADMIN_URL ?>/user/delete/<?php echo $user['id_user'] ?>">
             Удалить
         </a>
 
@@ -38,9 +38,9 @@
 <?php endforeach; ?>
 
 <ul class="pagination">
-    <?php for($i = 1; $i <= $pages_count; $i++): ?>
-        <?php if($i == $page): ?>
-        <li class="active"><a href="/user/page/<?php echo $i; ?>"><?php echo $i; ?></a>
+    <?php for ($i = 1; $i <= $pages_count; $i++): ?>
+        <?php if ($i == $page): ?>
+            <li class="active"><a href="/user/page/<?php echo $i; ?>"><?php echo $i; ?></a>
         <? else: ?>
             <li><a href="/user/page/<?php echo $i; ?>"><?php echo $i; ?></a></li>
         <?php endif; ?>

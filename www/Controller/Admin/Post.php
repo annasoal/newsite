@@ -2,9 +2,8 @@
 
 namespace Controller\Admin;
 
-use Core\Arr as Arr;
-use Core\Auth as Auth;
 use Core\Admin\View as View;
+use Core\Arr as Arr;
 use Model\Image as Image;
 use Model\Post as MPost;
 use Model\Tag as Tag;
@@ -30,7 +29,8 @@ class Post
 
     }
 
-    public function action_all(){
+    public function action_all()
+    {
         $this->action_page();
     }
 
@@ -41,7 +41,7 @@ class Post
         $posts = $this->post->page($page);
         $posts_id = [];
 
-        foreach($posts as $one)
+        foreach ($posts as $one)
             $posts_id[] = $one['id_post'];
         // 74, 75, ///, 78
         $tags = $this->tag->getTagsForAll($posts_id);
@@ -60,8 +60,9 @@ class Post
         $id = $this->params[2];
         $post = $this->post->one($id);
         $tags = $this->tag->getTagsForOne($id);
-        $this->content = View::template('post/v_one.php', ['post' => $post,'tags' => $tags]);
+        $this->content = View::template('post/v_one.php', ['post' => $post, 'tags' => $tags]);
     }
+
     public function action_tag()
     {
         $id = $this->params[2];
@@ -71,12 +72,12 @@ class Post
         $this->title = 'Новости по тегу: ' . $tag['name'];
         $posts_id = [];
 
-        foreach($posts as $one)
+        foreach ($posts as $one)
             $posts_id[] = $one['id_post'];
         // 74, 75, ///, 78
         $tags = $this->tag->getTagsForAll($posts_id);
 
-        $this->content = View::template('post/v_allbytags.php', ['posts' => $posts, 'tags' => $tags ]);
+        $this->content = View::template('post/v_allbytags.php', ['posts' => $posts, 'tags' => $tags]);
     }
 
 
@@ -88,14 +89,14 @@ class Post
     {
         $this->title = 'Добавить пост';
         $fields = ['text' => '', 'tags' => []];
-        $errors =[];
+        $errors = [];
         $tags = $this->tag->all();
 
         if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['title', 'text']);
             $tags = $_POST['tags'];
             $id_post = $this->post->add($fields, $tags, $_FILES['file']);
-            if ( $id_post!= false) {
+            if ($id_post != false) {
                 header('Location: /' . ADMIN_URL . '/post/one/' . $id_post);
                 exit();
             } else {
@@ -106,9 +107,8 @@ class Post
             }
         }
         // в шаблон tags Model\Tags\all для селекта
-        $this->content = View::template('post/v_add.php', ['fields' => $fields,'tags' => $tags,'errors' =>$errors]);
+        $this->content = View::template('post/v_add.php', ['fields' => $fields, 'tags' => $tags, 'errors' => $errors]);
     }
-
 
 
     // Редактирование поста
@@ -116,7 +116,7 @@ class Post
     {
         $this->title = 'Редактировать пост';
         $id = $this->params[2];
-        $errors =[];
+        $errors = [];
         $tags = $this->tag->all();
 
         // 3
@@ -137,7 +137,7 @@ class Post
 
         }
 
-        $this->content = View::template('post/v_edit.php', ['fields' => $fields, 'tags' => $tags,'errors' =>$errors]);
+        $this->content = View::template('post/v_edit.php', ['fields' => $fields, 'tags' => $tags, 'errors' => $errors]);
 
     }
 

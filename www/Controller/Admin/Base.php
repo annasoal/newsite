@@ -2,9 +2,8 @@
 
 namespace Controller\Admin;
 
-use \Core\Admin\View as View;
-use \Core\Auth as Auth;
-
+use Core\Admin\View as View;
+use Core\Auth as Auth;
 
 
 abstract class Base extends \Controller\Core
@@ -25,11 +24,11 @@ abstract class Base extends \Controller\Core
         $this->content = '';
         $this->active_user = Auth::app()->user();
 
-        if($this->active_user == false){
+        if ($this->active_user == false) {
             header("Location: /auth");
             exit();
         }
-       // $this->left = '';
+        // $this->left = '';
     }
 
     // всё, что после
@@ -38,8 +37,10 @@ abstract class Base extends \Controller\Core
         $main = View::template('v_main.php', ['title' => $this->title, 'content' => $this->content]);
         echo $main;
     }
-    protected function check_access($privs){
-        if(!Auth::app()->can($privs)){
+
+    protected function check_access($privs)
+    {
+        if (!Auth::app()->can($privs)) {
             $action = 'action_access_err';
             $conrtroller = new Msg();
             $conrtroller->request($action, $params);

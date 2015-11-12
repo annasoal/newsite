@@ -14,15 +14,17 @@ class Image extends \Core\Model
 
     private static $instance;
 
-    public static function app(){
-        if(self::$instance == null){
+    public static function app()
+    {
+        if (self::$instance == null) {
             self::$instance = new self();
         }
 
         return self::$instance;
     }
 
-    protected function __construct(){
+    protected function __construct()
+    {
         parent::__construct('images', 'id_image');
     }
 
@@ -32,7 +34,7 @@ class Image extends \Core\Model
 
         $res = $this->validation($file);
         //var_dump($res);
-        if ( $res === false) {
+        if ($res === false) {
             return false;
         } else {
             return $this->db->insert($this->table, ['file' => $res]);
@@ -40,7 +42,8 @@ class Image extends \Core\Model
     }
 
 
-    protected function validation($file){
+    protected function validation($file)
+    {
 
         $newFilename = __DIR__ . '/../images/' . basename($_FILES['file']['name']);
         if (is_uploaded_file($_FILES['file']['tmp_name'])) {
@@ -48,10 +51,11 @@ class Image extends \Core\Model
             return '/images/' . basename($_FILES['file']['name']);
             //что делать если название сайта русскими буквами???
         } else {
-        return false;
+            return false;
         }
     }
-    public function delete ($id)
+
+    public function delete($id)
     {
         $file = $this->one($id)['file'];
         $res = parent::delete($id);

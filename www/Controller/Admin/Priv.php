@@ -3,9 +3,8 @@
 
 namespace Controller\Admin;
 
-use Core\Arr as Arr;
-use Core\Auth as Auth;
 use Core\Admin\View as View;
+use Core\Arr as Arr;
 use Model\Priv as MPriv;
 
 
@@ -35,7 +34,7 @@ class Priv
     public function action_add()
     {
         $privs = $this->priv->all();
-        $errors =[];
+        $errors = [];
         $fields = [];
         if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['name', 'description']);
@@ -43,11 +42,11 @@ class Priv
                 header('Location: /' . ADMIN_URL . '/priv/all');
                 exit();
             } else {
-                 $errors = $this->priv->errors();
+                $errors = $this->priv->errors();
             }
         }
 
-        $this->content = View::template($this->template, ['fields' => $fields, 'errors' =>$errors, 'privs'=>$privs]);
+        $this->content = View::template($this->template, ['fields' => $fields, 'errors' => $errors, 'privs' => $privs]);
     }
 
 
@@ -55,7 +54,7 @@ class Priv
     public function action_edit()
     {
         $this->title = "Редактирование привилегии";
-        $errors =[];
+        $errors = [];
         $id = $this->params[2];
 
         if (isset($_POST['update'])) {
@@ -72,7 +71,7 @@ class Priv
             $fields = $this->priv->one($id);
         }
 
-        $this->content = View::template('priv/v_edit.php', ['fields' => $fields, 'errors' =>$errors]);
+        $this->content = View::template('priv/v_edit.php', ['fields' => $fields, 'errors' => $errors]);
     }
 
 

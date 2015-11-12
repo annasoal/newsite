@@ -2,7 +2,6 @@
 
 namespace Controller\Client;
 
-use Core\Arr as Arr;
 use Core\Client\View as View;
 use Model\Comment as MComment;
 use Model\Image as MImage;
@@ -26,7 +25,8 @@ class Post
 
     // ниже по одному методу под каждую страницу
     //главная
-    public function action_index(){
+    public function action_index()
+    {
         $this->action_page();
     }
 
@@ -37,7 +37,7 @@ class Post
         $posts = $this->post->page($page);
         $posts_id = [];
 
-        foreach($posts as $one)
+        foreach ($posts as $one)
             $posts_id[] = $one['id_post'];
         // 74, 75, ///, 78
         $tags = $this->tag->getTagsForAll($posts_id);
@@ -56,8 +56,9 @@ class Post
         $id = $this->params[2];
         $post = $this->post->one($id);
         $tags = $this->tag->getTagsForOne($id);
-        $this->content = View::template('post/v_one.php', ['post' => $post,'tags' => $tags]);
+        $this->content = View::template('post/v_one.php', ['post' => $post, 'tags' => $tags]);
     }
+
     public function action_tag()
     {
         $id = $this->params[2];
@@ -67,14 +68,13 @@ class Post
         $this->title = 'Новости по тегу: ' . $tag['name'];
         $posts_id = [];
 
-        foreach($posts as $one)
+        foreach ($posts as $one)
             $posts_id[] = $one['id_post'];
         // 74, 75, ///, 78
         $tags = $this->tag->getTagsForAll($posts_id);
 
-        $this->content = View::template('post/v_allbytags.php', ['posts' => $posts, 'tags' => $tags ]);
+        $this->content = View::template('post/v_allbytags.php', ['posts' => $posts, 'tags' => $tags]);
     }
-
 
 
 }

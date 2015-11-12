@@ -1,40 +1,45 @@
 <br>
-<? var_dump($fields);if($errors != null):
-foreach($errors as $e): ?>
-    <p class="error"><?php echo $e; ?></p>
-<?php endforeach;?>
-<? endif;?>
-<form class="form-horizontal"  method="post" enctype="multipart/form-data">
+<? var_dump($fields);
+if ($errors != null):
+    foreach ($errors as $e): ?>
+        <p class="error"><?php echo $e; ?></p>
+    <?php endforeach;?>
+<? endif; ?>
+<form class="form-horizontal" method="post" enctype="multipart/form-data">
     <fieldset>
         <legend>Изменить пользователя</legend>
 
         <div class="form-group">
             <label for="inputName" class="col-lg-2 control-label">Имя пользователя</label>
+
             <div class="col-lg-10">
                 <input type="text" class="form-control" required id="inputName" name="name" value="<?php echo
-                $fields['name'];?>">
+                $fields['name']; ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email/login</label>
+
             <div class="col-lg-10">
                 <input type="email" class="form-control" id="inputEmail" required placeholder="Email"
-                       name='email' value="<?php echo $fields['email'];?>">
+                       name='email' value="<?php echo $fields['email']; ?>">
             </div>
         </div>
 
 
         <div class="form-group">
             <label for="inputBirthday" class="col-lg-2 control-label">Дата рождения пользователя</label>
+
             <div class="col-lg-10">
                 <input type="date" class="form-control" id="inputBirthday" name="datebirth" value="<?php echo
-                $fields['datebirth'];?>">
+                $fields['datebirth']; ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-lg-2 control-label" for="file">Изменить аватар</label>
+
             <div class="col-lg-10">
                 <input id="filebutton" name="file" class="input-file btn-info btn-lg" type="file">
                 <span class="help-block">Добавить файл с раширением <strong>.png /.jpg /.jpeg / .gif</strong></span>
@@ -43,15 +48,17 @@ foreach($errors as $e): ?>
 
         <div class="form-group">
             <label for="selectTag" class="col-lg-2 control-label">Выберите тег</label>
+
             <div class="col-lg-10">
-                <select id="selectTag" required  class="form-control" name="id_role">
+                <select id="selectTag" required class="form-control" name="id_role">
                     <? foreach ($roles as $role): ?>
-                        <option value="<?php echo $role['id_role'];?>"
-                            <? if($fields['id_role'] == $role['id_role']){
-                                echo'selected="selected"'; }?>>
+                        <option value="<?php echo $role['id_role']; ?>"
+                            <? if ($fields['id_role'] == $role['id_role']) {
+                                echo 'selected="selected"';
+                            } ?>>
                             <? echo 'Роль: ' . $role['role']; ?>
                         </option>
-                    <? endforeach;?>
+                    <? endforeach; ?>
                 </select>
             </div>
         </div>

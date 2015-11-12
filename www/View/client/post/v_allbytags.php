@@ -1,4 +1,4 @@
-<?foreach ($posts as $post): ?>
+<? foreach ($posts as $post): ?>
     <div class="jumbotron">
         <h2><?php echo $post['title']; ?> </h2>
         <br>
@@ -9,7 +9,7 @@
             echo $post['text'];
             ?>
 
-            <?php if(is_array($tags[$post['id_post']])): ?>
+            <?php if (is_array($tags[$post['id_post']])): ?>
                 <div class="panel panel-default">
                     <div class="panel-heading">Теги</div>
                     <div class="panel-body">

@@ -52,8 +52,9 @@ class User extends \Core\Model
                                   LEFT JOIN images using(id_image)
                                   LEFT JOIN roles using(id_role)
                                   WHERE {$this->pk}=:{$this->pk}",
-                                  [$this->pk => $id])[0];
+            [$this->pk => $id])[0];
     }
+
     public function getByLogin($email)
     {
         return $this->db->select("SELECT * FROM {$this->table}
@@ -139,7 +140,7 @@ class User extends \Core\Model
 
         $privs = [];
 
-        foreach($res as $one)
+        foreach ($res as $one)
             $privs[] = $one['name'];
 
         return $privs;

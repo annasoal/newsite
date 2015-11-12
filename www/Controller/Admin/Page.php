@@ -2,36 +2,35 @@
 
 namespace Controller\Admin;
 
-use Core\Arr as Arr;
-use Core\Auth as Auth;
 use Core\Admin\View as View;
+use Core\Arr as Arr;
 use Model\Page as MPage;
 
 class Page extends Base
 {
     private $model;
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->model = MPage::app();
         $this->check_access('edit_pages');
     }
 
     public function action_index()
-        {
-            $pages = $this->model->tree();
-            $this->content = View::template('v_index.php', ['pages'=> $pages]);
-        }
-
+    {
+        $pages = $this->model->tree();
+        $this->content = View::template('v_index.php', ['pages' => $pages]);
+    }
 
 
     public function action_add()
     {
         $this->title = 'Добавить страницу';
         $fields = [];
-        $errors =[];
+        $errors = [];
 
-        if (isset($_POST['add'])){
+        if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['id_parent', 'url', 'title', 'content']);
             $id = $this->model->add($fields);
 
@@ -43,7 +42,7 @@ class Page extends Base
             }
         }
 
-        $this->content = View::template('page/v_add.php', ['fields' => $fields, 'errors' =>$errors, 'pages' => $this->model->tree()]);
+        $this->content = View::template('page/v_add.php', ['fields' => $fields, 'errors' => $errors, 'pages' => $this->model->tree()]);
     }
 
 }

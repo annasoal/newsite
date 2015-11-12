@@ -52,26 +52,32 @@ class Validation
                     else {
                         if (isset($this->rules['range']) &&
                             isset($this->rules['range'][$key]) &&
-                            ($count < $this->rules['range'][$key][0] || $count > $this->rules['range'][$key][1])) {
+                            ($count < $this->rules['range'][$key][0] || $count > $this->rules['range'][$key][1])
+                        ) {
                             $this->errors[] = ['range', $key, $this->rules['range'][$key][0], $this->rules['range'][$key][1]];
                         } elseif (isset($this->rules['exact_length']) &&
                             isset($this->rules['exact_length'][$key]) &&
-                            $count != $this->rules['exact_length'][$key]) {
+                            $count != $this->rules['exact_length'][$key]
+                        ) {
                             $this->errors[] = ['exact_length', $key, $this->rules['exact_length'][$key]];
                         } elseif (isset($this->rules['min_length']) &&
                             isset($this->rules['min_length'][$key]) &&
-                            $count < $this->rules['min_length'][$key]) {
+                            $count < $this->rules['min_length'][$key]
+                        ) {
                             $this->errors[] = ['min_length', $key, $this->rules['min_length'][$key]];
                         } elseif (isset($this->rules['max_length']) &&
                             isset($this->rules['max_length'][$key]) &&
-                            $count > $this->rules['max_length'][$key]) {
+                            $count > $this->rules['max_length'][$key]
+                        ) {
                             $this->errors[] = ['max_length', $key, $this->rules['max_length'][$key]];
                         } elseif (isset($this->rules['date']) &&
                             in_array($key, $this->rules['date']) &&
-                            strtotime($value) == false) {
+                            strtotime($value) == false
+                        ) {
                             $this->errors[] = ['date', $key];
                         } elseif (isset($this->rules['equals']) &&
-                            isset($this->rules['equals'][$key])) {
+                            isset($this->rules['equals'][$key])
+                        ) {
                             $required = $obj[$key];
                             $val = $obj[$this->rules['equals'][$key]];
                             if (!$this->equals($val, $required)) {
@@ -79,32 +85,37 @@ class Validation
                             }
                         } elseif (isset($this->rules['phone']) &&
                             isset($this->rules['phone'][$key]) &&
-                            !$this->phone($value, $this->rules['phone'][$key])) {
+                            !$this->phone($value, $this->rules['phone'][$key])
+                        ) {
                             $this->errors[] = array('phone', $key, $this->rules['phone'][$key]);
                         } elseif (isset($this->rules['correct_url']) &&
                             in_array($key, $this->rules['correct_url']) &&
-                            preg_match("/[^a-zA-Zа-яА-ЯёЁ0-9_\-\+]+msi/", $value)) {
+                            preg_match("/[^a-zA-Zа-яА-ЯёЁ0-9_\-\+]+msi/", $value)
+                        ) {
                             $this->errors[] = array('correct_url', $key);
                         } elseif (isset($this->rules['email']) &&
-                            in_array($key, $this->rules['email'])&&
-                            !$this->email($value)) {
+                            in_array($key, $this->rules['email']) &&
+                            !$this->email($value)
+                        ) {
                             $this->errors[] = array('email', $key);
                         } elseif (isset($this->rules['email_domain']) &&
                             in_array($key, $this->rules['email_domain']) &&
-                            !$this->email_domain($value)) {
+                            !$this->email_domain($value)
+                        ) {
                             $this->errors[] = array('email_domain', $key);
                         } elseif (isset($this->rules['unique']) &&
-                            in_array($key, $this->rules['unique'])) {
+                            in_array($key, $this->rules['unique'])
+                        ) {
                             $pair_for_unique[$key] = $value;
                         }
                         /* rules extentions */
                     }
                 }
 
-                 if(isset($this->rules['hash']) && in_array($key, $this->rules['hash'])) {
+                if (isset($this->rules['hash']) && in_array($key, $this->rules['hash'])) {
 
-                     $value = hash('sha256', $value . AUTH_SALT);
-                 }
+                    $value = hash('sha256', $value . AUTH_SALT);
+                }
                 $this->final_object[$key] = $value;
             }
         }

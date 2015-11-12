@@ -9,7 +9,7 @@
             echo $post['text'];
             ?>
 
-            <?php if(is_array($tags[$post['id_post']])): ?>
+            <?php if (is_array($tags[$post['id_post']])): ?>
                 <div class="panel panel-default">
                     <div class="panel-heading">Теги</div>
                     <div class="panel-body">
@@ -31,9 +31,9 @@
 <?php endforeach; ?>
 
 <ul class="pagination">
-    <?php for($i = 1; $i <= $pages_count; $i++): ?>
-        <?php if($i == $page): ?>
-        <li class="active"><a href="/post/page/<?php echo $i; ?>"><?php echo $i; ?></a>
+    <?php for ($i = 1; $i <= $pages_count; $i++): ?>
+        <?php if ($i == $page): ?>
+            <li class="active"><a href="/post/page/<?php echo $i; ?>"><?php echo $i; ?></a>
         <? else: ?>
             <li><a href="/post/page/<?php echo $i; ?>"><?php echo $i; ?></a></li>
         <?php endif; ?>

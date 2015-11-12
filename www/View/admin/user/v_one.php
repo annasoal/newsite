@@ -7,23 +7,23 @@
         echo '<br>';
         echo $user['email'];
         echo '<br>';
-        echo $user['datebirth'];?>
+        echo $user['datebirth']; ?>
 
         <div class="panel panel-default">
             <div class="panel-heading">Роль</div>
             <div class="panel-body">
-                <div><a href="/<?=ADMIN_URL?>/user/role/<?php echo $user['id_role']; ?>"><?php echo $user['role'];
-                            ?></a></div>
+                <div><a href="/<?= ADMIN_URL ?>/user/role/<?php echo $user['id_role']; ?>"><?php echo $user['role'];
+                        ?></a></div>
 
             </div>
         </div>
 
     </article>
 
-    <a class="btn btn-primary btn-sm" href="/<?=ADMIN_URL?>/user/edit/<?php echo $user['id_user'] ?>">
+    <a class="btn btn-primary btn-sm" href="/<?= ADMIN_URL ?>/user/edit/<?php echo $user['id_user'] ?>">
         Редактировать
     </a>
-    <a class="btn btn-danger btn-sm" href="/<?=ADMIN_URL?>/user/delete/<?php echo $user['id_user'] ?>">
+    <a class="btn btn-danger btn-sm" href="/<?= ADMIN_URL ?>/user/delete/<?php echo $user['id_user'] ?>">
         Удалить
     </a>
 

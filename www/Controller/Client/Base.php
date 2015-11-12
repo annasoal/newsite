@@ -2,8 +2,8 @@
 
 namespace Controller\Client;
 
-use \Core\Client\View as View;
-use \Core\Auth as Auth;
+use Core\Auth as Auth;
+use Core\Client\View as View;
 
 
 abstract class Base extends \Controller\Core

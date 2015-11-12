@@ -1,14 +1,15 @@
 <br>
 <br>
-<? var_dump ($values);?>
-<form class="form-horizontal"  method="post">
+<? var_dump($values); ?>
+<form class="form-horizontal" method="post">
     <fieldset>
         <legend>Редактирование привилегии</legend>
         <div class="form-group">
             <label for="inputTitle" class="col-lg-2 control-label">Название привилегии</label>
 
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputTitle" name="name" value="<?php echo $fields['name'];?>">
+                <input type="text" class="form-control" id="inputTitle" name="name"
+                       value="<?php echo $fields['name']; ?>">
             </div>
         </div>
         <div class="form-group">

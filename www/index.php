@@ -10,14 +10,14 @@ include_once('configs.php');
 $p = explode('/', $_GET['q']);
 $params = [];
 
-foreach($p as $one){
-    if($one != '')
+foreach ($p as $one) {
+    if ($one != '')
         $params[] = $one;
 }
 
 $folder = 'Client';
 
-if($params[0] == ADMIN_URL){
+if ($params[0] == ADMIN_URL) {
     $folder = 'Admin';
     unset($params[0]);
     $params = array_values($params);
@@ -34,11 +34,10 @@ $action = 'action_';
 $action .= isset($params[1]) ? $params[1] : 'index';
 
 
-try{
+try {
     $conrtroller = new $c();
     $conrtroller->request($action, $params);
-}
-catch(\Exception $e){
+} catch (\Exception $e) {
     $c = '\\Controller\\Page';
     $action = 'action_p404';
     $conrtroller = new $c();

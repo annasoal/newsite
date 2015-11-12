@@ -3,9 +3,8 @@
 
 namespace Controller\Admin;
 
-use Core\Arr as Arr;
-use Core\Auth as Auth;
 use Core\Admin\View as View;
+use Core\Arr as Arr;
 use Model\Tag as MTag;
 
 
@@ -34,7 +33,7 @@ class Tag
     public function action_add()
     {
         $tags = $this->tag->all();
-        $errors =[];
+        $errors = [];
         $fields = ['name' => ''];
         if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['name', 'comment']);
@@ -42,11 +41,11 @@ class Tag
                 header('Location: /' . ADMIN_URL . '/tag/all');
                 exit();
             } else {
-                 $errors = $this->tag->errors();
+                $errors = $this->tag->errors();
             }
         }
 
-        $this->content = View::template($this->template, ['fields' => $fields, 'errors' =>$errors, 'tags'=>$tags]);
+        $this->content = View::template($this->template, ['fields' => $fields, 'errors' => $errors, 'tags' => $tags]);
     }
 
 

@@ -8,13 +8,11 @@
 
 namespace Controller\Admin;
 
-use Core\Arr as Arr;
-use Core\Auth as Auth;
 use Core\Admin\View as View;
+use Core\Arr as Arr;
 use Model\Image as Image;
-use Model\User as MUser;
 use Model\Role as MRole;
-
+use Model\User as MUser;
 
 
 class User
@@ -31,7 +29,8 @@ class User
         $this->check_access('edit_users');
     }
 
-    public function action_all(){
+    public function action_all()
+    {
         $this->action_page();
     }
 
@@ -41,13 +40,13 @@ class User
         $this->title = 'Страница ' . $page;
         $users = $this->user->page($page);
         if (empty($users)) {
-            header('Location: /' . ADMIN_URL . '/user/add/' );;
+            header('Location: /' . ADMIN_URL . '/user/add/');;
         }
         $pages_count = $this->user->pages_count();
         $this->content = View::template('user/v_all.php', ['users' => $users,
                 'pages_count' => $pages_count,
                 'page' => $page,
-               ]
+            ]
         );
     }
 
@@ -56,9 +55,10 @@ class User
         $this->title = 'Пользователь';
         $id = $this->params[2];
         $user = $this->user->one($id);
-        var_dump ($user);
+        var_dump($user);
         $this->content = View::template('user/v_one.php', ['user' => $user]);
     }
+
     public function action_role()
     {
         $id = $this->params[2];
@@ -75,14 +75,14 @@ class User
     {
         $this->title = 'Добавить пользователя';
         $fields = [];
-        $errors =[];
+        $errors = [];
         $roles = $this->role->all();
 
         if (isset($_POST['add'])) {
-            $fields = Arr::extract($_POST, ['name', 'email', 'password', 'id_role', 'role','datebirth']);
+            $fields = Arr::extract($_POST, ['name', 'email', 'password', 'id_role', 'role', 'datebirth']);
 
             $id_user = $this->user->add($fields, $_FILES['file']);
-            if ( $id_user!= false) {
+            if ($id_user != false) {
                 header('Location: /' . ADMIN_URL . '/user/one/' . $id_user);
                 exit();
             } else {
@@ -92,9 +92,8 @@ class User
             }
         }
 
-        $this->content = View::template('user/v_add.php', ['fields' => $fields,'roles' => $roles,'errors' =>$errors]);
+        $this->content = View::template('user/v_add.php', ['fields' => $fields, 'roles' => $roles, 'errors' => $errors]);
     }
-
 
 
     // Редактирование поста
@@ -102,12 +101,12 @@ class User
     {
         $this->title = 'Редактировать пользователя';
         $id = $this->params[2];
-        $errors =[];
+        $errors = [];
         $roles = $this->role->all();
 
         if (isset($_POST['update'])) {
 
-            $fields = Arr::extract($_POST, ['name', 'email','id_role', 'role', 'datebirth']);
+            $fields = Arr::extract($_POST, ['name', 'email', 'id_role', 'role', 'datebirth']);
 
             if ($this->user->edit($id, $fields, $_FILES['file']) !== false) {
                 //die();
@@ -120,7 +119,7 @@ class User
 
         }
 
-        $this->content = View::template('user/v_edit.php', ['fields' => $fields, 'roles' => $roles,'errors' =>$errors]);
+        $this->content = View::template('user/v_edit.php', ['fields' => $fields, 'roles' => $roles, 'errors' => $errors]);
 
     }
 

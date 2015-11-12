@@ -11,7 +11,7 @@ namespace Model;
 
 class Role
 
- extends \Core\Model
+    extends \Core\Model
 {
     private static $instance;
 
@@ -78,7 +78,7 @@ class Role
 
     public function delete($id)
     {
-       $res = parent::delete($id);
+        $res = parent::delete($id);
 
         if ($res === false) {
             return false;
@@ -92,8 +92,6 @@ class Role
     }
 
 
-
-
     public function getAllByPriv($id_priv)
     {
         return $this->db->select("SELECT * FROM {$this->table}
@@ -101,8 +99,6 @@ class Role
                                   JOIN privs using(id_priv)
                                   WHERE id_priv=:id_priv", ['id_priv' => $id_priv]);
     }
-
-
 
 
 }

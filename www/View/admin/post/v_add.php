@@ -1,10 +1,10 @@
 <br>
- <? if($errors != null):
- foreach($errors as $e): ?>
-    <p class="error"><?php echo $e; ?></p>
-<?php endforeach;?>
-<? endif;?>
-<form class="form-horizontal" enctype="multipart/form-data"  method="post">
+<? if ($errors != null):
+    foreach ($errors as $e): ?>
+        <p class="error"><?php echo $e; ?></p>
+    <?php endforeach;?>
+<? endif; ?>
+<form class="form-horizontal" enctype="multipart/form-data" method="post">
     <fieldset>
         <legend>Добавить пост</legend>
         <!--
@@ -30,14 +30,16 @@
             <label for="inputTitle" class="col-lg-2 control-label">Заголовок</label>
 
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputTitle" name="title" value="<?php echo $fields['title'];?>">
+                <input type="text" class="form-control" id="inputTitle" name="title"
+                       value="<?php echo $fields['title']; ?>">
             </div>
         </div>
         <div class="form-group">
             <label for="textArea" class="col-lg-2 control-label">Новый пост</label>
 
             <div class="col-lg-10">
-                <textarea class="form-control" rows="5" id="textArea" name="text"><?php echo $fields['text'];?></textarea>
+                <textarea class="form-control" rows="5" id="textArea"
+                          name="text"><?php echo $fields['text']; ?></textarea>
                 <span class="help-block">Новое событие</span>
             </div>
         </div>
@@ -90,16 +92,17 @@
         -->
         <div class="form-group">
             <label for="selectTag" class="col-lg-2 control-label">Выберите тег</label>
+
             <div class="col-lg-10">
-                <select id="selectTag" multiple  required class="form-control" name="tags[]" size="5">
+                <select id="selectTag" multiple required class="form-control" name="tags[]" size="5">
                     <? foreach ($tags as $tag): ?>
-                        <option value="<?php echo $tag['id_tag'];?>"
-                            <? if($fields['tags'] != null && in_array($tag['id_tag'], $fields['tags'])) echo
+                        <option value="<?php echo $tag['id_tag']; ?>"
+                            <? if ($fields['tags'] != null && in_array($tag['id_tag'], $fields['tags'])) echo
                             'selected="selected"'; ?>
-                        >
+                            >
                             <? echo 'ТЕГ: ' . $tag['name'] . '. Комментарий к тегу: ' . $tag['comment']; ?>
                         </option>
-                    <? endforeach;?>
+                    <? endforeach; ?>
                 </select>
             </div>
         </div>

@@ -2,12 +2,11 @@
 
 namespace Controller\Client;
 
-use \Core\Client\View as View;
+use Core\Client\View as View;
 
 
 class Page extends Base
 {
-
 
 
     public function __construct()
@@ -32,6 +31,7 @@ class Page extends Base
         $this->title = 'О нас';
         $this->content = View::template('page/v_about.php');
     }
+
     // 404
     public function action_p404()
     {

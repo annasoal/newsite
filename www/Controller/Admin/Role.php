@@ -9,7 +9,6 @@
 namespace Controller\Admin;
 
 use Core\Admin\View as View;
-use \Core\Auth as Auth;
 use Core\Arr as Arr;
 use Model\Priv as MPriv;
 use Model\Role as MRole;
@@ -27,9 +26,11 @@ class Role
         $this->check_access('edit_rights');
     }
 
-    public function action_all(){
+    public function action_all()
+    {
         $this->action_page();
     }
+
     public function action_page()
     {
         $page = isset($this->params[2]) ? (int)$this->params[2] : 1;
@@ -37,7 +38,7 @@ class Role
         $roles = $this->role->page($page);
         $roles_id = [];
 
-        foreach($roles as $one)
+        foreach ($roles as $one)
             $roles_id[] = $one['id_role'];
         // 74, 75, ///, 78
         $privs = $this->priv->getPrivsForAll($roles_id);
@@ -49,7 +50,6 @@ class Role
                 'privs' => $privs]
         );
     }
-
 
 
     public function action_one()

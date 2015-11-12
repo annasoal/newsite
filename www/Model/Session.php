@@ -15,7 +15,8 @@ class Session extends \Core\Model
         return self::$instance;
     }
 
-    protected function __construct(){
+    protected function __construct()
+    {
         parent::__construct('sessions', 'id_session');
     }
 
@@ -37,12 +38,12 @@ class Session extends \Core\Model
     {
         $session = $this->db->select("SELECT * FROM {$this->table} WHERE token=:token", ['token' => $token])[0];
 
-        if($session == null)
+        if ($session == null)
             return null;
 
         $dt = date("Y-m-d H:i:s");
 
-        if($dt > $session['isover']){
+        if ($dt > $session['isover']) {
             $this->delete($session['id_session']);
             return null;
         }
@@ -67,7 +68,7 @@ class Session extends \Core\Model
         $code = '';
         $clen = strlen($chars) - 1;
 
-        while(strlen($code) < $length)
+        while (strlen($code) < $length)
             $code .= $chars[mt_rand(0, $clen)];
 
         return $code;

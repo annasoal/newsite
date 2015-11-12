@@ -3,22 +3,24 @@
         <legend>Авторизация пользователя</legend>
         <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email/login</label>
+
             <div class="col-lg-10">
                 <input type="email" class="form-control" id="inputEmail" required placeholder="Email"
-                       name='email' value="<?php echo $fields['email'];?>">
+                       name='email' value="<?php echo $fields['email']; ?>">
             </div>
         </div>
         <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Пароль</label>
+
             <div class="col-lg-10">
                 <input type="password" class="form-control" required id="inputPassword" name="password"
                        placeholder="Пароль">
 
-            <div class="checkbox">
-                <label for="inputRemember">
-                    <input type="checkbox" name ="remember" id="inputRemember"> Запомнить меня
-                </label>
-            </div>
+                <div class="checkbox">
+                    <label for="inputRemember">
+                        <input type="checkbox" name="remember" id="inputRemember"> Запомнить меня
+                    </label>
+                </div>
             </div>
         </div>
 
