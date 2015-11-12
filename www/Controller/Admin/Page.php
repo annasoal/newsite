@@ -18,8 +18,8 @@ class Page extends Base
 
     public function action_index()
         {
-
-            $this->content = View::template('v_index.php', []);
+            $pages = $this->model->tree();
+            $this->content = View::template('v_index.php', ['pages'=> $pages]);
         }
 
 
@@ -44,4 +44,5 @@ class Page extends Base
 
         $this->content = View::template('page/v_add.php', ['fields' => $fields, 'errors' =>$errors, 'pages' => $this->model->tree()]);
     }
+
 }

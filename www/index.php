@@ -24,7 +24,11 @@ if($params[0] == ADMIN_URL){
 }
 
 $c = "\\Controller\\$folder\\";
-$c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
+if ($folder == 'Admin') {
+    $c .= isset($params[0]) ? ucfirst($params[0]) : 'Page';
+} else {
+    $c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
+}
 
 $action = 'action_';
 $action .= isset($params[1]) ? $params[1] : 'index';

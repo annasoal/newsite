@@ -25,7 +25,7 @@ class Page extends \Core\Model
     
     public function tree($start_level = 0)
 	{
-		$map = array();		
+		$map = [];
 		$pages = $this->db->select("SELECT * FROM pages 
 									WHERE id_parent=:id_parent
 									ORDER BY id_page ASC",
@@ -48,4 +48,5 @@ class Page extends \Core\Model
 		$page = $this->one($id_parent);
 		return $page['full_url'] . '/' .  $url;
 	}
+
 }

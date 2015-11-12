@@ -38,20 +38,7 @@
                                 </span></a></li>
                         <li><a href="/page/about">О нас</a></li>
                         <li><a href="/page/contacts">Контакты</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Работа с сайтом <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/admin/add">Добавить пост</a></li>
-                                <li><a href="/adminTag/">Работа с тегами</a></li>
-                                <li><a href="/adminImage/">Работа с изображениями</a></li>
-                                <!--
-                                <li class="divider"></li>
-                                <li><a href="#">k</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
-                                -->
-                            </ul>
-                        </li>
+
                     </ul>
                     <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">

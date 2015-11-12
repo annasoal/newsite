@@ -10,4 +10,5 @@ class View
         include(__DIR__.'/../../View/admin/' . $filename);
         return ob_get_clean();
     }
+
 }

@@ -11,7 +11,7 @@
                 <div class="panel-heading">Теги</div>
                 <div class="panel-body">
                     <?php foreach ($tags as $tag): ?>
-                        <div><a href="/<?=ADMIN_URL?>/post/tag/<?php echo $tag['id_tag']; ?>"><?php echo $tag['name']; ?></a></div>
+                        <div><a href="/post/tag/<?php echo $tag['id_tag']; ?>"><?php echo $tag['name']; ?></a></div>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -20,12 +20,18 @@
         <aside role="complementary">
             <div class="panel panel-default">
                 <div class="panel-heading">Комментарии</div>
+                <?php if(!empty($comments)): ?>
                     <? foreach($comments as $c): ?>
                     <div class="panel-body">
                         <p><?php echo $c['text']; ?></p>
                         <p><?php echo $c['name']; ?></p>
                     </div>
                     <? endforeach;?>
+                <?php else: ?>
+                    <div class="panel-body">
+                        <p>Не добавлено ни одного комментария</p>
+                    </div>
+                <? endif?>
                 </div>
             </div>
             <? if($active_user != null): ?>
@@ -49,7 +55,12 @@
                         <? endforeach;?>
                     </div>
                 </div>
-                    <? endif; ?>
+            <? else: ?>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><a href="/auth"> Авторизуйтесь</a> для добавления комментариев</div>
+                </div>
+            <? endif;?>
+
 
         </aside>
     </article>

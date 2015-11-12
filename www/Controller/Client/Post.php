@@ -26,8 +26,7 @@ class Post
 
     // ниже по одному методу под каждую страницу
     //главная
-    public function action_index()
-    {
+    public function action_index(){
         $this->action_page();
     }
 
@@ -38,13 +37,13 @@ class Post
         $posts = $this->post->page($page);
         $posts_id = [];
 
-        foreach ($posts as $one)
+        foreach($posts as $one)
             $posts_id[] = $one['id_post'];
         // 74, 75, ///, 78
         $tags = $this->tag->getTagsForAll($posts_id);
 
         $pages_count = $this->post->pages_count();
-        $this->content = View::template('v_index.php', ['posts' => $posts,
+        $this->content = View::template('post/v_all.php', ['posts' => $posts,
                 'pages_count' => $pages_count,
                 'page' => $page,
                 'tags' => $tags]
@@ -53,37 +52,13 @@ class Post
 
     public function action_one()
     {
-        $fields = ['text' => ''];
-        $errors = [];
-        $mComment = MComment::app();
-
-        if (count($_POST) > 0) {
-            $fields = Arr::extract($_POST, ['text']);
-            $fields['id_post'] = $this->params[2];
-            $fields['id_user'] = $this->active_user['id_user'];
-
-            if ($fields['id_user'] > 0) {
-                if ($mComment->add($fields)) {
-                    header('Location: /post/one/' . $this->params[2]);
-                    exit();
-                }
-
-                $errors = $mComment->errors();
-            }
-        }
-
         $this->title = 'Новость';
         $id = $this->params[2];
         $post = $this->post->one($id);
         $tags = $this->tag->getTagsForOne($id);
-        $this->content = View::template('post/v_one.php', ['post' => $post, 'tags' => $tags,
-            'active_user' => $this->active_user, 'fields' => $fields, 'errors' => $errors,
-            'comments' => $mComment->getByPost($id)]);
+        $this->content = View::template('post/v_one.php', ['post' => $post,'tags' => $tags]);
     }
-
-
-    public
-    function action_postsByTag()
+    public function action_tag()
     {
         $id = $this->params[2];
         $tag = $this->tag->one($id);
@@ -92,12 +67,14 @@ class Post
         $this->title = 'Новости по тегу: ' . $tag['name'];
         $posts_id = [];
 
-        foreach ($posts as $one)
+        foreach($posts as $one)
             $posts_id[] = $one['id_post'];
         // 74, 75, ///, 78
         $tags = $this->tag->getTagsForAll($posts_id);
 
-        $this->content = View::template('v_allbytags.php', ['posts' => $posts, 'tags' => $tags]);
+        $this->content = View::template('post/v_allbytags.php', ['posts' => $posts, 'tags' => $tags ]);
     }
+
+
 
 }
