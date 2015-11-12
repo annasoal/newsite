@@ -28,13 +28,7 @@ class User
         $this->user = MUser::app();
         $this->image = Image::app();
         $this->role = MRole::app();
-        if(!Auth::app()->can('edit_users')) {
-            echo "Доступ запрещен";
-            die();
-        }
-
-
-
+        $this->check_access('edit_users');
     }
 
     public function action_all(){

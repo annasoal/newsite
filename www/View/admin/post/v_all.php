@@ -1,4 +1,4 @@
-<?foreach ($posts as $post): ?>
+<? foreach ($posts as $post): ?>
     <div class="jumbotron">
         <h2><?php echo $post['title']; ?> </h2>
         <br>
@@ -14,8 +14,7 @@
                     <div class="panel-heading">Теги</div>
                     <div class="panel-body">
                         <?php foreach ($tags[$post['id_post']] as $tag): ?>
-                            <div><a href="/<?=ADMIN_URL?>/post/tag/<?php echo $tag['id_tag']; ?>"><?php echo
-                                    $tag['name'];
+                            <div><a href="/<?=ADMIN_URL?>/post/tag/<?php echo $tag['id_tag']; ?>"><?php echo $tag['name'];
                                     ?></a></div>
                         <?php endforeach; ?>
                     </div>
@@ -35,3 +34,13 @@
 
     </div>
 <?php endforeach; ?>
+
+<ul class="pagination">
+    <?php for($i = 1; $i <= $pages_count; $i++): ?>
+        <?php if($i == $page): ?>
+        <li class="active"><a href="/post/page/<?php echo $i; ?>"><?php echo $i; ?></a>
+        <? else: ?>
+            <li><a href="/post/page/<?php echo $i; ?>"><?php echo $i; ?></a></li>
+        <?php endif; ?>
+    <?php endfor; ?>
+</ul>

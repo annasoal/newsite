@@ -38,15 +38,17 @@
                         <li><a href="/<?=ADMIN_URL?>/page/about">О нас</a></li>
                         <li><a href="/<?=ADMIN_URL?>/page/contacts">Контакты</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Работа с сайтом <span class="caret"></span></a>
+                            <a href="/<?=ADMIN_URL?>/pages" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Админ-панель <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/<?=ADMIN_URL?>/post/add">Добавить пост</a></li>
-                                <li><a href="/<?=ADMIN_URL?>/tag/all">Работа с тегами</a></li>
-                                <li><a href="/<?=ADMIN_URL?>/user/all">Работа с пользователями</a></li>
-                                <li><a href="/<?=ADMIN_URL?>/role/all">Работа с ролями</a></li>
+                                <li><a href="/<?=ADMIN_URL?>/post/add">Все посты</a></li>
+                                <li><a href="/<?=ADMIN_URL?>/tag/all">Теги</a></li>
+                                <li><a href="/<?=ADMIN_URL?>/user/all">Пользователи</a></li>
                                 <li><a href="/<?=ADMIN_URL?>/user/add">Добавить пользователя</a></li>
+                                <li><a href="/<?=ADMIN_URL?>/role/all">Роли</a></li>
                                 <li><a href="/<?=ADMIN_URL?>/role/add">Добавить роль</a></li>
-                                <li><a href="/<?=ADMIN_URL?>/priv/all">Работа с привилегиями</a></li>
+                                <li><a href="/<?=ADMIN_URL?>/priv/all">Привилегии</a></li>
                                 <li><a href="/<?=ADMIN_URL?>/image/">Работа с изображениями</a></li>
                                 <!--
                                 <li class="divider"></li>

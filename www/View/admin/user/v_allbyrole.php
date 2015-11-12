@@ -22,13 +22,13 @@
             </div>
         </article>
 
-        <a class="btn btn-success btn-sm" href="/<?ADMIN_URL?>/user/one/<?php echo $user['id_user'] ?>">
+        <a class="btn btn-success btn-sm" href="/<?=ADMIN_URL?>/user/one/<?php echo $user['id_user'] ?>">
             Подробнее
         </a>
-        <a class="btn btn-primary btn-sm" href="/<?ADMIN_URL?>/user/edit/<?php echo $user['id_user'] ?>">
+        <a class="btn btn-primary btn-sm" href="/<?=ADMIN_URL?>/user/edit/<?php echo $user['id_user'] ?>">
             Редактировать
         </a>
-        <a class="btn btn-danger btn-sm" href="/<?ADMIN_URL?>/user/delete/<?php echo $user['id_user'] ?>">
+        <a class="btn btn-danger btn-sm" href="/<?=ADMIN_URL?>/user/delete/<?php echo $user['id_user'] ?>">
             Удалить
         </a>
 

@@ -3,6 +3,8 @@
 namespace Controller\Client;
 
 use \Core\Client\View as View;
+use \Core\Auth as Auth;
+
 
 abstract class Base extends \Controller\Core
 {
@@ -12,6 +14,8 @@ abstract class Base extends \Controller\Core
     protected $title;
     protected $content;
     protected $left;
+    protected $active_user;
+
 
     // всё, что до
     public function __construct()
@@ -19,6 +23,7 @@ abstract class Base extends \Controller\Core
         $this->title = '';
         $this->content = '';
         $this->left = '';
+        $this->active_user = Auth::app()->user();
     }
 
     // всё, что после

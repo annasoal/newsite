@@ -1,47 +1,47 @@
 <?php
 
-namespace Controller\Client;
+namespace Controller\Admin;
 
-use \Core\Client\View as View;
+use Core\Arr as Arr;
 use Core\Auth as Auth;
-
+use Core\Admin\View as View;
+use Model\Page as MPage;
 
 class Page extends Base
 {
+    private $model;
 
-
-
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
-        //$this->left = View::template('v_left.php');
+        $this->model = MPage::app();
     }
 
-    // ниже по одному методу под каждую страницу
+    public function action_index()
+        {
+
+            $this->content = View::template('v_index.php', []);
+        }
 
 
-    // контакты
-    public function action_contacts()
+
+    public function action_add()
     {
-        $this->title = 'Контакты';
-        $this->content = View::template('page/v_contacts.php');
+        $this->title = 'Добавить страницу';
+        $fields = [];
+        $errors =[];
+
+        if (isset($_POST['add'])){
+            $fields = Arr::extract($_POST, ['id_parent', 'url', 'title', 'content']);
+            $id = $this->model->add($fields);
+
+            if ($id != false) {
+                header('Location: /' . ADMIN_URL . '/page/');
+                exit();
+            } else {
+                $errors = $this->model->errors();
+            }
+        }
+
+        $this->content = View::template('page/v_add.php', ['fields' => $fields, 'errors' =>$errors, 'pages' => $this->model->tree()]);
     }
-
-    // о нас
-    public function action_about()
-    {
-        $this->title = 'О нас';
-        $this->content = View::template('page/v_about.php');
-    }
-    // 404
-    public function action_p404()
-    {
-        header("HTTP/1.1 404 Not Found");
-        $this->title = 'Cтраница не найдена';
-        $message = 'Ошибка 404.Запрашиваемая страница не найдена';
-
-        $this->content = View::template('page/v_404.php', ['message' => $message]);
-    }
-
-
 }

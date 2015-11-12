@@ -13,7 +13,8 @@
                     <div class="panel-heading">Привилегии</div>
                     <div class="panel-body">
                         <?php foreach ($privs[$role['id_role']] as $priv): ?>
-                            <div><a href="/user/role/<?php echo $priv['id_priv']; ?>"><?php echo $priv['name'];
+                            <div><a href="/<?=ADMIN_URL?>/user/role/<?php echo $priv['id_priv']; ?>"><?php echo
+                                    $priv['name'];
                                     ?></a></div>
                         <?php endforeach; ?>
                     </div>

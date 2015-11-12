@@ -32,7 +32,8 @@ class Post
         }
 
     }
-    public function action_index(){
+
+    public function action_all(){
         $this->action_page();
     }
 
@@ -49,7 +50,7 @@ class Post
         $tags = $this->tag->getTagsForAll($posts_id);
 
         $pages_count = $this->post->pages_count();
-        $this->content = View::template('v_index.php', ['posts' => $posts,
+        $this->content = View::template('post/v_all.php', ['posts' => $posts,
                 'pages_count' => $pages_count,
                 'page' => $page,
                 'tags' => $tags]
