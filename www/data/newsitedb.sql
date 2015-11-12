@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 02 2015 г., 21:10
+-- Время создания: Ноя 12 2015 г., 18:40
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.6.3
 
@@ -23,6 +23,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `comments`
+--
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id_comment` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_post` bigint(20) NOT NULL,
+  `id_user` bigint(20) NOT NULL,
+  `text` longtext NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `id_comment` (`id_comment`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Дамп данных таблицы `comments`
+--
+
+INSERT INTO `comments` (`id_comment`, `id_post`, `id_user`, `text`, `date`) VALUES
+(1, 99, 6, 'iioioio', '2015-11-12 09:03:56'),
+(7, 99, 6, 'oioi', '2015-11-12 09:16:16'),
+(8, 99, 6, 'oioiopoio[p[p[]', '2015-11-12 09:16:24');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `images`
 --
 
@@ -32,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_image`),
   UNIQUE KEY `id_image` (`id_image`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
 
 --
 -- Дамп данных таблицы `images`
@@ -47,10 +71,35 @@ INSERT INTO `images` (`id_image`, `file`, `date`) VALUES
 (21, '/images/spring_announcement.jpg', '2015-10-23 10:59:23'),
 (22, '/images/spring_announcement.jpg', '2015-10-23 12:15:19'),
 (23, '/images/1880c5ba99e1b315e6b2b6f28dae4d4e.jpg', '2015-10-23 12:15:35'),
-(33, '/images/spring_announcement.jpg', '2015-10-26 11:25:12'),
 (34, '/images/field_corn_21.jpg', '2015-10-28 08:05:52'),
 (35, '/images/1880c5ba99e1b315e6b2b6f28dae4d4e.jpg', '2015-10-28 08:21:17'),
-(36, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-02 18:01:15');
+(36, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-02 18:01:15'),
+(38, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-09 19:10:33');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `pages`
+--
+
+CREATE TABLE IF NOT EXISTS `pages` (
+  `id_page` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_parent` bigint(20) NOT NULL,
+  `url` varchar(256) NOT NULL,
+  `full_url` varchar(256) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `content` longtext NOT NULL,
+  UNIQUE KEY `id_page` (`id_page`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `pages`
+--
+
+INSERT INTO `pages` (`id_page`, `id_parent`, `url`, `full_url`, `title`, `content`) VALUES
+(1, 0, 'contacts', 'contacts', 'Контакты', 'КОНТАКТЫ'),
+(2, 0, 'about', 'about', 'О нас', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eius eligendi eos error fugit libero maxime, modi\r\nnecessitatibus nihil officiis pariatur provident quos sint tempora tenetur veniam voluptas. Alias,\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut consequatur debitis dignissimos distinctio\r\ndolore eum fugit laborum, magnam maiores minima nesciunt nostrum, placeat quaerat qui reprehenderit sequi vitae voluptatum.'),
+(3, 1, 'address', 'contacts/address', 'Адрес', 'Москва');
 
 -- --------------------------------------------------------
 
@@ -73,7 +122,6 @@ CREATE TABLE IF NOT EXISTS `posts` (
 --
 
 INSERT INTO `posts` (`id_post`, `title`, `text`, `id_image`, `date`) VALUES
-(98, 'iuiuiuoouiopip', 'mmnmnm', 33, '2015-10-26 11:25:12'),
 (99, 'ter', 'rtete', 34, '2015-10-28 08:05:52'),
 (101, ';l;l;l', 'l;l;l;yuyuu', 35, '2015-10-28 08:21:17'),
 (102, 'iuiuiu 8788988', 'lklkl', 36, '2015-11-02 18:01:15');
@@ -111,7 +159,6 @@ INSERT INTO `posts_tags` (`id_post`, `id_tag`) VALUES
 (95, 6),
 (96, 6),
 (97, 6),
-(98, 6),
 (99, 1),
 (99, 6),
 (99, 9),
@@ -133,16 +180,17 @@ CREATE TABLE IF NOT EXISTS `privs` (
   PRIMARY KEY (`id_priv`),
   UNIQUE KEY `id_priv` (`id_priv`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `privs`
 --
 
 INSERT INTO `privs` (`id_priv`, `name`, `description`) VALUES
-(3, 'редактирование всех статей', 'EDIT_POSTS'),
-(4, 'редактирование пользователей', 'EDIT_USERS'),
-(5, 'просмотр статей', 'VIEW_POSTS');
+(3, 'edit_posts', 'редактирование всех статей, тегов, связанных изображений'),
+(4, 'edit_users', 'редактирование пользователей'),
+(5, 'edit_rights', 'редактирование прав доступа(роли, привилегии, присвоение ролей пользователям)'),
+(6, 'edit_pages', 'создание и редактирование страниц');
 
 -- --------------------------------------------------------
 
@@ -152,23 +200,20 @@ INSERT INTO `privs` (`id_priv`, `name`, `description`) VALUES
 
 CREATE TABLE IF NOT EXISTS `roles` (
   `id_role` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(128) NOT NULL,
+  `role` varchar(128) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`id_role`),
   UNIQUE KEY `id_role` (`id_role`),
-  UNIQUE KEY `name` (`name`)
+  UNIQUE KEY `unique_role` (`role`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `roles`
 --
 
-INSERT INTO `roles` (`id_role`, `name`, `description`) VALUES
-(1, 'Admin', ''),
-(2, 'Registered user', ''),
-(3, 'Moderator', ''),
-(5, 'User', ''),
-(6, 'Writer', 'jkkjkjkjkjkj lllklk lklklklklkl');
+INSERT INTO `roles` (`id_role`, `role`, `description`) VALUES
+(1, 'Admin', 'Доступ ко всему'),
+(3, 'Moderator', 'Доступ к контенту');
 
 -- --------------------------------------------------------
 
@@ -189,6 +234,12 @@ CREATE TABLE IF NOT EXISTS `roles_privs` (
 INSERT INTO `roles_privs` (`id_role`, `id_priv`) VALUES
 (0, 3),
 (0, 5),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(3, 3),
+(5, 3),
 (6, 3);
 
 -- --------------------------------------------------------
@@ -207,7 +258,17 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   PRIMARY KEY (`id_session`),
   UNIQUE KEY `id_session` (`id_session`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+
+--
+-- Дамп данных таблицы `sessions`
+--
+
+INSERT INTO `sessions` (`id_session`, `id_user`, `token`, `timestart`, `lastactivity`, `isover`) VALUES
+(1, 8, 'vgM3hmURM0LslE1c6oRz9MXZKwjUWm2IaVIWVvIfNwOtbvrYmuaFNVij8ovvoJtU', '2015-11-09 16:53:12', '2015-11-09 16:53:49', '2015-11-16 16:53:12'),
+(4, 8, '3iaxDoqpydxIwVf6kzCHCer9ay4ZINAhG5OEWWp3GT4HbQX66l7hEMMEMjU6G7md', '2015-11-09 17:17:42', '2015-11-09 17:17:42', '2015-11-16 17:17:42'),
+(5, 8, '7LBDiNkwKZlmc6wX1DwzFNbS7k40ycWPc99oQixacy4MZfUqxnIAyd3cVLmUj9dG', '2015-11-09 17:18:16', '2015-11-09 17:18:16', '2015-11-16 17:18:16'),
+(13, 8, '7YMhuu93RM1AACIvLPfJOCLEJI9nhbWB0sVrXHvr2bv7UjIdVfaCe0WikUwtyDnn', '2015-11-12 18:13:10', '2015-11-12 18:34:25', '2015-11-19 18:13:10');
 
 -- --------------------------------------------------------
 
@@ -222,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   PRIMARY KEY (`id_tag`),
   UNIQUE KEY `id_tag` (`id_tag`),
   KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Дамп данных таблицы `tags`
@@ -245,40 +306,23 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id_user` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(256) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(64) DEFAULT NULL,
   `id_image` bigint(20) NOT NULL,
   `datebirth` date NOT NULL,
+  `id_role` bigint(20) NOT NULL,
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `id_user` (`id_user`),
   UNIQUE KEY `email` (`email`),
   KEY `datebirth` (`datebirth`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id_user`, `name`, `email`, `password`, `id_image`, `datebirth`) VALUES
-(1, '', '', '', 0, '0000-00-00');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `users_roles`
---
-
-CREATE TABLE IF NOT EXISTS `users_roles` (
-  `id_user` bigint(20) NOT NULL,
-  `id_role` bigint(20) NOT NULL,
-  UNIQUE KEY `id_user` (`id_user`,`id_role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `users_roles`
---
-
-INSERT INTO `users_roles` (`id_user`, `id_role`) VALUES
-(1, 2);
+INSERT INTO `users` (`id_user`, `name`, `email`, `password`, `id_image`, `datebirth`, `id_role`) VALUES
+(6, 'Ann', 'm1@mail.ru', '7e3f7f2a639d4fa1243be82e9372381a11834ee15e9707bee48c65d000550d61', 38, '1987-12-01', 3),
+(8, 'Anna', 'm@mail.ru', '7e3f7f2a639d4fa1243be82e9372381a11834ee15e9707bee48c65d000550d61', 0, '0000-00-00', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
