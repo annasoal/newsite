@@ -14,6 +14,7 @@ class Page extends Base
     public function __construct(){
         parent::__construct();
         $this->model = MPage::app();
+        $this->check_access('edit_pages');
     }
 
     public function action_index()

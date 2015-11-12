@@ -21,10 +21,7 @@ class Priv
         parent::__construct();
         $this->priv = MPriv::app();
         $this->template = 'priv/v_privs.php';
-        if(!Auth::app()->can('edit_rights')) {
-            echo "Доступ запрещен";
-            die();
-        }
+        $this->check_access('edit_rights');
     }
 
 
@@ -39,11 +36,11 @@ class Priv
     {
         $privs = $this->priv->all();
         $errors =[];
-        $fields = ['name' => ''];
+        $fields = [];
         if (isset($_POST['add'])) {
             $fields = Arr::extract($_POST, ['name', 'description']);
             if ($this->priv->add($fields)) {
-                header('Location: ' . ADMIN_URL . '/priv/all');
+                header('Location: /' . ADMIN_URL . '/priv/all');
                 exit();
             } else {
                  $errors = $this->priv->errors();

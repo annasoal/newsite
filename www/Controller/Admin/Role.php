@@ -24,10 +24,7 @@ class Role
         parent::__construct();
         $this->priv = MPriv::app();
         $this->role = MRole::app();
-        if(!Auth::app()->can('edit_rights')) {
-            echo "Доступ запрещен";
-            die();
-        }
+        $this->check_access('edit_rights');
     }
 
     public function action_all(){

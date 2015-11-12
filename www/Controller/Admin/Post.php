@@ -26,10 +26,7 @@ class Post
 
         $this->image = Image::app();
         $this->tag = Tag::app();
-        if(!Auth::app()->can('edit_posts')) {
-            echo "Доступ запрещен";
-
-        }
+        $this->check_access('edit_posts');
 
     }
 

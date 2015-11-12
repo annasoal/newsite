@@ -35,7 +35,7 @@ foreach($errors as $e): ?>
 <?php endforeach;?>
 <?php endif;?>
 
-<form class="form-horizontal" method="post" >
+<form class="form-horizontal" method="post" action="/<?=ADMIN_URL?>/priv/add" >
     <fieldset>
         <legend>Добавить привилегию</legend>
         <div class="form-group">

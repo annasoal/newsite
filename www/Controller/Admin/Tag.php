@@ -20,10 +20,7 @@ class Tag
         parent::__construct();
         $this->tag = MTag::app();
         $this->template = 'tag/v_tags.php';
-        if(!Auth::app()->can('edit_posts')) {
-            echo "Доступ запрещен";
-            die();
-        }
+        $this->check_access('edit_posts');
     }
 
 

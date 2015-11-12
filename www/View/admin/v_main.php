@@ -37,8 +37,9 @@
                         <li class="active"><a href="/">Главная страница <span class="sr-only">(current)</span></a></li>
                         <li><a href="/page/about">О нас</a></li>
                         <li><a href="/page/contacts">Контакты</a></li>
+                        <li><a href="/<?=ADMIN_URL?>/page">Админка</a></li>
                         <li class="dropdown">
-                            <a href="/<?=ADMIN_URL?>/page/index" class="dropdown-toggle" data-toggle="dropdown"
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                role="button"
                                aria-expanded="false">Админ-панель <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
