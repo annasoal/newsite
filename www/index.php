@@ -3,8 +3,8 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 setlocale(LC_ALL, 'ru_RU.UTF8');
 session_start();
-include_once('autoload.php');
-include_once('configs.php');
+include_once(__DIR__ . '/autoload.php');
+include_once(__DIR__ . '/configs.php');
 
 
 $p = explode('/', $_GET['q']);
@@ -25,20 +25,19 @@ if ($params[0] == ADMIN_URL) {
 
 $c = "\\Controller\\$folder\\";
 
-if($folder == 'Admin') {
-    $c .= isset($params[0]) ? ucfirst($params[0]) : 'Page';
-} else {
-    $c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
-}
-
-
 $action = 'action_';
 $action .= isset($params[1]) ? $params[1] : 'index';
 
-if ($folder == 'Client' && class_exists($c) != true) {
-    $c = '\\Controller\\Client\\Page';
-    $action = 'action_page';
+if ($folder == 'Admin') {
+    $c .= isset($params[0]) ? ucfirst($params[0]) : 'Page';
+} else {
+    $c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
+    if (class_exists($c) != true) {
+        $c = '\\Controller\\Client\\Page';
+        $action = 'action_page';
+    }
 }
+
 
 
 try {
@@ -49,4 +48,5 @@ try {
     $action = 'action_p404';
     $controller = new $c();
     $controller->request($action, $params);
+    throw new \Exception('class not found');
 }

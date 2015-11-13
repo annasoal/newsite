@@ -1,13 +1,14 @@
 <?php
+spl_autoload_register('__autoload');
 
 function __autoload($class)
 {
-    $path = strtr($class, '\\', '/') . '.php';
+    $path = __DIR__. '/' . strtr($class, '\\', '/') . '.php';
 
-    if (file_exists($path))
-        include_once($path);
-    else {
-        throw new \Exception('class not found');
+    if (file_exists($path)) {
+
+        require_once($path);
+
+        return true;
     }
-    //spl_autoload_register('__autoload');
 }
