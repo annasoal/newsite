@@ -31,23 +31,22 @@ if($folder == 'Admin') {
     $c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
 }
 
+
 $action = 'action_';
 $action .= isset($params[1]) ? $params[1] : 'index';
 
-try{
-    class_exists($c);
-}
-catch(\Exception $e) {
+if ($folder == 'Client' && class_exists($c) != true) {
     $c = '\\Controller\\Client\\Page';
     $action = 'action_page';
 }
 
+
 try {
-    $conrtroller = new $c();
-    $conrtroller->request($action, $params);
+    $controller = new $c();
+    $controller->request($action, $params);
 } catch (\Exception $e) {
-    $c = '\\Controller\\Page';
+    $c = '\\Controller\\Admin\\Page';
     $action = 'action_p404';
-    $conrtroller = new $c();
-    $conrtroller->request($action, $params);
+    $controller = new $c();
+    $controller->request($action, $params);
 }

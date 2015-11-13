@@ -1,8 +1,5 @@
 <?php
 
-
-spl_autoload_register('__autoload');
-
 function __autoload($class)
 {
     $path = strtr($class, '\\', '/') . '.php';
@@ -12,4 +9,5 @@ function __autoload($class)
     else {
         throw new \Exception('class not found');
     }
+    //spl_autoload_register('__autoload');
 }

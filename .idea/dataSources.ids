@@ -29,6 +29,8 @@
       <column name="full_url" sqlType="VARCHAR" precision="256" scale="0" nullable="false" jdbcType="12"/>
       <column name="title" sqlType="VARCHAR" precision="256" scale="0" nullable="false" jdbcType="12"/>
       <column name="content" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="base_template" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="inner_template" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
       <index name="id_page" unique="true" columns="id_page"/>
     </table>
     <table name="posts" schema="" catalog="newsitedb" type="TABLE">

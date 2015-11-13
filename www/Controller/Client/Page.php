@@ -19,6 +19,7 @@ class Page extends Base
     public function action_page(){
         $model = MPage::app();
         $url = implode('/', $this->params);
+        //var_dump($url);
         $page = $model->getByUrl($url);
 
         if($page == null){

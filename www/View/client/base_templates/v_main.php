@@ -42,8 +42,8 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/">Главная страница <span class="sr-only">(current)
                                 </span></a></li>
-                    <li><a href="page/about">О нас</a></li>
-                    <li><a href="page/contacts">Контакты</a></li>
+                    <li><a href="/about">О нас</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
 
                 </ul>
                 <form class="navbar-form navbar-left" role="search">

@@ -36,8 +36,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/">Главная страница <span class="sr-only">(current)</span></a></li>
-                    <li><a href="/page/about">О нас</a></li>
-                    <li><a href="/page/contacts">Контакты</a></li>
+                    <li><a href="/about">О нас</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
                     <li><a href="/<?= ADMIN_URL ?>/page">Админка</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -110,8 +110,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-<? foreach($scripts as $script): ?>
-    <script src="/js/<?=$script?>.js"></script>
-<? endforeach; ?>
+<? if (isset ($scripts)) {
+    foreach($scripts as $script): ?>
+        <script src="/js/<?=$script?>.js"></script>
+    <? endforeach;
+} ?>
 </body>
 </html>
