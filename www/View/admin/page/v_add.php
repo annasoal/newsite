@@ -1,17 +1,3 @@
-<script>
-    window.onload = function () {
-        $('#selectTag').change(function () {
-            setUrl();
-        });
-
-        function setUrl() {
-            var url = $('#selectTag').find('option:selected').attr('data-url');
-            $('#parent_url').html(url);
-        }
-
-        setUrl();
-    }
-</script>
 <?php
 function print_tree($pages, $id_page, $shift = 0)
 {
@@ -41,7 +27,7 @@ function print_tree($pages, $id_page, $shift = 0)
 
             <div class="col-lg-10">
                 <select id="selectTag" class="form-control" name="id_parent">
-                    <option value="0">Без раздела</option>
+                    <option value="0" data-url="">Без раздела</option>
                     <? print_tree($pages, $fields['id_parent']) ?>
                 </select>
             </div>
@@ -63,15 +49,38 @@ function print_tree($pages, $id_page, $shift = 0)
             </div>
         </div>
         <div class="form-group">
-            <label for="content" class="col-lg-2 control-label">Новая страница</label>
+            <label for="textArea" class="col-lg-2 control-label">Новая страница</label>
 
             <div class="col-lg-10">
-                <textarea class="form-control" rows="5" id="content"
+                <textarea class="form-control" rows="5" id="textArea"
                           name="content"><?php echo $fields['content']; ?></textarea>
-                <span class="help-block">Новое событие</span>
+                <span class="help-block">Новая страница</span>
             </div>
         </div>
-
+        <div class="form-group">
+            <label for="base_template" class="col-lg-2 control-label">Внешний шаблон</label>
+            <div class="col-lg-10">
+                <select id="base_template" class="form-control" name="base_template">
+                    <? foreach($base_templates as $template): ?>
+                        <option value="<?=$template?>" 
+                            <? if($template == $fields['base_template']) echo 'selected'; ?>
+                        ><?=$template?></option>
+                    <? endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inner_template" class="col-lg-2 control-label">Внутренний шаблон</label>
+            <div class="col-lg-10">
+                <select id="inner_template" class="form-control" name="inner_template">
+                    <? foreach($inner_templates as $template): ?>
+                        <option value="<?=$template?>" 
+                            <? if($template == $fields['inner_template']) echo 'selected'; ?>
+                        ><?=$template?></option>
+                    <? endforeach; ?>
+                </select>
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">

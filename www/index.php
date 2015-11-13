@@ -1,5 +1,5 @@
 <?php
-//error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 setlocale(LC_ALL, 'ru_RU.UTF8');
 session_start();
@@ -24,7 +24,8 @@ if ($params[0] == ADMIN_URL) {
 }
 
 $c = "\\Controller\\$folder\\";
-if ($folder == 'Admin') {
+
+if($folder == 'Admin') {
     $c .= isset($params[0]) ? ucfirst($params[0]) : 'Page';
 } else {
     $c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
@@ -33,6 +34,13 @@ if ($folder == 'Admin') {
 $action = 'action_';
 $action .= isset($params[1]) ? $params[1] : 'index';
 
+try{
+    class_exists($c);
+}
+catch(\Exception $e) {
+    $c = '\\Controller\\Client\\Page';
+    $action = 'action_page';
+}
 
 try {
     $conrtroller = new $c();

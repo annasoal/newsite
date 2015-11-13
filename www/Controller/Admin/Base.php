@@ -14,6 +14,7 @@ abstract class Base extends \Controller\Core
     // поля базового шаблона
     protected $title;
     protected $content;
+    protected $scripts;
 
     //protected $left;
 
@@ -34,7 +35,10 @@ abstract class Base extends \Controller\Core
     // всё, что после
     public function render()
     {
-        $main = View::template('v_main.php', ['title' => $this->title, 'content' => $this->content]);
+        $main = View::template('v_main.php', ['title' => $this->title,
+                                              'content' => $this->content,
+                                              'scripts' => $this->scripts,
+                                               'user' =>$this->active_user]);
         echo $main;
     }
 

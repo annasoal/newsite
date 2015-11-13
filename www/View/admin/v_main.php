@@ -90,30 +90,7 @@
                     <li><a href="../help/#api">API</a></li>
                     <li><a href="../help/#support">Support</a></li>
                 </ul>
-                <p>Made by <a href="http://thomaspark.co" rel="nofollow">Thomas Park</a>. Contact him at <a
-                        href="/cdn-cgi/l/email-protection#afdbc7c0c2cedcefcdc0c0dbdcd8cedbccc781ccc0c2"><span
-                            class="__cf_email__" data-cfemail="b0c4d8dfddd1c3f0d2dfdfc4c3c7d1c4d3d89ed3dfdd">[email&#160;protected]</span>
-                        <script data-cfhash='f9e31' type="text/javascript">
-                            /* <![CDATA[ */
-                            !function () {
-                                try {
-                                    var t = "currentScript"in document ? document.currentScript : function () {
-                                        for (var t = document.getElementsByTagName("script"), e = t.length; e--;)if (t[e].getAttribute("data-cfhash"))return t[e]
-                                    }();
-                                    if (t && t.previousSibling) {
-                                        var e, r, n, i, c = t.previousSibling, a = c.getAttribute("data-cfemail");
-                                        if (a) {
-                                            for (e = "", r = parseInt(a.substr(0, 2), 16), n = 2; a.length - n; n += 2)i = parseInt(a.substr(n, 2), 16) ^ r, e += String.fromCharCode(i);
-                                            e = document.createTextNode(e), c.parentNode.replaceChild(e, c)
-                                        }
-                                        t.parentNode.removeChild(t);
-                                    }
-                                } catch (u) {
-                                }
-                            }()
-                            /* ]]> */</script>
-                    </a>.
-                </p>
+
                 <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT
                         License</a>.</p>
 
@@ -133,5 +110,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
+<? foreach($scripts as $script): ?>
+    <script src="/js/<?=$script?>.js"></script>
+<? endforeach; ?>
 </body>
 </html>

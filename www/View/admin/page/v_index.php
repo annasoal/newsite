@@ -1,24 +1,22 @@
 <?php
-function print_tree($pages, $shift = 0)
-{    //var_dump($pages);
-    if (!empty($pages)) {
-        echo '<ul class="nav nav-pills nav-stacked">';
-        foreach ($pages as $page) {
-            echo '<li>';
-            for ($i = 0; $i < $shift; $i++) {
-                echo '&nbsp;';
+    function print_tree($pages, $shift = 0)
+    {
+        if (!empty($pages)) {
+            foreach ($pages as $page) {
+                echo '<li>';
+                for ($i = 0; $i < $shift; $i++) {
+                    echo '&nbsp;';
+                }
+                echo '<a href="/' . ADMIN_URL . '/page/edit/' . $page['id_page'] . '">'
+                    . $page['title'] . ' ' . $page['full_url'] . '</a>';
+                echo '</li>';
+                print_tree($page['children'], $shift + 5);
             }
-            echo $page['title'] . ' ' . $page['full_url'];
-
-            echo '</li>';
-            print_tree($page['children'], $shift + 5);
-
         }
-        echo '</ul>';
     }
-}
-
 ?>
+
+
 <ul class="nav nav-tabs">
     <li class="active"><a href="#staticpages" data-toggle="tab">Страницы</a></li>
     <li><a href="#allposts" data-toggle="tab">Посты</a></li>
@@ -33,7 +31,9 @@ function print_tree($pages, $shift = 0)
         <h3> Добавление и редактирование страниц</h3>
 
         <div class="jumbotron">
+            <ul class="nav nav-pills nav-stacked">
             <? print_tree($pages) ?>
+            </ul>
         </div>
         <a class="btn btn-success" href="/<?= ADMIN_URL ?>/page/add">Добавить страницу</a>
     </div>

@@ -20,10 +20,41 @@ class Page extends \Core\Model
         parent::__construct('pages', 'id_page');
     }
 
+    public function getByParent($id_parent){
+        return $this->db->select("SELECT * FROM {$this->table} WHERE id_parent=:id_parent", ['id_parent' => $id_parent]);
+    }
+
+    public function getByUrl($url){
+        $res = $this->db->select("SELECT * FROM {$this->table} WHERE full_url=:full_url", ['full_url' => $url]);
+        return $res[0];
+    }
+
     public function add($fields)
     {
         $fields['full_url'] = $this->make_full_url($fields['id_parent'], $fields['url']);
         return parent::add($fields);
+    }
+
+    public function edit($id, $fields)
+    {
+        $fields['full_url'] = $this->make_full_url($fields['id_parent'], $fields['url']);
+        $res = parent::edit($id, $fields);
+
+        if($res)
+            $this->updateChildrenUrl($id);
+
+        return $res;
+    }
+
+    public function updateChildrenUrl($id_parent){
+        $page = $this->one($id_parent);
+        $children = $this->getByParent($id_parent);
+
+        foreach($children as $child){
+            $fields = ['full_url' => $page['full_url'] . '/' . $child['url']];
+            $this->db->update($this->table, $fields, "id_page={$child['id_page']}");
+            $this->updateChildrenUrl($child['id_page']);
+        }
     }
 
     public function tree($start_level = 0)

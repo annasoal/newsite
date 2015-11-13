@@ -11,3 +11,11 @@ img {
 article {
     word-wrap: break-word;
 }
+.admin-link{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.left{float: left; margin: 0 10px 10px 0;}
+.clear{clear: both;}

@@ -3,7 +3,7 @@
 namespace Controller\Client;
 
 use Core\Client\View as View;
-
+use Model\Page as MPage;
 
 class Page extends Base
 {
@@ -16,21 +16,22 @@ class Page extends Base
     }
 
     // ниже по одному методу под каждую страницу
+    public function action_page(){
+        $model = MPage::app();
+        $url = implode('/', $this->params);
+        $page = $model->getByUrl($url);
 
+        if($page == null){
+            $this->action_p404();
+            return;
+        }
 
+        $this->title = $page['title'];
+        $this->base_template = $page['base_template'];
+        $this->content = View::template('inner_templates/' . $page['inner_template'], ['page' => $page]);
+    }
     // контакты
-    public function action_contacts()
-    {
-        $this->title = 'Контакты';
-        $this->content = View::template('page/v_contacts.php');
-    }
 
-    // о нас
-    public function action_about()
-    {
-        $this->title = 'О нас';
-        $this->content = View::template('page/v_about.php');
-    }
 
     // 404
     public function action_p404()
