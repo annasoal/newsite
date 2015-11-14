@@ -9,6 +9,8 @@ function __autoload($class)
 
         require_once($path);
 
-        return true;
+
+    }else {
+        echo $path;
     }
 }
