@@ -15,9 +15,6 @@ abstract class Core
         $this->render();
     }
 
-    public function __call($name, $params)
-    {
-        throw new \Exception('Класс не найден');
-    }
+
 
 }

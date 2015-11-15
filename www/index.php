@@ -6,7 +6,6 @@ session_start();
 include_once(__DIR__ . '/autoload.php');
 include_once(__DIR__ . '/configs.php');
 
-
 $p = explode('/', $_GET['q']);
 $params = [];
 
@@ -38,13 +37,11 @@ if ($folder == 'Admin') {
     }
 }
 
-
-
 try {
     $controller = new $c();
     $controller->request($action, $params);
 } catch (\Exception $e) {
-    $c = '\\Controller\\Admin\\Page';
+    $c = '\\Controller\\Client\\Page';
     $action = 'action_p404';
     $controller = new $c();
     $controller->request($action, $params);
