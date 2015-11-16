@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="309e3fbc-4b70-40b8-af46-b6497bf6b07b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/vendor/codeguy/upload" afterPath="$PROJECT_DIR$/www/vendor/codeguy/upload" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="e67e8a98-1ee2-4bc0-962c-f8cbc0e1d99b" name="Failed commit: Default" comment="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;" />
     <list id="40c28123-838f-4d50-96ed-1ebeefc8f337" name="Failed commit: Default (2)" comment="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;" />
@@ -148,7 +149,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newsitedb.images" pinned="false" current-in-tab="true">
+      <file leaf-file-name="newsitedb.images" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/a77cbd50/8fda1658-2cd8-4975-a095-e8583cce06be/newsitedb..images">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -157,6 +158,26 @@
           </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="119">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsitedb.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/data/newsitedb.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6052">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -212,34 +233,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build-config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/ckeditor/build-config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2431">
-              <caret line="105" column="17" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/Controller/Admin/Post.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-41.96154" vertical-offset="1238" max-vertical-offset="2856">
               <caret line="141" column="37" selection-start-line="141" selection-start-column="37" selection-end-line="141" selection-end-column="37" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/ckeditor/plugins/image/dialogs/image.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-              <caret line="13" column="143" selection-start-line="13" selection-start-column="143" selection-end-line="13" selection-end-column="143" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -762,11 +761,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\newsite\www\data" />
       <recent name="C:\OpenServer\domains\newsite\www\View\admin\page" />
       <recent name="C:\OpenServer\domains\newsite\www\View\client" />
       <recent name="C:\OpenServer\domains\newsite\www\Model\rules" />
       <recent name="C:\OpenServer\domains\newsite\www" />
-      <recent name="C:\OpenServer\domains\newsite\www\Core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\newsite\www\View\client\user" />
@@ -821,18 +820,6 @@
       <created>1444144421704</created>
       <option name="number" value="Default" />
       <updated>1444144421704</updated>
-    </task>
-    <task id="LOCAL-00007" summary="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;">
-      <created>1444590740058</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1444590740058</updated>
-    </task>
-    <task id="LOCAL-00008" summary="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;">
-      <created>1444590889429</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1444590889429</updated>
     </task>
     <task id="LOCAL-00009" summary="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;">
       <created>1444590961900</created>
@@ -1116,7 +1103,19 @@
       <option name="project" value="LOCAL" />
       <updated>1447688563100</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="этап 9 (обработка изображений)">
+      <created>1447688598946</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1447688598946</updated>
+    </task>
+    <task id="LOCAL-00057" summary="этап 9 (обработка изображений)">
+      <created>1447689543323</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1447689543323</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1228,7 +1227,8 @@
     <MESSAGE value="этап 8" />
     <MESSAGE value="этап 9" />
     <MESSAGE value="этап 9 (проблема с исключениями) без искючений, выбрасываемых в автолоаде, все работает" />
-    <option name="LAST_COMMIT_MESSAGE" value="этап 9 (проблема с исключениями) без искючений, выбрасываемых в автолоаде, все работает" />
+    <MESSAGE value="этап 9 (обработка изображений)" />
+    <option name="LAST_COMMIT_MESSAGE" value="этап 9 (обработка изображений)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1249,22 +1249,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/Core/Admin/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="323">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/Core/Client/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="323">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/Core/Template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="442">
@@ -1688,6 +1672,22 @@
       </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="853">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/data/newsitedb.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6052">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
