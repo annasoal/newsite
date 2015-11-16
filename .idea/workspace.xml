@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309e3fbc-4b70-40b8-af46-b6497bf6b07b" name="Default" comment="этап 9 (проблема с исключениями) без искючений, выбрасываемых в автолоаде, все работает">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/Core/Helpers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/View/admin/page/v_delete.php" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\View\admin\page\v_about.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\View\admin\page\v_contacts.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\View\client\page\v_about.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\View\client\page\v_contacts.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\View\client\v_index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\OpenServer\domains\newsite\www\View\client\v_main.php" afterPath="" />
-      <change type="MOVED" beforePath="C:\OpenServer\domains\newsite\www\View\client\v_auth.php" afterPath="$PROJECT_DIR$/www/View/client/user/v_auth.php" />
+    <list default="true" id="309e3fbc-4b70-40b8-af46-b6497bf6b07b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/vendor/codeguy/upload" afterPath="$PROJECT_DIR$/www/vendor/codeguy/upload" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Ajax.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Client/Auth.php" afterPath="$PROJECT_DIR$/www/Controller/Client/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Base.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Client/Base.php" afterPath="$PROJECT_DIR$/www/Controller/Client/Base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/Image.php" afterPath="$PROJECT_DIR$/www/Model/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Page.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Model/Page.php" afterPath="$PROJECT_DIR$/www/Model/Page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/Controller/Admin/Post.php" afterPath="$PROJECT_DIR$/www/Controller/Admin/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/styles/styles.css" afterPath="$PROJECT_DIR$/www/styles/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/client/post/v_allbytags.php" afterPath="$PROJECT_DIR$/www/View/client/post/v_allbytags.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/page/v_edit.php" afterPath="$PROJECT_DIR$/www/View/admin/page/v_edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/page/v_index.php" afterPath="$PROJECT_DIR$/www/View/admin/page/v_index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/admin/v_main.php" afterPath="$PROJECT_DIR$/www/View/admin/v_main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/View/client/base_templates/v_main.php" afterPath="$PROJECT_DIR$/www/View/client/base_templates/v_main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="e67e8a98-1ee2-4bc0-962c-f8cbc0e1d99b" name="Failed commit: Default" comment="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;" />
     <list id="40c28123-838f-4d50-96ed-1ebeefc8f337" name="Failed commit: Default (2)" comment="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;" />
@@ -846,12 +822,6 @@
       <option name="number" value="Default" />
       <updated>1444144421704</updated>
     </task>
-    <task id="LOCAL-00006" summary="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;">
-      <created>1444586922184</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1444586922184</updated>
-    </task>
     <task id="LOCAL-00007" summary="этап 2&#10;(namespaces, PDO, добавление, редактирование, удаление записей,добавление и отображение картинок к постам - примитивное, без проверок)&#10;">
       <created>1444590740058</created>
       <option name="number" value="00007" />
@@ -1140,7 +1110,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447604119994</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="этап 9 (проблема с исключениями) без искючений, выбрасываемых в автолоаде, все работает">
+      <created>1447688563098</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1447688563100</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1167,6 +1143,7 @@
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3233618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1185,7 +1162,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1366,6 +1342,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.653847" vertical-offset="0" max-vertical-offset="680">
           <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1380,6 +1357,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="595">
           <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,6 +1379,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="833">
           <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1432,6 +1411,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-37.923077" vertical-offset="68" max-vertical-offset="2040">
           <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1470,6 +1450,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.692307" vertical-offset="393" max-vertical-offset="1819">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
