@@ -38,29 +38,8 @@
                     <li class="active"><a href="/">Главная страница <span class="sr-only">(current)</span></a></li>
                     <li><a href="/about">О нас</a></li>
                     <li><a href="/contacts">Контакты</a></li>
-                    <li><a href="/<?= ADMIN_URL ?>/page">Админка</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                           role="button"
-                           aria-expanded="false">Админ-панель <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="/<?= ADMIN_URL ?>/post/add">Добавить пост</a></li>
-                            <li><a href="/<?= ADMIN_URL ?>/post/add">Все посты</a></li>
-                            <li><a href="/<?= ADMIN_URL ?>/tag/all">Теги</a></li>
-                            <li><a href="/<?= ADMIN_URL ?>/user/all">Пользователи</a></li>
-                            <li><a href="/<?= ADMIN_URL ?>/user/add">Добавить пользователя</a></li>
-                            <li><a href="/<?= ADMIN_URL ?>/role/all">Роли</a></li>
-                            <li><a href="/<?= ADMIN_URL ?>/role/add">Добавить роль</a></li>
-                            <li><a href="/<?= ADMIN_URL ?>/priv/all">Привилегии</a></li>
-                            <li><a href="/<?= ADMIN_URL ?>/image/">Работа с изображениями</a></li>
-                            <!--
-                            <li class="divider"></li>
-                            <li><a href="#">k</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                            -->
-                        </ul>
-                    </li>
+                    <li><a href="/<?= ADMIN_URL ?>/page">Панель администратора</a></li>
+
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
@@ -68,7 +47,11 @@
                     </div>
                     <button type="submit" class="btn btn-warning">Искать</button>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
+                <aside class="nav navbar-nav userInfo ">
+                    <p><a href="#">Пользователь <?=$active_user['name'];?></a></p>
+                    <p><a href="#">Права <?=$active_user['role'];?> </a></p>
+                </aside>
+                <ul class="nav navbar-nav navbar-right ">
                     <li><a href="/auth/logout">Выход</a></li>
                 </ul>
             </div>

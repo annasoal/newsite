@@ -32,13 +32,13 @@ class Auth
             }
         }
 
-        $this->content = View::template('v_auth.php');
+        $this->content = View::template('user/v_auth.php');
     }
 
     public function action_logout()
     {
         $this->auth->logout();
-        header('Location: /auth');
+        header('Location: /');
         exit();
     }
 }

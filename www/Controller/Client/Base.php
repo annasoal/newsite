@@ -25,14 +25,19 @@ abstract class Base extends \Controller\Core
         $this->content = '';
         $this->left = '';
         $this->base_template = 'v_main.php';
-        $this->active_user = Auth::app()->user();
-        $this->admin_link = in_array($this->active_user['id_role'], ['1', '3']);
+        $this->active_user = Auth::app()->user();// авторизованный пользователь
+        $this->admin_link = in_array($this->active_user['id_role'], ['1', '3']);// только для админа и модератора
     }
 
     // всё, что после
     public function render()
     {
-        $main = View::template('base_templates/' . $this->base_template, ['title' => $this->title, 'content' => $this->content, 'left' => $this->left, 'admin_link' => $this->admin_link, 'active_user' => $this->active_user]);
+        $main = View::template('base_templates/' . $this->base_template, ['title' => $this->title,
+                                                                         'content' => $this->content,
+                                                                         'left' => $this->left,
+                                                                         'admin_link' => $this->admin_link,
+                                                                         'active_user' => $this->active_user]
+                              );
         echo $main;
     }
 

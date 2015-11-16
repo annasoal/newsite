@@ -83,4 +83,19 @@ class Page extends \Core\Model
         return $page['full_url'] . '/' . $url;
     }
 
+    public function delete($id)
+    {
+        $children  = $this->getByParent($id);
+
+        if ($children != null) {
+            return $children;
+        } else {
+            $res = parent::delete($id);
+            return $res;
+        }
+
+
+    }
+
+
 }

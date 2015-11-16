@@ -21,7 +21,7 @@ class Page extends Base
     public function action_index()
     {
         $pages = $this->model->tree();
-        $this->content = View::template('page/v_index.php', ['pages' => $pages]);
+        $this->content = View::template('page/v_index.php', ['pages' => $pages, 'active_user' => $this->active_user]);
     }
 
 
@@ -53,21 +53,22 @@ class Page extends Base
         ]);
     }
 
-    public function action_edit(){
+    public function action_edit()
+    {
         $this->title = 'Редактировать страницу';
+        $id = $this->params[2];
         $errors = [];
 
-        if (isset($_POST['edit'])){
+        if (isset($_POST['update'])) {
             $fields = Arr::extract($_POST, ['id_parent', 'url', 'title', 'content', 'base_template', 'inner_template']);
 
-            if ($this->model->edit($this->params[2], $fields)){
+            if ($this->model->edit($id, $fields)) {
                 header('Location: /' . ADMIN_URL . '/page/');
                 exit();
             } else {
                 $errors = $this->model->errors();
             }
-        }
-        else{
+        } else {
             $fields = $this->model->one($this->params[2]);
         }
 
@@ -81,4 +82,35 @@ class Page extends Base
             'inner_templates' => Template::all('inner')
         ]);
     }
+
+        public function action_delete(){
+
+
+            //if (isset($_POST['delete'])) {
+
+                $this->title = 'Удалить страницу';
+                $id = $this->params[2];
+                $errors = [];
+                $pages = null;
+
+                if ($this->model->delete($id) === true) {
+                    header('Location: /' . ADMIN_URL . '/page');
+                    exit();
+                } elseif ($this->model->delete($id) === false) {
+                    $errors = $this->model->errors();
+                } elseif (is_array($this->model->delete($id))){
+                    $pages = $this->model->tree($shift = $id);
+                }
+                //var_dump($this->model->delete($id));
+                //die;
+                $this->content = View::template('page/v_delete.php', ['errors' => $errors,
+                    'pages' => $pages]);
+            //}
+
+
+            //$this->scripts[] = 'url_page';
+
+
+        }
+
 }

@@ -107,6 +107,8 @@ class Post
             }
         }
         // в шаблон tags Model\Tags\all для селекта
+        $this->scripts[] = 'ckeditor/ckeditor';
+        $this->scripts[] = 'ck_init';
         $this->content = View::template('post/v_add.php', ['fields' => $fields, 'tags' => $tags, 'errors' => $errors]);
     }
 
@@ -136,7 +138,8 @@ class Post
             //$tags = Tags::app()->all();
 
         }
-
+        $this->scripts[] = 'ckeditor/ckeditor';
+        $this->scripts[] = 'ck_init';
         $this->content = View::template('post/v_edit.php', ['fields' => $fields, 'tags' => $tags, 'errors' => $errors]);
 
     }

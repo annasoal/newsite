@@ -84,7 +84,7 @@ function print_tree($pages, $id_page, $shift = 0)
         
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-                <button type="submit" class="btn btn-success" name="edit">Сохранить</button>
+                <button type="submit" class="btn btn-success" name="update">Сохранить</button>
             </div>
         </div>
     </fieldset>

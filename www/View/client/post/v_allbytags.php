@@ -25,7 +25,6 @@
 
         <a class="btn btn-success btn-sm" href="/post/one/<?php echo $post['id_post'] ?>">
             Подробнее
-
-
+        </a>
     </div>
 <?php endforeach; ?>

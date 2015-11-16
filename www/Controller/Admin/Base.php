@@ -38,7 +38,7 @@ abstract class Base extends \Controller\Core
         $main = View::template('v_main.php', ['title' => $this->title,
                                               'content' => $this->content,
                                               'scripts' => $this->scripts,
-                                               'user' =>$this->active_user]);
+                                              'active_user' =>$this->active_user]);
         echo $main;
     }
 

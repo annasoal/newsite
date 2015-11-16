@@ -14,8 +14,21 @@ article {
 .admin-link{
     position: absolute;
     top: 2px;
-    left: 2px;
+    right: 15px;
+
 }
 
-.left{float: left; margin: 0 10px 10px 0;}
-.clear{clear: both;}
+.left{
+    float: left; margin: 0 10px 10px 0;
+}
+.clear{
+    clear: both;
+}
+
+.userInfo > p > a, .list-group-item >.badge > a {
+    color: #6b9430;
+    text-decoration: none;
+}
+.userInfo>p >a:hover, .list-group-item >.badge :hover  {
+    color:white;
+}

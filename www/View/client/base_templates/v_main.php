@@ -21,7 +21,7 @@
 <body>
 <? if($admin_link): ?>
     <div class="admin-link">
-        <a href="/<?=ADMIN_URL?>">В админскую панель</a>
+        <a href="/<?=ADMIN_URL?>">Панель администратора</a>
     </div>
 <? endif; ?>
 <div class="container">
@@ -52,9 +52,26 @@
                     </div>
                     <button type="submit" class="btn btn-warning">Искать</button>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/auth">Авторизация</a></li>
+
+                <aside class="nav navbar-nav userInfo ">
+                    <?
+                    //var_dump ($active_user);
+                    if ($active_user != null) {
+
+                        echo '<p><a href="#">Пользователь ' . $active_user['name'] . '</a></p>
+                              <p><a href="#">Права ' . $active_user['role'] . '</a></p>';
+                    }?>
+                </aside>
+
+                <ul class="nav navbar-nav navbar-right ">
+                    <? if ($active_user != null) {
+                    echo '<li><a href="/auth/logout">Выход</a></li>';
+                    } else {
+                        echo '<li><a href="/auth">Авторизация</a></li>';
+                    }
+                    ?>
                 </ul>
+
             </div>
         </div>
     </nav>
