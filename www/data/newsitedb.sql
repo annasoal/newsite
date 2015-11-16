@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 12 2015 г., 18:40
+-- Время создания: Ноя 16 2015 г., 18:58
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.6.3
 
@@ -56,25 +56,25 @@ CREATE TABLE IF NOT EXISTS `images` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_image`),
   UNIQUE KEY `id_image` (`id_image`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
 
 --
 -- Дамп данных таблицы `images`
 --
 
 INSERT INTO `images` (`id_image`, `file`, `date`) VALUES
-(11, '/images/12079470_501949103308490_6954766548849410363_n.jpg', '2015-10-14 14:54:45'),
-(13, '/images/12079470_501949103308490_6954766548849410363_n.jpg', '2015-10-14 16:47:59'),
-(14, '/images/background-15933_640.jpg', '2015-10-14 18:26:47'),
 (15, '/images/12088009_500866653416735_6281055393724545069_n.jpg', '2015-10-14 19:38:56'),
 (16, '/images/Bright_Spring_Flower_Garden.jpg', '2015-10-16 13:48:33'),
-(21, '/images/spring_announcement.jpg', '2015-10-23 10:59:23'),
-(22, '/images/spring_announcement.jpg', '2015-10-23 12:15:19'),
 (23, '/images/1880c5ba99e1b315e6b2b6f28dae4d4e.jpg', '2015-10-23 12:15:35'),
 (34, '/images/field_corn_21.jpg', '2015-10-28 08:05:52'),
 (35, '/images/1880c5ba99e1b315e6b2b6f28dae4d4e.jpg', '2015-10-28 08:21:17'),
 (36, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-02 18:01:15'),
-(38, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-09 19:10:33');
+(38, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-09 19:10:33'),
+(43, '/images/field-corn-21.jpeg', '2015-11-16 14:22:11'),
+(45, '/images/field-corn-21.jpeg', '2015-11-16 15:23:41'),
+(46, '/images/field-corn-21.jpeg', '2015-11-16 15:26:42'),
+(47, '/images/field-corn-21.jpeg', '2015-11-16 15:27:50'),
+(48, '/images/field-corn-21_1.jpeg', '2015-11-16 15:28:21');
 
 -- --------------------------------------------------------
 
@@ -89,17 +89,21 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `full_url` varchar(256) NOT NULL,
   `title` varchar(256) NOT NULL,
   `content` longtext NOT NULL,
+  `base_template` varchar(64) NOT NULL,
+  `inner_template` varchar(64) NOT NULL,
   UNIQUE KEY `id_page` (`id_page`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `pages`
 --
 
-INSERT INTO `pages` (`id_page`, `id_parent`, `url`, `full_url`, `title`, `content`) VALUES
-(1, 0, 'contacts', 'contacts', 'Контакты', 'КОНТАКТЫ'),
-(2, 0, 'about', 'about', 'О нас', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eius eligendi eos error fugit libero maxime, modi\r\nnecessitatibus nihil officiis pariatur provident quos sint tempora tenetur veniam voluptas. Alias,\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut consequatur debitis dignissimos distinctio\r\ndolore eum fugit laborum, magnam maiores minima nesciunt nostrum, placeat quaerat qui reprehenderit sequi vitae voluptatum.'),
-(3, 1, 'address', 'contacts/address', 'Адрес', 'Москва');
+INSERT INTO `pages` (`id_page`, `id_parent`, `url`, `full_url`, `title`, `content`, `base_template`, `inner_template`) VALUES
+(1, 0, 'contacts', 'contacts', 'Контакты', 'КОНТАКТЫ', 'v_main.php', 'v_main.php'),
+(2, 0, 'about', 'about', 'О нас', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eius eligendi eos error fugit libero maxime, modi\r\nnecessitatibus nihil officiis pariatur provident quos sint tempora tenetur veniam voluptas. Alias,\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut consequatur debitis dignissimos distinctio\r\ndolore eum fugit laborum, magnam maiores minima nesciunt nostrum, placeat quaerat qui reprehenderit sequi vitae voluptatum.', 'v_main.php', 'v_main.php'),
+(4, 2, 'erwr', 'about/erwr', 'erwr', '<p>wererwerrw</p>', 'v_main.php', 'v_main.php'),
+(5, 0, 'qew', 'qew', 'qeqweq', '<p><img alt="" src="/images/field-corn-21" style="width: 1500px; height: 938px;" />​</p>', 'v_main.php', 'v_main.php'),
+(6, 0, 'tu', 'tu', 'tyut', '<p><img alt="" src="/images/1880c5ba99e1b315e6b2b6f28dae4d4e_1.jpeg" style="width: 600px; height: 831px;" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt="" src="C:OpenServerdomainsewsitewwwControllerAdmin/../../images/field-corn-21" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>rtyurtut</p>', 'v_main.php', 'v_main.php');
 
 -- --------------------------------------------------------
 
@@ -115,16 +119,23 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_post`),
   UNIQUE KEY `id_post` (`id_post`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=110 ;
 
 --
 -- Дамп данных таблицы `posts`
 --
 
 INSERT INTO `posts` (`id_post`, `title`, `text`, `id_image`, `date`) VALUES
-(99, 'ter', 'rtete', 34, '2015-10-28 08:05:52'),
+(99, 'ter', '<p><strong>rtete</strong></p>', 34, '2015-10-28 08:05:52'),
 (101, ';l;l;l', 'l;l;l;yuyuu', 35, '2015-10-28 08:21:17'),
-(102, 'iuiuiu 8788988', 'lklkl', 36, '2015-11-02 18:01:15');
+(102, 'iuiuiu 8788988', 'lklkl', 36, '2015-11-02 18:01:15'),
+(103, 'ytutyu', '<p>yuytrtyuyt</p>', 39, '2015-11-16 14:18:49'),
+(104, 'oopopop', '<p>klklklk</p>', 41, '2015-11-16 14:21:00'),
+(105, 'qeqweqeqwe', '<p>klklklk</p>', 43, '2015-11-16 14:22:11'),
+(106, 'ioioio', '<p>kjkjkjk</p>', 45, '2015-11-16 15:23:41'),
+(107, 'dasad', '<p>asdadadadsd</p>', 46, '2015-11-16 15:26:42'),
+(108, 'sdadadad', '<p>adadsdadada</p>', 47, '2015-11-16 15:27:50'),
+(109, 'ddad', '<p>adadad</p>', 48, '2015-11-16 15:28:21');
 
 -- --------------------------------------------------------
 
@@ -165,7 +176,14 @@ INSERT INTO `posts_tags` (`id_post`, `id_tag`) VALUES
 (101, 1),
 (102, 5),
 (102, 6),
-(102, 8);
+(102, 8),
+(103, 5),
+(104, 5),
+(105, 8),
+(106, 8),
+(107, 6),
+(108, 8),
+(109, 5);
 
 -- --------------------------------------------------------
 
@@ -205,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   PRIMARY KEY (`id_role`),
   UNIQUE KEY `id_role` (`id_role`),
   UNIQUE KEY `unique_role` (`role`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `roles`
@@ -239,6 +257,7 @@ INSERT INTO `roles_privs` (`id_role`, `id_priv`) VALUES
 (1, 5),
 (1, 6),
 (3, 3),
+(3, 6),
 (5, 3),
 (6, 3);
 
@@ -258,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   PRIMARY KEY (`id_session`),
   UNIQUE KEY `id_session` (`id_session`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 --
 -- Дамп данных таблицы `sessions`
@@ -268,7 +287,9 @@ INSERT INTO `sessions` (`id_session`, `id_user`, `token`, `timestart`, `lastacti
 (1, 8, 'vgM3hmURM0LslE1c6oRz9MXZKwjUWm2IaVIWVvIfNwOtbvrYmuaFNVij8ovvoJtU', '2015-11-09 16:53:12', '2015-11-09 16:53:49', '2015-11-16 16:53:12'),
 (4, 8, '3iaxDoqpydxIwVf6kzCHCer9ay4ZINAhG5OEWWp3GT4HbQX66l7hEMMEMjU6G7md', '2015-11-09 17:17:42', '2015-11-09 17:17:42', '2015-11-16 17:17:42'),
 (5, 8, '7LBDiNkwKZlmc6wX1DwzFNbS7k40ycWPc99oQixacy4MZfUqxnIAyd3cVLmUj9dG', '2015-11-09 17:18:16', '2015-11-09 17:18:16', '2015-11-16 17:18:16'),
-(13, 8, '7YMhuu93RM1AACIvLPfJOCLEJI9nhbWB0sVrXHvr2bv7UjIdVfaCe0WikUwtyDnn', '2015-11-12 18:13:10', '2015-11-12 18:34:25', '2015-11-19 18:13:10');
+(16, 8, 'pLxu43O8B0T6Um3VpxIEuAprvOYTigMD8v1QJjB71CiBpLgQEWil9t59FbOoXeOb', '2015-11-13 16:15:11', '2015-11-13 21:52:53', '2015-11-20 16:15:11'),
+(29, 6, 'rUTEtSNVWBasmhhq2rh3CcbkLa1FfblFprFGZGMDptMaiwAa28wx6XMHAtGTDexS', '2015-11-15 21:27:47', '2015-11-16 18:28:21', '2015-11-22 21:27:47'),
+(30, 8, 'elqZpW5W6Z7xIt6n9A3fTHS2Qm9SM8eETtPTcm5oqZq0Ltr17RyzMAmLQKGbLpmb', '2015-11-16 16:33:21', '2015-11-16 16:46:31', '2015-11-23 16:33:21');
 
 -- --------------------------------------------------------
 
