@@ -27,14 +27,23 @@ $c = "\\Controller\\$folder\\";
 $action = 'action_';
 $action .= isset($params[1]) ? $params[1] : 'index';
 
+$c = "\\Controller\\$folder\\";
+
+$action = 'action_';
+$action .= isset($params[1]) ? $params[1] : 'index';
+
 if ($folder == 'Admin') {
     $c .= isset($params[0]) ? ucfirst($params[0]) : 'Page';
 } else {
     $c .= isset($params[0]) ? ucfirst($params[0]) : 'Post';
-    if (class_exists($c) != true) {
-        $c = '\\Controller\\Client\\Page';
-        $action = 'action_page';
-    }
+}
+
+try{
+    class_exists($c);
+}
+catch(\Exception $e) {
+    $c = '\\Controller\\Client\\Page';
+    $action = 'action_page';
 }
 
 try {
@@ -45,5 +54,4 @@ try {
     $action = 'action_p404';
     $controller = new $c();
     $controller->request($action, $params);
-    throw new \Exception('class not found');
 }

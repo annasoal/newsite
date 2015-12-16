@@ -1,5 +1,5 @@
 <div class="jumbotron">
-    <h2><?php echo $page['title']; ?></h2>
+    <h1><?php echo $page['title']; ?></h1>
     <br>
     <article>
         <?php echo $page['content'];?>

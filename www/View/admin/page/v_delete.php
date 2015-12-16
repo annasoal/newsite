@@ -19,11 +19,7 @@
 ?>
 
 <div class="jumbotron">
-    <? if ($errors != null):
-        foreach ($errors as $e): ?>
-            <p class="error"><?= $e; ?></p>
-        <?php endforeach;?>
-    <? endif; ?>
+
     <? if ($pages != null):?>
     <h3>Для удаления страницы необходимо изменить url или удалить дочерние страницы</h3>
     <ul class="list-group">

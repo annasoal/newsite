@@ -35,6 +35,7 @@ abstract class Base extends \Controller\Core
     // всё, что после
     public function render()
     {
+
         $main = View::template('v_main.php', ['title' => $this->title,
                                               'content' => $this->content,
                                               'scripts' => $this->scripts,

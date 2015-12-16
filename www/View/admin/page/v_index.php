@@ -22,6 +22,7 @@
     <li class="active"><a href="#allposts" data-toggle="tab">Посты</a></li>
     <li><a href="#alltags" data-toggle="tab">Теги</a></li>
     <li><a href="#staticpages" data-toggle="tab">Страницы</a></li>
+    <li><a href="#images" data-toggle="tab">Изображения</a></li>
     <?
     if ($active_user['role'] == 'Admin') {
         //var_dump($active_user['role']);
@@ -57,6 +58,12 @@
                 <? print_tree($pages) ?>
             </ul>
             <a class="btn btn-success" href="/<?= ADMIN_URL ?>/page/add">Добавить страницу</a>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="images">
+        <h3> Редактирование изображений</h3>
+        <div class="jumbotron">
+            <a class="btn btn-warning" href="/<?= ADMIN_URL ?>/images/all">Изображения</a>
         </div>
     </div>
     <? if ($active_user['role'] == 'Admin') {

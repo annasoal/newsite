@@ -61,8 +61,9 @@ class Page extends \Core\Model
     {
         $map = [];
         $pages = $this->db->select("SELECT * FROM pages
-									WHERE id_parent=:id_parent
-									ORDER BY id_page ASC",
+                                    WHERE id_parent=:id_parent
+                                    ORDER BY id_page ASC
+									",
             ['id_parent' => $start_level]);
 
         if (!empty($pages))

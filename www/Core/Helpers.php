@@ -4,6 +4,8 @@ namespace Core;
 
 class Helpers
 {
+    private static $texts = null;
+
     public static function make_translit($str){
 
         $converter = [
@@ -58,5 +60,17 @@ class Helpers
         ];
 
         return strtolower(strtr($str, $converter));
+    }
+
+    public static function text($name){
+        if(self::$texts === null){
+            $all = \Model\Text::app()->all();
+            self::$texts = [];
+
+            foreach($all as $one)
+                self::$texts[$one['name']] = $one['text'];
+        }
+
+        return self::$texts[$name];
     }
 }

@@ -25,30 +25,28 @@ class Image extends \Core\Model
 
     public function add($file)
     {
+        $res = $this->upload($file);
 
-
-        $res = $this->validation($file);
-        //var_dump($res);
-        if ($res === false) {
+        if ($res['res'] === false) {
             return false;
         } else {
-            return $this->db->insert($this->table, ['file' => $res]);
+            return $this->db->insert($this->table, ['file' => $res['path']]);
         }
     }
 
 
-    protected function validation($file)
+    public function upload($file)
     {
-        if (is_uploaded_file($_FILES['file']['tmp_name'])) {
+        $out = ['res' => false, 'error' => '', 'path' => '', 'ext' => ''];
 
-            $file_tmp_name = $_FILES['file']['tmp_name'];
-            $file_name = $_FILES['file']['name'];
+        if (is_uploaded_file($file['tmp_name'])){
+            $file_tmp_name = $file['tmp_name'];
+            $file_name = $file['name'];
 
             $mime = exif_imagetype($file_tmp_name);
 
             if ($mime === false) {
-                $error = "Файл не является изображением " . $mime;
-                $http_path = '';
+                $out['error'] = "Файл не является изображением " . $mime;
             } else {
                 $name = Helpers::make_translit(pathinfo($file_name)['filename']);
                 $dir ='/images/';
@@ -65,19 +63,19 @@ class Image extends \Core\Model
                 $full_path = $dir . $full_name;
 
                 if (move_uploaded_file($file_tmp_name, __DIR__ . '/..' .$full_path)) {
-                    $http_path = $full_path;
-                    $error = '';
+                    $out['res'] = true;
+                    $out['path'] = $full_path;
+                    $out['ext'] = $ext;
                 } else {
-                    $error = "Произошла ошибка, попробуйте еще раз";
-                    $http_path = '';
+                    $out['error'] = "Произошла ошибка, попробуйте еще раз";
                 }
-
             }
-            return $http_path;
-        } else {
-                return false;
-            }
+        }
+        else{
+            $out['error'] = "Сервер отклюнил картинку";
+        }
 
+        return $out;
     }
 
     public function delete($id)

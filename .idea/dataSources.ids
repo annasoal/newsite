@@ -19,6 +19,8 @@
       <column name="id_image" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="file" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="date" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="alt" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="figcaption" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <primary-key name="PRIMARY" columns="id_image"/>
       <index name="id_image" unique="true" columns="id_image"/>
     </table>
@@ -86,6 +88,14 @@
       <primary-key name="PRIMARY" columns="id_tag"/>
       <index name="id_tag" unique="true" columns="id_tag"/>
       <index name="name" unique="false" columns="name"/>
+    </table>
+    <table name="texts" schema="" catalog="newsitedb" type="TABLE">
+      <column name="id_text" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="text" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id_text"/>
+      <index name="id_text" unique="true" columns="id_text"/>
+      <index name="unique_name" unique="true" columns="name"/>
     </table>
     <table name="users" schema="" catalog="newsitedb" type="TABLE">
       <column name="id_user" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>

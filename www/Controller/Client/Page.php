@@ -3,6 +3,7 @@
 namespace Controller\Client;
 
 use Core\Client\View as View;
+use Core\Exceptions\MyException404 as Ex404;
 use Model\Page as MPage;
 
 class Page extends Base
@@ -19,12 +20,12 @@ class Page extends Base
     public function action_page(){
         $model = MPage::app();
         $url = implode('/', $this->params);
-        //var_dump($url);
         $page = $model->getByUrl($url);
 
         if($page == null){
-            $this->action_p404();
-            return;
+            throw new Ex404();
+             /*$this->action_p404();
+            return;*/
         }
 
         $this->title = $page['title'];

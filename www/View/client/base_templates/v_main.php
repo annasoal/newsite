@@ -81,6 +81,9 @@
         <div class="row">
             <div class="col-lg-12">
 
+                <?=\Core\Helpers::text('phone')?>
+                <?=\Core\Helpers::text('address')?>
+
                 <ul class="list-unstyled">
                     <li class="pull-right"><a href="#top">Back to top</a></li>
                     <li><a href="http://news.bootswatch.com"
@@ -101,6 +104,7 @@
 
             </div>
         </div>
+
 
     </footer>
 

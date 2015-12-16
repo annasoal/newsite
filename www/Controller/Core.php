@@ -14,6 +14,10 @@ abstract class Core
         $this->$action();
         $this->render();
     }
+    public function __call($name, $params)
+    {
+        throw new \Exception('Метод не найден');
+    }
 
 
 
