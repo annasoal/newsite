@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 17 2015 г., 14:29
+-- Время создания: Янв 14 2016 г., 14:52
 -- Версия сервера: 5.5.41-log
 -- Версия PHP: 5.6.3
 
@@ -47,6 +47,40 @@ INSERT INTO `comments` (`id_comment`, `id_post`, `id_user`, `text`, `date`) VALU
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `galleries`
+--
+
+CREATE TABLE IF NOT EXISTS `galleries` (
+  `id_gallery` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(256) NOT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_gallery`),
+  UNIQUE KEY `id_gallery` (`id_gallery`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `galleries`
+--
+
+INSERT INTO `galleries` (`id_gallery`, `name`, `dt`) VALUES
+(1, '123', '2016-01-14 10:07:16');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `galleries_images`
+--
+
+CREATE TABLE IF NOT EXISTS `galleries_images` (
+  `id_gallery` bigint(20) NOT NULL,
+  `id_image` bigint(20) NOT NULL,
+  `num_sort` int(11) NOT NULL DEFAULT '0',
+  UNIQUE KEY `id_gallery` (`id_gallery`,`id_image`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `images`
 --
 
@@ -56,6 +90,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `alt` text,
   `figcaption` text,
+  `is_show` enum('0','1') NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_image`),
   UNIQUE KEY `id_image` (`id_image`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
@@ -64,19 +99,19 @@ CREATE TABLE IF NOT EXISTS `images` (
 -- Дамп данных таблицы `images`
 --
 
-INSERT INTO `images` (`id_image`, `file`, `date`, `alt`, `figcaption`) VALUES
-(15, '/images/12088009_500866653416735_6281055393724545069_n.jpg', '2015-10-14 19:38:56', NULL, NULL),
-(16, '/images/Bright_Spring_Flower_Garden.jpg', '2015-10-16 13:48:33', NULL, NULL),
-(23, '/images/1880c5ba99e1b315e6b2b6f28dae4d4e.jpg', '2015-10-23 12:15:35', NULL, NULL),
-(34, '/images/field_corn_21.jpg', '2015-10-28 08:05:52', NULL, NULL),
-(35, '/images/1880c5ba99e1b315e6b2b6f28dae4d4e.jpg', '2015-10-28 08:21:17', NULL, NULL),
-(36, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-02 18:01:15', NULL, NULL),
-(38, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-09 19:10:33', NULL, NULL),
-(43, '/images/field-corn-21.jpeg', '2015-11-16 14:22:11', NULL, NULL),
-(45, '/images/field-corn-21.jpeg', '2015-11-16 15:23:41', NULL, NULL),
-(46, '/images/field-corn-21.jpeg', '2015-11-16 15:26:42', NULL, NULL),
-(47, '/images/field-corn-21.jpeg', '2015-11-16 15:27:50', NULL, NULL),
-(48, '/images/field-corn-21_1.jpeg', '2015-11-16 15:28:21', NULL, NULL);
+INSERT INTO `images` (`id_image`, `file`, `date`, `alt`, `figcaption`, `is_show`) VALUES
+(15, '/images/12088009_500866653416735_6281055393724545069_n.jpg', '2015-10-14 19:38:56', NULL, NULL, '1'),
+(16, '/images/Bright_Spring_Flower_Garden.jpg', '2015-10-16 13:48:33', NULL, NULL, '1'),
+(23, '/images/1880c5ba99e1b315e6b2b6f28dae4d4e.jpg', '2015-10-23 12:15:35', NULL, NULL, '1'),
+(34, '/images/field_corn_21.jpg', '2015-10-28 08:05:52', NULL, NULL, '1'),
+(35, '/images/1880c5ba99e1b315e6b2b6f28dae4d4e.jpg', '2015-10-28 08:21:17', NULL, NULL, '1'),
+(36, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-02 18:01:15', NULL, NULL, '1'),
+(38, '/images/eb170112a4ec4d5e96f12a3cda1920dc.jpg', '2015-11-09 19:10:33', NULL, NULL, '1'),
+(43, '/images/field-corn-21.jpeg', '2015-11-16 14:22:11', NULL, NULL, '1'),
+(45, '/images/field-corn-21.jpeg', '2015-11-16 15:23:41', NULL, NULL, '1'),
+(46, '/images/field-corn-21.jpeg', '2015-11-16 15:26:42', NULL, NULL, '1'),
+(47, '/images/field-corn-21.jpeg', '2015-11-16 15:27:50', NULL, NULL, '1'),
+(48, '/images/field-corn-21_1.jpeg', '2015-11-16 15:28:21', NULL, NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -280,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   PRIMARY KEY (`id_session`),
   UNIQUE KEY `id_session` (`id_session`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
 -- Дамп данных таблицы `sessions`
@@ -293,7 +328,8 @@ INSERT INTO `sessions` (`id_session`, `id_user`, `token`, `timestart`, `lastacti
 (16, 8, 'pLxu43O8B0T6Um3VpxIEuAprvOYTigMD8v1QJjB71CiBpLgQEWil9t59FbOoXeOb', '2015-11-13 16:15:11', '2015-11-19 14:51:11', '2015-11-20 16:15:11'),
 (29, 6, 'rUTEtSNVWBasmhhq2rh3CcbkLa1FfblFprFGZGMDptMaiwAa28wx6XMHAtGTDexS', '2015-11-15 21:27:47', '2015-11-22 00:41:58', '2015-11-22 21:27:47'),
 (30, 8, 'elqZpW5W6Z7xIt6n9A3fTHS2Qm9SM8eETtPTcm5oqZq0Ltr17RyzMAmLQKGbLpmb', '2015-11-16 16:33:21', '2015-11-16 16:46:31', '2015-11-23 16:33:21'),
-(31, 8, 'auSZNazyqm2rYHR4Xl4HzRJbIb0lbpJKFvWn1Z04RfVZQfOW4xjKvtG1X9BBoMti', '2015-12-16 15:53:15', '2015-12-16 18:30:47', '2015-12-23 15:53:15');
+(31, 8, 'auSZNazyqm2rYHR4Xl4HzRJbIb0lbpJKFvWn1Z04RfVZQfOW4xjKvtG1X9BBoMti', '2015-12-16 15:53:15', '2015-12-16 18:30:47', '2015-12-23 15:53:15'),
+(32, 8, 'B3S7wwTgNzeXny6bO63TfeKjXzhZJAZ4NFgun6vlnn6O0GpVuhjYumW9nHQsASeR', '2016-01-14 12:53:51', '2016-01-14 14:25:07', '2016-01-21 12:53:51');
 
 -- --------------------------------------------------------
 
