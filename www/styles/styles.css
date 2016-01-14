@@ -32,3 +32,113 @@ article {
 .userInfo>p >a:hover, .list-group-item >.badge :hover  {
     color:white;
 }
+
+/* ------------------------- */
+#drop-files {
+    position:relative;
+    width: 500px;
+    height: 240px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    border: 4px dashed rgba(0,0,0,0.2);
+    padding-top:80px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#drop-files p {
+    clear:none;
+    padding:0;
+    margin:0;
+}
+
+#uploaded-holder {
+    display: none;
+    position:relative;
+    margin: 0 auto;
+}
+
+#dropped-files {
+    display:block;
+    width: 650px;
+}
+
+#upload-button {
+    z-index: 9999;
+    display: none;
+    margin: 20px 0;
+}
+
+.drop-button {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    padding: 5px;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    font-size: 1em;
+    bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.drop-button:hover{
+    text-decoration: underline;
+    color: red;
+}
+
+#dropped-files .image {
+    position: relative;
+    height: 133px;
+    width: 200px;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: #fff;
+    float: left;
+    border-radius: 4px;
+    margin: 0 7px 7px 0;
+    overflow: hidden;
+}
+/* ----Галерея-----*/
+.delimg{
+    float:left;
+    border-radius:3px;
+
+    width: 150px;
+    height: 100px;
+    border:1px solid #78866b;
+    padding: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 10px 20px 10px 0;
+}
+
+.delimg form{
+    margin: 0;
+}
+
+.delimg img{
+    float:left;
+    width: 80%;
+}
+.delimg input[type='submit']{
+    float:right;
+    position:relative;
+    margin-right:5px;
+    margin-top:3px;
+}
+.delimg:hover{
+    background-color:#ccc;
+}
+.delete {
+    width: 20px;
+    height: 20px;
+    background-image:url(images/x_red.gif);
+    font-weight:bold;
+    color:white;
+    box-shadow: none;
+}

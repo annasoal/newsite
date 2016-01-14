@@ -15,6 +15,7 @@ abstract class Base extends \Controller\Core
     protected $title;
     protected $content;
     protected $scripts;
+    protected $vars_to_js;
 
     //protected $left;
 
@@ -24,6 +25,8 @@ abstract class Base extends \Controller\Core
         $this->title = '';
         $this->content = '';
         $this->active_user = Auth::app()->user();
+        $this->scripts = [];
+        $this->vars_to_js = ['admin_url' => ADMIN_URL];
 
         if ($this->active_user == false) {
             header("Location: /auth");
@@ -37,9 +40,10 @@ abstract class Base extends \Controller\Core
     {
 
         $main = View::template('v_main.php', ['title' => $this->title,
-                                              'content' => $this->content,
-                                              'scripts' => $this->scripts,
-                                              'active_user' =>$this->active_user]);
+            'content' => $this->content,
+            'scripts' => $this->scripts,
+            'vars_to_js' => $this->vars_to_js,
+            'active_user' =>$this->active_user]);
         echo $main;
     }
 
@@ -48,7 +52,7 @@ abstract class Base extends \Controller\Core
         if (!Auth::app()->can($privs)) {
             $action = 'action_access_err';
             $conrtroller = new Msg();
-            $conrtroller->request($action, $params);
+            $conrtroller->request($action, $this->params);
             die();
         }
     }

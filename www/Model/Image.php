@@ -91,5 +91,41 @@ class Image extends \Core\Model
         }
         return $res;
     }
+    public function upload_base64($name, $value)
+    {
+        if(!$this->check_type($name))
+            return false;
 
+        $getMime = explode('.', $name);
+        $mime = strtolower(end($getMime));
+        $filename = mt_rand(0, 10000000) . '.' . $mime;
+
+        while(file_exists('images/' . $filename))
+            $filename = mt_rand(0, 10000000) . '.' . $mime;
+
+        // Выделим данные
+        $data = explode(',', $value);
+
+        // Декодируем данные, закодированные алгоритмом MIME base64
+        $encodedData = str_replace(' ', '+', $data[1]);
+        $decodedData = base64_decode($encodedData);
+
+        file_put_contents('images/' . $filename, $decodedData);
+        // exif_imagetype, если === false unlink return false
+
+        return $this->db->insert($this->table, ['file' => '/images/' . $filename]);
+    }
+
+    //
+    // Редактирование изображения
+    //
+
+    private function check_type($name)
+    {
+        // Получаем расширение файла
+        $getMime = explode('.', $name);
+        $mime = strtolower(end($getMime));
+        $types = array('jpg', 'png', 'gif', 'bmp', 'jpeg');
+        return in_array($mime, $types);
+    }
 }
